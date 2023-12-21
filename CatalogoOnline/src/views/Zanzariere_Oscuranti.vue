@@ -3,11 +3,11 @@
     <div>
       <h1>Zanzariere e Oscuranti</h1>
       <!-- <router-link to="/about"><button class="btn btn-primary">Click me</button></router-link> -->
-      <div v-for="(zanzariera, index) in zanzariere" :key="index" class="porta-item">
+      <div v-for="(zanzariera, index) in zanzariere" :key="index" class="zanzariera-item">
       <a :href="zanzariera.link" target="_blank">
-        <img :src="zanzariera.image" alt="Zanzariera e Oscuranti" class="porta-image" />
+        <img :src="zanzariera.image" alt="Zanzariera e Oscuranti" class="zanzariera-image" />
       </a>
-      <div class="porta-description">
+      <div class="zanzariera-description">
         <h2>{{ zanzariera.descrizione }}</h2>
       </div>
     </div>
@@ -28,35 +28,38 @@
           link: 'https://zanzar.it/',
         },
         {
-          image:'https://unionearchitetti.com/wp-content/uploads/2019/03/Porte_imic_made_in_italy_logotype.jpg',
-          descrizione:"Porte Imic è un' azienda specializzata nella lavorazione di porte in legno. Tradizione e innovazione sono i pilastri della filiera produttiva, gran parte della quale è completamente interna, garantendo velocità nella lavorazione, versatilità nelle rifiniture e nel design, qualità e ricercatezza attraverso un'attenzione costante delle materie prime e dei processi costruttivi. Le fasi di lavorazione, dal taglio del legno alle finiture, sono svolte in azienda, supervisionate dai nostri superadvisor addetti al controllo qualità, per offrirti le porte che tu desideri al giusto prezzo.",
-          link:'https://www.porteimic.com/'
+          image:'https://croci.com/wp-content/uploads/2019/07/croci-def.png',
+          descrizione:"Le Tapparelle Croci fungono da deterrente ai furti nelle abitazioni ed oppongono un'ottima resistenza ai tentativi d'intrusione.Questo è possibile grazie alle caratteristiche delle materie prime utilizzate, unite agli esclusivi accessori di sicurezza.",
+          link:'https://croci.com/'
         },
         {
-          image:'https://porte.manuellodesign.it/wp-content/uploads/2022/04/logo-manuello-design.png',
-          descrizione:"La nostra azienda, Manuello Design, si posiziona tra i leader di arredamento. Produciamo porte interne da oltre trent'anni. Nel tempo abbiamo aggiornato e sviluppato i nostri processi produttivi, integrando macchinari all'avanguardia e tecniche di verniciatura ecosostenibili.La qualità che ci contraddistingue è la combinazione tra la cura del dettaglio e la creatività.",
-          link:'https://www.manuellodesign.it/it/'
+          image:'https://suncover.com/wp-content/uploads/2020/05/marchio-suncover.png',
+          descrizione:"Dal 1969 Suncover produce su misura e vende, tende avvolgibili di ogni dimensione e materiale, per interno ed esterno, frangisole, tende tecniche per l'arredo per ogni ambiente domestico, professionale, teatri, musei, hotels, padiglioni espositivi, e tante altre locations.Produce e vende anche zanzariere e sistemi antinsetto, di diverse tipologie e per ogni ambiente, sia domestico che professionale.",
+          link:'https://suncover.com/'
         },
         {
-          image:'https://cdn.archilovers.com/people/thumb2_BARAUSSE-fed3452d-log1.gif',
-          descrizione:"“Sublimare la vivibilità degli ambienti, plasmare un design che nobilita la funzionalità, porre le conoscenze e l'esperienza della nostra squadra al servizio del bello: perseguiamo l'imprescindibile obiettivo di creare un sistema di prodotti che migliora la qualità dell'abitare e aumenta il valore del progetto.”Tutto questo è per noi Cultura del Progetto.",
-          link:'https://www.barausse.com/it/'
-        },
-        {
-          image:'https://pbs.twimg.com/profile_images/3320113913/5717b5960ce15f5e7ac7501ae25bd067_400x400.png',
-          descrizione:"NEC Chiusure srl  produce istallazioni efficienti garantendo il massimo livello di sicurezza operativa: ne sono un esempio eccellente le porte per ospedali e le porte per le scuole, pratiche veloci e certificate. L'azienda fornisce il suo telaio che meglio si adatta alla situazione esistente.Gli elementi predominanti nella produzione di NEC Chiusure srl sono l'alluminio, che rappresenta la struttura delle varie tipologie di porte tecniche, abbinate all'acciaio, al vetro, al laminato plastico ed al legno. Tutte materie prime selezionate per garantire qualità e sicurezza, rispondenti alle più innovative tecniche disponibili sul mercato.Le porte per ospedali, grazie alla loro praticità gestionale, risultano particolarmente adeguate alle esigenze del settore della salute. Un prodotto che ha le massime garanzie che vuole una installazione sanitaria. Lo stesso standard qualitativo è seguito per la produzione di porte per la scuole.Le porte per la scuola sono progettate in base alle normative di sicurezza, igiene, economicità e durata nel tempo. L'installazione è rapida e non invasiva. La loro semplicità e una vasta gamma di prototipi ne permettono l'inserimento in qualsiasi contesto architettonico.",
-          link:'https://www.chiusure-nec.it/'
-        },
-        {
-          image:'https://www.fgporte.it/images/FGPorte/loghi/logo-FG-50-orizz-400.png',
-          descrizione:"L'azienda FG Porte S.R.L.,viene fondata Giorgio Dino,Guerrino,Riccardo e Settimio nel 1968.Tutto ebbe inizio in una piccola falegnameria dove i fratteli Giorgi si sono via via specializzati nella produzione di infissi in legno e dedicando una particolare attenzione alla realizzazione delle porte",
-          link:'https://www.fgporte.it/'
-
-
+          image:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Logo_Schenker_Storen.svg/1200px-Logo_Schenker_Storen.svg.png',
+          descrizione:"l frangisole che proponiamo sono versatili e quindi facilmente adattabili all'architettura ed alla situazione di cantiere in cui devono essere impiegati.Sono regolabili in qualsiasi posizione, sia verticale che orizzontale, garantendo pertanto un'illuminazione ottimale o un oscuramento praticamente totale. Ogni frangisole è disponibile con azionamento manuale o a motore e l'opzione supplementare di un comando elettronico. Con Suncover e Schenker Storen trovererete oltre al prodotto ideale, anche una consulenza esaustiva e un'assistenza rapida e competente.",
+          link:'https://suncover.com/frangisole-2/'
         }
       ]
       }
     }
   };
   </script>
+  <style>
+  /* Aggiungi stili CSS per personalizzare l'aspetto delle zanzariere */
+  .zanzariera-item {
+    margin-bottom: 20px;
+  }
+  
+  .zanzariera-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .zanzariera-description {
+    margin-top: 10px;
+  }
+  </style>
   
