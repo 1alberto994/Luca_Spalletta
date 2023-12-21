@@ -2,6 +2,15 @@
 <template>
     <div>
       <h1>Zanzariere e Oscuranti</h1>
+      <div class="container-fluid">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade mt-3" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div v-for="(item, index) in carouselItems" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
+          <img :src="item.image" class=" interval d-block w-100" alt="...">
+        </div>
+      </div>
+    </div>
+  </div>
       <!-- <router-link to="/about"><button class="btn btn-primary">Click me</button></router-link> -->
       <div class="container cointainer-sm ">
           <div class="row">
@@ -51,10 +60,33 @@
           descrizione:"l frangisole che proponiamo sono versatili e quindi facilmente adattabili all'architettura ed alla situazione di cantiere in cui devono essere impiegati.Sono regolabili in qualsiasi posizione, sia verticale che orizzontale, garantendo pertanto un'illuminazione ottimale o un oscuramento praticamente totale. Ogni frangisole è disponibile con azionamento manuale o a motore e l'opzione supplementare di un comando elettronico. Con Suncover e Schenker Storen trovererete oltre al prodotto ideale, anche una consulenza esaustiva e un'assistenza rapida e competente.",
           link:'https://suncover.com/frangisole-2/'
         }
-      ]
-      }
-    }
-  };
+      ],
+      carouselItems: [
+        {
+          image: 'https://www.serramenti82.it/wp-content/uploads/2018/08/zanzariere_4.jpg',
+        },
+        {
+          image: 'https://www.ca-mia.it/wp-content/uploads/2020/09/sistemi-oscuranti-ca-mia-luxury-home.jpg',
+        },
+        {
+          image: 'https://www.oknoplast.it/blog/wp-content/uploads/2019/09/vantaggi-oscuranti-per-finestre.jpg',
+        },
+      ],
+      currentSlide: 0,
+        
+        }
+      },
+      mounted() {
+    // Imposta l'intervallo per cambiare la slide ogni 3 secondi
+    setInterval(this.nextSlide, 3000);
+  },
+  methods: {
+    nextSlide() {
+      // Incrementa l'indice della slide corrente
+      this.currentSlide = (this.currentSlide + 1) % this.carouselItems.length;
+    },
+  },
+};
   </script>
   <style>
   /* Aggiungi stili CSS per personalizzare l'aspetto delle zanzariere */

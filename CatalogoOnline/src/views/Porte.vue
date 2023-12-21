@@ -1,8 +1,17 @@
  <!-- src/views/Porte.vue -->
 <template>
-  <div class="container container-sm custom-background">
+      <div class="container-fluid">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade mt-3" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div v-for="(item, index) in carouselItems" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
+          <img :src="item.image" class="interval d-block  w-100" alt="...">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid container-sm custom-background">
     <div class="row">
-      <div v-for="(porta, index) in porte" :key="index" class="col-lg-4 col-sm-12">
+      <div v-for="(porta, index) in porte" :key="index" class="col-lg-6 col-sm-12">
         <div class="card custom-card">
           <a :href="porta.link" target="_blank">
             <img :src="porta.image" alt="Porta" class="card-img-top" />
@@ -35,7 +44,7 @@
           link: 'https://www.ferwall.it/',
         },
         {
-          image:'https://unionearchitetti.com/wp-content/uploads/2019/03/Porte_imic_made_in_italy_logotype.jpg',
+          image:'https://www.porteimic.com/assets/images/porte-imic-made-in-italy-logotypes.png',
           descrizione:"Porte Imic è un' azienda specializzata nella lavorazione di porte in legno. Tradizione e innovazione sono i pilastri della filiera produttiva, gran parte della quale è completamente interna, garantendo velocità nella lavorazione, versatilità nelle rifiniture e nel design, qualità e ricercatezza attraverso un'attenzione costante delle materie prime e dei processi costruttivi.",
           link:'https://www.porteimic.com/'
         },
@@ -45,12 +54,12 @@
           link:'https://www.manuellodesign.it/it/'
         },
         {
-          image:'https://cdn.archilovers.com/people/thumb2_BARAUSSE-fed3452d-log1.gif',
+          image:'https://www.barausse.com/app/themes/barausse/dist/images/barausse-logo-white_7f43f2aa.svg',
           descrizione:"“Sublimare la vivibilità degli ambienti, plasmare un design che nobilita la funzionalità, porre le conoscenze e l'esperienza della nostra squadra al servizio del bello: perseguiamo l'imprescindibile obiettivo di creare un sistema di prodotti che migliora la qualità dell'abitare e aumenta il valore del progetto.”Tutto questo è per noi Cultura del Progetto.",
           link:'https://www.barausse.com/it/'
         },
         {
-          image:'https://pbs.twimg.com/profile_images/3320113913/5717b5960ce15f5e7ac7501ae25bd067_400x400.png',
+          image:'https://www.chiusure-nec.it/nec/wp-content/uploads/2016/02/logo-bianco.png',
           descrizione:"NEC Chiusure srl  produce istallazioni efficienti garantendo il massimo livello di sicurezza operativa: ne sono un esempio eccellente le porte per ospedali e le porte per le scuole, pratiche veloci e certificate. ",
           link:'https://www.chiusure-nec.it/'
         },
@@ -61,11 +70,34 @@
 
 
         }
-      ]
+      ],
+      carouselItems: [
+        {
+          image: 'https://www.relupisa.it/wp-content/uploads/2019/05/4.jpg',
+        },
+        {
+          image: 'https://www.fracaros.it/DB_files/sottocategorie/Schermata_08-2456513_alle_10.44.26.png',
+        },
+        {
+          image: 'https://www.garofoli.com/wp-content/uploads/2018/02/Garofoli_No-Limits_Olmo-Grigio_filetti-forati-6-mm-e1545059658122.jpg',
+        },
+      ],
+      currentSlide: 0,
       
       }
-    }
-  };
+    },
+    mounted() {
+    // Imposta l'intervallo per cambiare la slide ogni 3 secondi
+    setInterval(this.nextSlide, 3000);
+  },
+  methods: {
+    nextSlide() {
+      // Incrementa l'indice della slide corrente
+      this.currentSlide = (this.currentSlide + 1) % this.carouselItems.length;
+    },
+  },
+
+};
   </script>
   <style>
   /* Aggiungi stili CSS per personalizzare l'aspetto delle porte */
@@ -115,7 +147,7 @@
   max-width: 100%;
   height: auto;
   border-bottom: 1px solid #e0e0e0;
-  max-height: 200px;
+  
   opacity: 1 !important;
   padding: 5px;
   border:none !important;
@@ -140,6 +172,9 @@
 
 .btn-custom:hover {
   background-color: #45a049;
+}
+.interval{
+  max-height: 500px;
 }
 </style>
   

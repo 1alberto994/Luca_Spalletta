@@ -2,10 +2,19 @@
 <template>
     
       <h1>Infissi</h1>
+      <div class="container-fluid">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade mt-3" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div v-for="(item, index) in carouselItems" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
+          <img :src="item.image" class=" interval d-block w-100" alt="...">
+        </div>
+      </div>
+    </div>
+  </div>
       <div class="container-fluid container-sm ">
           <div class="row">
 
-            <div v-for="(infisso, index) in infissi" :key="index" class="col-12 bg-dark">
+            <div v-for="(infisso, index) in infissi" :key="index" class="col-12 ">
               <div class="card custom-card">
                 <a :href="infisso.link" target="_blank">
                   <img :src="infisso.image" alt="infissi" class="card-img-top" />
@@ -23,7 +32,7 @@
       <div class="container-fluid container-sm">
           <div class="row">
 
-            <div  v-for="(azienda, index) in aziende" :key="index" class="col-xl-4 col-sm-12 bg-dark">
+            <div  v-for="(azienda, index) in aziende" :key="index" class="col-xl-4 col-sm-12 ">
               <div class="card custom-card">
                 <a :href="azienda.link" target="_blank">
                   <img :src="azienda.image" alt="infissi" class="card-img-top" />
@@ -69,9 +78,31 @@
           descrizione:"Scegliere una finestra in alluminio ALWO è una scelta di stile ma non solo. È la soluzione migliore per la tua casa grazie al design moderno ed essenziale, alla completa riciclabilità e alle elevate prestazioni.",
           link:'https://www.cosmetgroup.it/brand/32/alwo'
         }
-      ]
+      ],
+      carouselItems: [
+        {
+          image:'https://www.ediltecnico.it/wp-content/uploads/2023/05/infissi-serramenti-finestre-definizioni-1024x683.jpg',
+        },
+        {
+          image: 'https://www.dauniaserramenti.it/wp-content/uploads/2021/07/daunia-serramenti-infissi-finestre-portafinestre-pvc-anteprima.jpg',
+        },
+        {
+          image: 'https://www.infissilombardia.it/wp-content/uploads/2017/07/infissi-in-pvc-milano.jpg',
+        },
+      ],
+      currentSlide: 0,
       }
-    }
+    },
+    mounted() {
+    // Imposta l'intervallo per cambiare la slide ogni 3 secondi
+    setInterval(this.nextSlide, 3000);
+  },
+  methods: {
+    nextSlide() {
+      // Incrementa l'indice della slide corrente
+      this.currentSlide = (this.currentSlide + 1) % this.carouselItems.length;
+    },
+  },
   };
   </script>
   <style>

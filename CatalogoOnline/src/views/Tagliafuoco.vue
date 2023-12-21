@@ -1,28 +1,14 @@
  <!-- src/views/Tagliafuoco.vue -->
  <template>
-    <div class="container-fluid">
-        <div id="carouselExampleFade" class="carousel slide carousel-fade">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://www.proteggifire.it/files/acatalog1/category/PortaTagliafuoco_02.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="https://www.industrieluna.com/wp-content/uploads/2015/11/Banner_PorteTU_850x425b.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="https://i1.wp.com/www.imsasrl.it/wp-content/uploads/2020/09/1-1.png?fit=700%2C400&ssl=1" class="d-block w-100" alt="...">
+        <div class="container-fluid">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade mt-3" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div v-for="(item, index) in carouselItems" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
+          <img :src="item.image" class=" interval d-block w-100" alt="...">
+        </div>
+      </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-    </div>
     <div class="container container-sm custom-background">
       <div class="row">
         <div v-for="(tagliafuoco, index) in tagliafuochi" :key="index" class="col-lg-6 col-sm-12">
@@ -48,18 +34,19 @@
   
     export default {
       name: 'Tagliafuoco',
+      name: 'CarouselExample',
     
       data(){
         return{
           tagliafuochi:[
           {
-            image :'https://gilardiedilizia.bigmat.it/export/sites/default/gilardiedilizia/NINZ.png',
+            image :'https://firio.com.cy/wp-content/uploads/2022/05/ninz-300x220-1.jpg',
             descrizione:"Ninz S.p.A. è leader in Italia nella produzione di porte tagliafuoco con il 70% del mercato. Esperienza consolidata nel settore, conoscenza delle normative e ottimo rapporto qualità-prezzo sono i tratti distintivi dell'azienda, che nel corso degli anni ha ampliato l'offerta produttiva fino a comprendere porte metalliche multiuso e una vasta gamma di accessori. Oltre che in Italia, la Ninz S.p.A. commercializza i propri prodotti anche in numerosi paesi europei come Francia, Grecia, Portogallo, Romania, Spagna, Slovenia... ed extraeuropei, tra cui Turchia, Russia, Panama.",
             link: 'https://www.componentbuilding.it/ninz-intro.html',
           },
           {
-            image:'https://www.meverin.com/wp-content/uploads/2020/07/logo-meverin-video-2.jpg',
-            descrizione:"I Portoni tagliafuoco Meverin sono realizzati esclusivamente su misura (zero % standard) con tempi di consegna equiparabili ad una produzione di serie.",
+            image:'https://www.meverin.com/wp-content/uploads/2020/06/logo-meverin-400.png',
+            descrizione:" I prodotti Meverin Fire Fixing® evolvono in modo perfettamente allineato alle normative di riferimento più recenti in materia di prevenzione e tutela dell'incolumità e salute umana e di preservazione del valore in tutte le sue declinazioni in caso di eventi particolarmente devastanti quali sono gli incendi.L'elevata flessibilità della capacità di progettazione aziendale rende Meverin particolarmente vocata anche alla protezione dell'esteso patrimonio storico, artistico e culturale che fa dell'Italia un luogo unico al mondo. Una ricchezza di tale importanza da essere obbligatoriamente, sia per morale che per norma, posta a riparo (il patrimonio culturale italiano, a causa di vicende storiche, politiche e amministrative è stato da sempre fortemente soggetto a rischio incendio).",
             link:'https://www.meverin.com/'
           },
           {
@@ -69,14 +56,37 @@
           },
           {
             image:'https://www.coneglianoserramenti.it/public/images/news/BLACKFIRE_Logo.png',
-            descrizione:"Blackfire® di Conegliano Group si pone l’obiettivo strategico di diventare uno dei principali fornitori di sistemi di protezione passiva al fuoco ed al fumo, in Italia ed in tutto il mercato europeo. La strategia consiste nel perfezionare il proprio modello di business, volto ad offrire servizi alla clientela ed un assortimento di prodotti rispondenti ad ogni esigenza",
+            descrizione:"Blackfire® di Conegliano Group si pone l'obiettivo strategico di diventare uno dei principali fornitori di sistemi di protezione passiva al fuoco ed al fumo, in Italia ed in tutto il mercato europeo. La strategia consiste nel perfezionare il proprio modello di business, volto ad offrire servizi alla clientela ed un assortimento di prodotti rispondenti ad ogni esigenza",
             link:'https://blackfireitaly.it/'
           }
-        ]
+        ],
+        carouselItems: [
+        {
+          image: 'https://www.proteggifire.it/files/acatalog1/category/PortaTagliafuoco_02.jpg',
+        },
+        {
+          image: 'https://www.industrieluna.com/wp-content/uploads/2015/11/Banner_PorteTU_850x425b.jpg',
+        },
+        {
+          image: 'https://i1.wp.com/www.imsasrl.it/wp-content/uploads/2020/09/1-1.png?fit=700%2C400&ssl=1',
+        },
+      ],
+      currentSlide: 0,
         
         }
-      }
-    };
+      },
+      mounted() {
+    // Imposta l'intervallo per cambiare la slide ogni 3 secondi
+    setInterval(this.nextSlide, 3000);
+  },
+  methods: {
+    nextSlide() {
+      // Incrementa l'indice della slide corrente
+      this.currentSlide = (this.currentSlide + 1) % this.carouselItems.length;
+    },
+  },
+};
+    
     </script>
     <style>
     /* Aggiungi stili CSS per personalizzare l'aspetto delle porte */
@@ -127,7 +137,8 @@
     height: auto;
     border-bottom: 1px solid #e0e0e0;
     max-height: 200px;
-    opacity: 1 !important;
+    /* opacity: 1 !important; */
+    opacity: 0.8 !important;
     padding: 5px;
     border:none !important;
   }
@@ -151,6 +162,9 @@
   
   .btn-custom:hover {
     background-color: #45a049;
+  }
+  .interval{
+    max-height: 500px;
   }
   </style>
     
