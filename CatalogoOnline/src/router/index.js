@@ -2,13 +2,16 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import About from '../views/About.vue';
-import About from '../views/Porte.vue';
+import Porte from '../views/Porte.vue';
+import Zanzariere_Oscuranti from '../views/Zanzariere_Oscuranti.vue';
+
 
 
 const routes = [
   { path: '/', component: Home },
   { path: '/about', component: About },
   {path:'/porte',component:Porte},
+  {path:'/Zanazariere_Oscuranti',component:Zanzariere_Oscuranti},
 ];
 
 const router = createRouter({
