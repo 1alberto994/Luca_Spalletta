@@ -2,36 +2,35 @@
 <template>
   <div id="app">
     <header>
-      <nav class="navbar navbar-light bg-dark">
-        <div class="container-fluid">
+      <nav class="navbar navbar-light bg-dark ">
+        <div class="container-fluid d-flex align-items-center justify-content-center"><h1 class="text-light text-center">Gianluca e Luca Spalletta rappresentanze</h1></div>
+        <div class="container-fluid d-flex align-items-center justify-content-center">
+          
+          
           <div class="row">
-            <div class="col-6"><h1 class="text-light text-center">Gianluca e Luca Spalletta rappresentanze</h1></div>
 
-            <div class="col-6 d-flex align-items-center justify-content-between">
-              <ul class="list-unstyled m-3">
-                <li class="d-flex justify-content-between">
+            <div class="  align-items-center justify-content-between text-center">
+              <ul class="list-unstyled m-3 d-flex">
+                <li class="d-flex justify-content-between p-2">
                   <router-link class="router" to="/">Home</router-link>
                 </li>
-                <li class="d-flex justify-content-between">
+                <li class="d-flex justify-content-between p-2">
                   <router-link class="router" to="/about">About</router-link>
                 </li>
-                <li class="d-flex justify-content-between dropdown"> <!-- Aggiunto dropdown qui -->
-                  <router-link class="router" to="/porte" data-bs-toggle="dropdown">
+                <li class="d-flex justify-content-between p-2">
+                  <router-link class="router" to="/tagliafuoco">Chiusure Tagliafuoco</router-link>
+                </li>
+                <li class="d-flex justify-content-between p-2"> <!-- Aggiunto dropdown qui -->
+                  <router-link class="router" to="/porte">
                     Porte
                   </router-link>
-                  <!-- <ul class="dropdown-menu">  Aggiunto dropdown-menu qui 
-                    <li><router-link class="dropdown-item" to="/porte/ferwall">Ferwall</router-link></li>
-                    <li><router-link class="dropdown-item" to="/porte/porte-imic">Porte Imic</router-link></li>
-                    <li><router-link class="dropdown-item" to="/porte/manuello">Manuello</router-link></li>
-                    <li><router-link class="dropdown-item" to="/porte/barausse">Barausse</router-link></li>
-                    <li><router-link class="dropdown-item" to="/porte/fg-porte">FG Porte</router-link></li>
-                    <li><router-link class="dropdown-item" to="/porte/nec">NEC</router-link></li>
-                  </ul> -->
                 </li>
-                <li class="d-flex justify-content-between">
-                  <router-link class="router" to="/infissi">Infissi</router-link>
+                <li class="d-flex justify-content-between p-2">
+                    <router-link class="router" to="/infissi" data-bs-toggle="dropdown">
+                      Infissi
+                    </router-link>
                 </li>
-                <li class="d-flex justify-content-between">
+                <li class="d-flex justify-content-between p-2">
                   <router-link class="router" to="/Zanzariere_Oscuranti">Zanzariere_Oscuranti</router-link>
                 </li>
               </ul>
@@ -63,13 +62,5 @@ export default {
   color: white;
 }
 
-ul {
-  display: flex;
-  justify-content: space-between;
-}
 
-/* Aggiungi uno stile per la dropdown */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
 </style>
