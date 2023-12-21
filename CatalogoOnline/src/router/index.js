@@ -11,7 +11,7 @@ const routes = [
   { path: '/', component: Home },
   { path: '/about', component: About },
   {path:'/porte',component:Porte},
-  {path:'/Zanazariere_Oscuranti',component:Zanzariere_Oscuranti},
+  {path:'/Zanzariere_Oscuranti',component:Zanzariere_Oscuranti},
 ];
 
 const router = createRouter({

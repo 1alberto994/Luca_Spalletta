@@ -5,7 +5,7 @@
       <nav class="navbar navbar-light bg-dark">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-6"><h1 class="text-light">Logo</h1></div>
+            <div class="col-6"><h1 class="text-light text-center">Gianluca e Luca Spalletta rappresentanze</h1></div>
 
             <div class="col-6 d-flex align-items-center justify-content-between">
               <ul class="list-unstyled m-3">
@@ -14,6 +14,9 @@
                 </li>
                 <li class="d-flex justify-content-between">
                   <router-link class="router" to="/about">About</router-link>
+                </li>
+                <li class="d-flex justify-content-between">
+                  <router-link class="router" to="/Zanzariere_Oscuranti">Zanzariere_Oscuranti</router-link>
                 </li>
                 <li class="d-flex justify-content-between dropdown"> <!-- Aggiunto dropdown qui -->
                   <router-link class="router" to="/porte" data-bs-toggle="dropdown">
