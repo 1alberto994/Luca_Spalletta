@@ -15,9 +15,6 @@
                 <li class="d-flex justify-content-between">
                   <router-link class="router" to="/about">About</router-link>
                 </li>
-                <li class="d-flex justify-content-between">
-                  <router-link class="router" to="/Zanzariere_Oscuranti">Zanzariere_Oscuranti</router-link>
-                </li>
                 <li class="d-flex justify-content-between dropdown"> <!-- Aggiunto dropdown qui -->
                   <router-link class="router" to="/porte" data-bs-toggle="dropdown">
                     Porte
@@ -30,6 +27,12 @@
                     <li><router-link class="dropdown-item" to="/porte/fg-porte">FG Porte</router-link></li>
                     <li><router-link class="dropdown-item" to="/porte/nec">NEC</router-link></li>
                   </ul> -->
+                </li>
+                <li class="d-flex justify-content-between">
+                  <router-link class="router" to="/infissi">Infissi</router-link>
+                </li>
+                <li class="d-flex justify-content-between">
+                  <router-link class="router" to="/Zanzariere_Oscuranti">Zanzariere_Oscuranti</router-link>
                 </li>
               </ul>
             </div>

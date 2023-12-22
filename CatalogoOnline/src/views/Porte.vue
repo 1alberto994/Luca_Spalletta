@@ -1,21 +1,31 @@
-<!-- src/views/Porte.vue -->
+ <!-- src/views/Porte.vue -->
 <template>
-  <div>
-    <h1>Porte</h1>
-    <div v-for="(porta, index) in porte" :key="index" class="porta-item">
-      <a :href="porta.link" target="_blank">
-        <img :src="porta.image" alt="Porta" class="porta-image" />
-      </a>
-      <div class="porta-description">
-        <h2>{{ porta.descrizione }}</h2>
+  <div class="container container-sm custom-background">
+    <div class="row">
+      <div v-for="(porta, index) in porte" :key="index" class="col-lg-4 col-sm-12">
+        <div class="card custom-card">
+          <a :href="porta.link" target="_blank">
+            <img :src="porta.image" alt="Porta" class="card-img-top" />
+          </a>
+          <div class="card-body">
+            
+            <p class="card-text">{{ porta.descrizione }}</p>
+            
+            <a :href="porta.link" target="_blank" class="btn btn-primary">Vai al sito</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  
 </template>
   <script>
   
+
+
   export default {
     name: 'Porte',
+  
     data(){
       return{
         porte:[
@@ -26,7 +36,7 @@
         },
         {
           image:'https://unionearchitetti.com/wp-content/uploads/2019/03/Porte_imic_made_in_italy_logotype.jpg',
-          descrizione:"Porte Imic è un' azienda specializzata nella lavorazione di porte in legno. Tradizione e innovazione sono i pilastri della filiera produttiva, gran parte della quale è completamente interna, garantendo velocità nella lavorazione, versatilità nelle rifiniture e nel design, qualità e ricercatezza attraverso un'attenzione costante delle materie prime e dei processi costruttivi. Le fasi di lavorazione, dal taglio del legno alle finiture, sono svolte in azienda, supervisionate dai nostri superadvisor addetti al controllo qualità, per offrirti le porte che tu desideri al giusto prezzo.",
+          descrizione:"Porte Imic è un' azienda specializzata nella lavorazione di porte in legno. Tradizione e innovazione sono i pilastri della filiera produttiva, gran parte della quale è completamente interna, garantendo velocità nella lavorazione, versatilità nelle rifiniture e nel design, qualità e ricercatezza attraverso un'attenzione costante delle materie prime e dei processi costruttivi.",
           link:'https://www.porteimic.com/'
         },
         {
@@ -41,7 +51,7 @@
         },
         {
           image:'https://pbs.twimg.com/profile_images/3320113913/5717b5960ce15f5e7ac7501ae25bd067_400x400.png',
-          descrizione:"NEC Chiusure srl  produce istallazioni efficienti garantendo il massimo livello di sicurezza operativa: ne sono un esempio eccellente le porte per ospedali e le porte per le scuole, pratiche veloci e certificate. L'azienda fornisce il suo telaio che meglio si adatta alla situazione esistente.Gli elementi predominanti nella produzione di NEC Chiusure srl sono l'alluminio, che rappresenta la struttura delle varie tipologie di porte tecniche, abbinate all'acciaio, al vetro, al laminato plastico ed al legno. Tutte materie prime selezionate per garantire qualità e sicurezza, rispondenti alle più innovative tecniche disponibili sul mercato.Le porte per ospedali, grazie alla loro praticità gestionale, risultano particolarmente adeguate alle esigenze del settore della salute. Un prodotto che ha le massime garanzie che vuole una installazione sanitaria. Lo stesso standard qualitativo è seguito per la produzione di porte per la scuole.Le porte per la scuola sono progettate in base alle normative di sicurezza, igiene, economicità e durata nel tempo. L'installazione è rapida e non invasiva. La loro semplicità e una vasta gamma di prototipi ne permettono l'inserimento in qualsiasi contesto architettonico.",
+          descrizione:"NEC Chiusure srl  produce istallazioni efficienti garantendo il massimo livello di sicurezza operativa: ne sono un esempio eccellente le porte per ospedali e le porte per le scuole, pratiche veloci e certificate. ",
           link:'https://www.chiusure-nec.it/'
         },
         {
@@ -52,6 +62,7 @@
 
         }
       ]
+      
       }
     }
   };
@@ -60,15 +71,76 @@
   /* Aggiungi stili CSS per personalizzare l'aspetto delle porte */
   .porta-item {
     margin-bottom: 20px;
+    
   }
   
   .porta-image {
     max-width: 100%;
-    height: auto;
+    height: 50%;
   }
   
   .porta-description {
     margin-top: 10px;
+    
   }
-  </style>
+  .custom-background {
+    background-color: #e0e0e01e; /* Cambia il colore di sfondo a tuo piacimento */
+    color: #333; /* Cambia il colore del testo a tuo piacimento */
+  }
+  .card {
+  margin-bottom: 20px;
+  border: none !important;
+}
+
+
+.card-text {
+  margin-top: 10px;
+}
+
+.custom-card {
+  margin-bottom: 20px;
+  margin:20px ;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #f8f9fa58 !important;
+}
+
+.custom-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #e0e0e0;
+  max-height: 200px;
+  opacity: 1 !important;
+  padding: 5px;
+  border:none !important;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+
+
+.card-text {
+  margin-top: 10px;
+  color: #666;
+}
+
+.btn-custom {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: #45a049;
+}
+</style>
+  
   

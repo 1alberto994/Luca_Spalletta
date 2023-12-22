@@ -4,6 +4,8 @@ import Home from '../views/Home.vue';
 import About from '../views/About.vue';
 import Porte from '../views/Porte.vue';
 import Zanzariere_Oscuranti from '../views/Zanzariere_Oscuranti.vue';
+import Infissi from '../views/Infissi.vue';
+
 
 
 
@@ -12,6 +14,8 @@ const routes = [
   { path: '/about', component: About },
   {path:'/porte',component:Porte},
   {path:'/Zanzariere_Oscuranti',component:Zanzariere_Oscuranti},
+  {path:'/infissi',component:Infissi},
+
 ];
 
 const router = createRouter({
