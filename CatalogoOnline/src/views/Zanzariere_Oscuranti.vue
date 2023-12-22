@@ -3,14 +3,23 @@
     <div>
       <h1>Zanzariere e Oscuranti</h1>
       <!-- <router-link to="/about"><button class="btn btn-primary">Click me</button></router-link> -->
-      <div v-for="(zanzariera, index) in zanzariere" :key="index" class="zanzariera-item">
-      <a :href="zanzariera.link" target="_blank">
-        <img :src="zanzariera.image" alt="Zanzariera e Oscuranti" class="zanzariera-image" />
-      </a>
-      <div class="zanzariera-description">
-        <h2>{{ zanzariera.descrizione }}</h2>
+      <div class="container cointainer-sm ">
+          <div class="row">
+
+            <div v-for="(zanzariera, index) in zanzariere" :key="index" class="col-xl-6 col-sm-12">
+              <div class="card custom-card">
+                <a :href="zanzariera.link" target="_blank">
+                  <img :src="zanzariera.image" alt="Zanzariera e Oscuranti" class="card-img-top" />
+                </a>
+                <div class="card-body">
+                  <p>{{ zanzariera.descrizione }}</p>
+                  <a :href="zanzariera.link" target="_blank" class="btn btn-primary">Vai al sito</a>
+                </div>
+      
+              </div>
+          </div>
+          </div>
       </div>
-    </div>
   
      </div>
   </template>
@@ -49,7 +58,7 @@
   </script>
   <style>
   /* Aggiungi stili CSS per personalizzare l'aspetto delle zanzariere */
-  .zanzariera-item {
+  /* .zanzariera-item {
     margin-bottom: 20px;
   }
   
@@ -60,6 +69,58 @@
   
   .zanzariera-description {
     margin-top: 10px;
+  } */
+  .card{
+    margin-bottom: 20px;
+    border: none !important;
   }
+  .card-text {
+  margin-top: 10px;
+}
+
+.custom-card {
+  margin-bottom: 20px;
+  margin:20px ;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #f8f9fa58 !important;
+}
+
+.custom-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #e0e0e0;
+  max-height: 200px;
+  opacity: 1 !important;
+  padding: 5px;
+  border:none !important;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+
+
+.card-text {
+  margin-top: 10px;
+  color: #666;
+}
+
+.btn-custom {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: #45a049;
+}
   </style>
   
