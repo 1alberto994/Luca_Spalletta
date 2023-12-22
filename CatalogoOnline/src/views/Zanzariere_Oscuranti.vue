@@ -22,7 +22,7 @@
                 </a>
                 <div class="card-body">
                   <p>{{ zanzariera.descrizione }}</p>
-                  <a :href="zanzariera.link" target="_blank" class="btn btn-primary">Vai al sito</a>
+                  <a :href="zanzariera.link" target="_blank" class="btn btn-dark p-2">Vai al sito</a>
                 </div>
       
               </div>
@@ -47,12 +47,12 @@
         },
         {
           image:'https://croci.com/wp-content/uploads/2019/07/croci-def.png',
-          descrizione:"Le Tapparelle Croci fungono da deterrente ai furti nelle abitazioni ed oppongono un'ottima resistenza ai tentativi d'intrusione.Questo è possibile grazie alle caratteristiche delle materie prime utilizzate, unite agli esclusivi accessori di sicurezza.",
+          descrizione:"Con i suoi prodotti esclusivi e di successo, apprezzati in tutto il mondo, Croci offre un patrimonio di elevato valore aggiunto alla tua casa e alla tua attività.Leader nel settore delle tapparelle di sicurezza, l'azienda mette a disposizione dei propri partner numerose risorse per ottimizzare il lavoro e distinguersi sul mercato.Le Tapparelle Croci fungono da deterrente ai furti nelle abitazioni ed oppongono un'ottima resistenza ai tentativi d'intrusione.Questo è possibile grazie alle caratteristiche delle materie prime utilizzate, unite agli esclusivi accessori di sicurezza.",
           link:'https://croci.com/'
         },
         {
           image:'https://suncover.com/wp-content/uploads/2020/05/marchio-suncover.png',
-          descrizione:"Dal 1969 Suncover produce su misura e vende, tende avvolgibili di ogni dimensione e materiale, per interno ed esterno, frangisole, tende tecniche per l'arredo per ogni ambiente domestico, professionale, teatri, musei, hotels, padiglioni espositivi, e tante altre locations.Produce e vende anche zanzariere e sistemi antinsetto, di diverse tipologie e per ogni ambiente, sia domestico che professionale.",
+          descrizione:"Suncover da oltre 50 anni risponde atutte le esigenze di protezione solare,schermatura e diffusione luminosa,sempre al fianco di professionisti dell'arredo,del restauro e delle costruzioni.Dal 1969 Suncover produce su misura e vende, tende avvolgibili di ogni dimensione e materiale, per interno ed esterno, frangisole, tende tecniche per l'arredo per ogni ambiente domestico, professionale, teatri, musei, hotels, padiglioni espositivi, e tante altre locations.Produce e vende anche zanzariere e sistemi antinsetto, di diverse tipologie e per ogni ambiente, sia domestico che professionale.",
           link:'https://suncover.com/'
         },
         {

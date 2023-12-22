@@ -19,9 +19,9 @@
                 <a :href="infisso.link" target="_blank">
                   <img :src="infisso.image" alt="infissi" class="card-img-top" />
                 </a>
-                <div class="card-body text-light">
-                  <p class="card-text text-light">{{ infisso.descrizione }}</p>
-                  <a :href="infisso.link" target="_blank" class="btn btn-primary">Vai al sito</a>
+                <div class="card-body ">
+                  <p class="card-text ">{{ infisso.descrizione }}</p>
+                  <a :href="infisso.link" target="_blank" class="btn btn-dark p-2">Vai al sito</a>
 
                 </div>
 
@@ -37,9 +37,9 @@
                 <a :href="azienda.link" target="_blank">
                   <img :src="azienda.image" alt="infissi" class="card-img-top" />
               </a>
-              <div class="card-body text-light">
-                  <p class="card-text text-light">{{ azienda.descrizione }}</p>
-                  <a :href="azienda.link" target="_blank" class="btn btn-primary">Vai al sito</a>
+              <div class="card-body ">
+                  <p class="card-text ">{{ azienda.descrizione }}</p>
+                  <a :href="azienda.link" target="_blank" class="btn btn-dark p-2">Vai al sito</a>
 
               </div>
               </div>

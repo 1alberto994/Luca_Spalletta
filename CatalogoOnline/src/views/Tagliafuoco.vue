@@ -4,7 +4,7 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade mt-3" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div v-for="(item, index) in carouselItems" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
-          <img :src="item.image" class=" interval d-block w-100" alt="...">
+          <img :src="item.image" class=" interval mt-5 d-block " alt="...">
         </div>
       </div>
     </div>
@@ -14,13 +14,13 @@
         <div v-for="(tagliafuoco, index) in tagliafuochi" :key="index" class="col-lg-6 col-sm-12">
           <div class="card custom-card">
             <a :href="tagliafuoco.link" target="_blank">
-              <img :src="tagliafuoco.image" alt="tagliafuoco" class="card-img-top" />
+              <img :src="tagliafuoco.image" alt="tagliafuoco" class=" mt-3 card-img-top" />
             </a>
             <div class="card-body">
               
               <p class="card-text">{{ tagliafuoco.descrizione }}</p>
               
-              <a :href="tagliafuoco.link" target="_blank" class="btn btn-primary">Vai al sito</a>
+              <a :href="tagliafuoco.link" target="_blank" class="btn btn-dark p-2">Vai al sito</a>
             </div>
           </div>
         </div>
@@ -165,6 +165,8 @@
   }
   .interval{
     max-height: 500px;
+    max-width: 100%;
+    width: 100%;
   }
   </style>
     
