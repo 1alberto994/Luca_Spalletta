@@ -1,26 +1,44 @@
 <!-- src/views/Infissi.vue -->
 <template>
-    <div>
+    
       <h1>Infissi</h1>
-      <!-- <router-link to="/about"><button class="btn btn-primary">Click me</button></router-link> -->
-      <div v-for="(infisso, index) in infissi" :key="index" class="infisso-item bg-dark">
-      <a :href="infisso.link" target="_blank">
-        <img :src="infisso.image" alt="infissi" class="infisso-image" />
-      </a>
-      <div class="infisso-description text-light">
-        <h2>{{ infisso.descrizione }}</h2>
+      <div class="container-fluid container-sm ">
+          <div class="row">
+
+            <div v-for="(infisso, index) in infissi" :key="index" class="col-12 bg-dark">
+              <div class="card custom-card">
+                <a :href="infisso.link" target="_blank">
+                  <img :src="infisso.image" alt="infissi" class="card-img-top" />
+                </a>
+                <div class="card-body text-light">
+                  <p class="card-text text-light">{{ infisso.descrizione }}</p>
+                  <a :href="infisso.link" target="_blank" class="btn btn-primary">Vai al sito</a>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
       </div>
-      </div>
-      <div  v-for="(azienda, index) in aziende" :key="index" class="infisso-item bg-dark">
-        <a :href="azienda.link" target="_blank">
-            <img :src="azienda.image" alt="infissi" class="infisso-image" />
-        </a>
-        <div class="infisso-description text-light">
-            <h2>{{ azienda.descrizione }}</h2>
-        </div>
-        </div>
-  
-    </div>
+      <div class="container-fluid container-sm">
+          <div class="row">
+
+            <div  v-for="(azienda, index) in aziende" :key="index" class="col-xl-4 col-sm-12 bg-dark">
+              <div class="card custom-card">
+                <a :href="azienda.link" target="_blank">
+                  <img :src="azienda.image" alt="infissi" class="card-img-top" />
+              </a>
+              <div class="card-body text-light">
+                  <p class="card-text text-light">{{ azienda.descrizione }}</p>
+                  <a :href="azienda.link" target="_blank" class="btn btn-primary">Vai al sito</a>
+
+              </div>
+              </div>
+              </div>
+        
+          </div>
+          </div>
+      
   </template>
   
   <script>
@@ -58,17 +76,59 @@
   </script>
   <style>
   /* Aggiungi stili CSS per personalizzare l'aspetto delle zanzariere */
-  .infisso-item {
-    margin-bottom: 20px;
-  }
-  
-  .infisso-image {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .infisso-description {
-    margin-top: 10px;
-  }
+  .card {
+  margin-bottom: 20px;
+  border: none !important;
+}
+
+
+.card-text {
+  margin-top: 10px;
+}
+
+.custom-card {
+  margin-bottom: 20px;
+  margin:20px ;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #f8f9fa58 !important;
+}
+
+.custom-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #e0e0e0;
+  max-height: 200px;
+  opacity: 1 !important;
+  padding: 5px;
+  border:none !important;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+
+
+.card-text {
+  margin-top: 10px;
+  color: #666;
+}
+
+.btn-custom {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: #45a049;
+}
   </style>
   
