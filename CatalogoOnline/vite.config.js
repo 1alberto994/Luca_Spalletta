@@ -9,4 +9,9 @@ export default defineConfig({
   esbuild: {
     target: 'esnext',
   },
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
 });

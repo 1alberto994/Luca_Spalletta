@@ -1,5 +1,8 @@
  <!-- src/views/Tagliafuoco.vue -->
  <template>
+  <div>
+    <h1>Chiusure Tagliafuoco</h1>
+  </div>
         <div class="container-fluid">
     <div id="carouselExampleFade" class="carousel slide carousel-fade mt-3" data-bs-ride="carousel">
       <div class="carousel-inner">

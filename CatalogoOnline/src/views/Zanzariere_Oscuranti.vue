@@ -1,9 +1,11 @@
 <!-- src/views/Zanzariere.vue -->
 <template>
     <div>
-      <h1>Zanzariere e Oscuranti</h1>
+      <div>
+        <h1>Zanzariere e Oscuranti</h1>
+      </div>
       <div class="container-fluid">
-    <div id="carouselExampleFade" class="carousel slide carousel-fade mt-3" data-bs-ride="carousel">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade mt-3 " data-bs-ride="carousel">
       <div class="carousel-inner">
         <div v-for="(item, index) in carouselItems" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
           <img :src="item.image" class=" interval d-block w-100" alt="...">
@@ -154,5 +156,10 @@
 .btn-custom:hover {
   background-color: #45a049;
 }
+.interval{
+    max-height: 500px;
+    max-width: 100%;
+    width: 100%;
+  }
   </style>
   

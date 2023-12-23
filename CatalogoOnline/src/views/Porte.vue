@@ -1,5 +1,8 @@
  <!-- src/views/Porte.vue -->
 <template>
+  <div>
+    <h1>Porte</h1>
+  </div>
       <div class="container-fluid">
     <div id="carouselExampleFade" class="carousel slide carousel-fade mt-3" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -174,8 +177,10 @@
   background-color: #45a049;
 }
 .interval{
-  max-height: 500px;
-}
+    max-height: 500px;
+    max-width: 100%;
+    width: 100%;
+  }
 </style>
   
   
