@@ -22,42 +22,197 @@
                 <li class="d-flex justify-content-between p-2 font">
                   <router-link class="router" to="/partner">Partners</router-link>
                 </li>
-                <li class="d-flex justify-content-between p-2 font">
-                  <router-link class="router" to="/tagliafuoco">Chiusure Tagliafuoco</router-link>
+                <li class="dropdown d-flex justify-content-between p-2 font">
+                  <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Chiusure Tagliafuoco
+                  </a>
+                  
+                  <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item bg-dark" href="https://www.componentbuilding.it/pt.html">Ninz(porte tagliafuoco)</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.componentbuilding.it/pm.html">Ninz(porte multiuso)</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.meverin.com/">Meverin</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://glassfire.it/">Glassfire</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://blackfireitaly.it/">Blackfire</a></li>
+                    
+                  </ul>
                 </li>
-                <li class="d-flex justify-content-between p-2 font"> 
+                <!-- <li class="d-flex justify-content-between p-2 font">
+                  <router-link class="router" to="/tagliafuoco">Chiusure Tagliafuoco</router-link>
+                </li> -->
+                <li class="dropdown d-flex justify-content-between p-2 font">
+                  <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Porte
+                  </a>
+                  
+                  <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item bg-dark" href="https://www.ferwall.it/">Ferwall</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.porteimic.com/">Porte Imic</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.manuellodesign.it/it/">Manuello</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.barausse.com/it/">Barausse</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.chiusure-nec.it/">Nec-Chiusure</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.fgporte.it/">FGporte</a></li>
+
+
+                    
+                  </ul>
+                </li>
+                <!-- <li class="d-flex justify-content-between p-2 font"> 
                   <router-link class="router" to="/porte">
                     Porte
                   </router-link>
-                </li>
-                <li class="d-flex justify-content-between p-2 font">
+                </li> -->
+                <!-- <li class="d-flex justify-content-between p-2 font">
                     <router-link class="router" to="/infissi" >
                       Infissi
                     </router-link>
                 </li>
                 <li class="d-flex justify-content-between p-2 font">
                   <router-link class="router" to="/Zanzariere_Oscuranti">Zanzariere/Oscuranti</router-link>
+                </li> -->
+                <li class="dropdown d-flex justify-content-between p-2 font">
+                  <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Infissi
+                  </a>
+                  
+                  <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/30/cosmet">Cosmet</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/31/fideal">Fideal</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/32/alwo">Alwo</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown d-flex justify-content-between p-2 font">
+                  <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Zanzariere/Oscuranti
+                  </a>
+                  
+                  <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item bg-dark" href="https://zanzar.it/">Zanzar System</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://croci.com/">Croci</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://suncover.com/">Suncover</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://suncover.com/frangisole-2/">Shenker Storen(frangisole)</a></li>
+                    
+                  </ul>
                 </li>
                 <li class="d-flex justify-content-between p-2 font">
                   <a class="router" href="#footer">Contatti</a>
                 </li>
-                <div class="dropdown">
-                          <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Infissi
-                          </a>
-
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="https://www.cosmetgroup.it/brand/30/cosmet">Cosmet</a></li>
-                            <li><a class="dropdown-item" href="https://www.cosmetgroup.it/brand/31/fideal">Fideal</a></li>
-                            <li><a class="dropdown-item" href="https://www.cosmetgroup.it/brand/32/alwo">Alwo</a></li>
-                          </ul>
-                </div>
               </ul>
             </div>
           
 
           </div>
         </div>
+        <div class="container-fluid d-flex align-items-center justify-content-center">
+    <div class="row">
+        <!-- Pulsante di attivazione del menu per schermi piccoli -->
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasLabel">Menu</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Chiudi"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul>
+                    <!-- ... i tuoi elementi di menu esistenti vanno qui ... -->
+                    <li>
+                  <router-link class="router" to="/">Home</router-link>
+                </li>
+  
+                <li >
+                  <router-link class="router" to="/about">About</router-link>
+                </li>
+                <li>
+                  <router-link class="router" to="/partner">Partners</router-link>
+                </li>
+                <li>
+                  <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Chiusure Tagliafuoco
+                  </a>
+                  
+                  <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item bg-dark" href="https://www.componentbuilding.it/pt.html">Ninz(porte tagliafuoco)</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.componentbuilding.it/pm.html">Ninz(porte multiuso)</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.meverin.com/">Meverin</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://glassfire.it/">Glassfire</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://blackfireitaly.it/">Blackfire</a></li>
+                    
+                  </ul>
+                </li>
+                <!-- <li class="d-flex justify-content-between p-2 font">
+                  <router-link class="router" to="/tagliafuoco">Chiusure Tagliafuoco</router-link>
+                </li> -->
+                <li>
+                  <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Porte
+                  </a>
+                  
+                  <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item bg-dark" href="https://www.ferwall.it/">Ferwall</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.porteimic.com/">Porte Imic</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.manuellodesign.it/it/">Manuello</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.barausse.com/it/">Barausse</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.chiusure-nec.it/">Nec-Chiusure</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.fgporte.it/">FGporte</a></li>
+
+
+                    
+                  </ul>
+                </li>
+                <!-- <li class="d-flex justify-content-between p-2 font"> 
+                  <router-link class="router" to="/porte">
+                    Porte
+                  </router-link>
+                </li> -->
+                <!-- <li class="d-flex justify-content-between p-2 font">
+                    <router-link class="router" to="/infissi" >
+                      Infissi
+                    </router-link>
+                </li>
+                <li class="d-flex justify-content-between p-2 font">
+                  <router-link class="router" to="/Zanzariere_Oscuranti">Zanzariere/Oscuranti</router-link>
+                </li> -->
+                <li>
+                  <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Infissi
+                  </a>
+                  
+                  <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/30/cosmet">Cosmet</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/31/fideal">Fideal</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/32/alwo">Alwo</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Zanzariere/Oscuranti
+                  </a>
+                  
+                  <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item bg-dark" href="https://zanzar.it/">Zanzar System</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://croci.com/">Croci</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://suncover.com/">Suncover</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://suncover.com/frangisole-2/">Shenker Storen(frangisole)</a></li>
+                    
+                  </ul>
+                </li>
+                <li>
+                  <a class="router" href="#footer">Contatti</a>
+                </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div class="align-items-center justify-content-between text-center">
+            <!-- Il tuo codice di menu esistente va qui -->
+        </div>
+    </div>
+</div>
+
+        
         <!-- <div>
             
            <div class="text-center">
@@ -191,19 +346,23 @@ main{
 }
  footer{
   min-height: 100px;
+  
 }
 
 /* .orari{
   list-style-position: inherit;
 } */
-.footcontact{
+.footcontact {
+  color: white;
+}
+.dropdown-item{
   color: white;
 }
 
 header {
     position: fixed;
     width: 100%;
-    z-index: 1000;
+    z-index: 2000;
     top: 0;
     max-height: 100px;
   }

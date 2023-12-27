@@ -6,10 +6,11 @@
              <h1 class="title text-center ">
                  I nostri partner 
              </h1>
-         </div>
-        <img class="hand" src="https://www.r101.it/resizer/616/348/true/importR101/contentresources_22/news/53.%24plit/C_22_news_3247_upiFotoApertura.jpg--articolostrettadimano700x394_jpg.jpg" alt="">
-
+             
         </div>
+        <img class="hand" src="https://www.r101.it/resizer/616/348/true/importR101/contentresources_22/news/53.%24plit/C_22_news_3247_upiFotoApertura.jpg--articolostrettadimano700x394_jpg.jpg" alt="">
+        
+      </div>
     </section>
     <section>
         
