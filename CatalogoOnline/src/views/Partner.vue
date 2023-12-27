@@ -1,6 +1,14 @@
 <!-- src/views/Partner.vue -->
 <template>
+    <section class="super_title">
+        <div class="opac  container">
+            <h1 class="title text-center ">
+                I nostri partner 
+            </h1>
+        </div>
+    </section>
     <section>
+        
         <div>
     <h1>Chiusure Tagliafuoco</h1>
   </div>
@@ -387,6 +395,20 @@ methods: {
     background-image: url(https://i.pinimg.com/736x/a8/4b/00/a84b00aed02b505734b4326ac9a9d465.jpg);
     width: 100%;
     height: auto;
+}
+.title{
+    font-size: 4.5rem;
+    color: white;
+}
+.opac{
+    background-color:#333;
+    opacity: 0.8;
+    border-radius: 20px;
+    margin-top: 220px;
+    
+}
+.super_title{
+    margin-top: 0px;
 }
 </style>
   
