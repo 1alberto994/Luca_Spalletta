@@ -92,21 +92,6 @@
     
     </script>
     <style>
-    /* Aggiungi stili CSS per personalizzare l'aspetto delle porte */
-    /* .porta-item {
-      margin-bottom: 20px;
-      
-    }
-    
-    .porta-image {
-      max-width: 100%;
-      height: 50%;
-    }
-    
-    .porta-description {
-      margin-top: 10px;
-      
-    } */
     .custom-background {
       background-color: #e0e0e01e; /* Cambia il colore di sfondo a tuo piacimento */
       color: #333; /* Cambia il colore del testo a tuo piacimento */

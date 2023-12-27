@@ -20,6 +20,9 @@
                   <router-link class="router" to="/about">About</router-link>
                 </li>
                 <li class="d-flex justify-content-between p-2 font">
+                  <router-link class="router" to="/partner">Partners</router-link>
+                </li>
+                <li class="d-flex justify-content-between p-2 font">
                   <router-link class="router" to="/tagliafuoco">Chiusure Tagliafuoco</router-link>
                 </li>
                 <li class="d-flex justify-content-between p-2 font"> 
@@ -40,6 +43,53 @@
                 </li>
               </ul>
             </div>
+            <!-- Offcanvas -->
+            <a class="text-center font" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                <span class="navbar-toggler-icon"></span> 
+            </a>
+
+
+<div class="offcanvas offcanvas-top bg-dark" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasTopLabel">Menu</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+  <div class="offcanvas-body">
+            <div>
+                <ul>
+                  <li>
+                    <router-link class="router" to="/">Home</router-link>
+                  </li>
+    
+                  <li>
+                    <router-link class="router" to="/about">About</router-link>
+                  </li>
+                  <li>
+                    <router-link class="router" to="/partner">Partners</router-link>
+                  </li>
+                  <li>
+                    <router-link class="router" to="/tagliafuoco">Chiusure Tagliafuoco</router-link>
+                  </li>
+                  <li> 
+                    <router-link class="router" to="/porte">
+                      Porte
+                    </router-link>
+                  </li>
+                  <li>
+                      <router-link class="router" to="/infissi" >
+                        Infissi
+                      </router-link>
+                  </li>
+                  <li>
+                    <router-link class="router" to="/Zanzariere_Oscuranti">Zanzariere/Oscuranti</router-link>
+                  </li>
+                  <li>
+                    <a class="router" href="#footer">Contatti</a>
+                  </li>
+                </ul>
+          </div>
+  </div>
+</div>
           </div>
         </div>
       </nav>
