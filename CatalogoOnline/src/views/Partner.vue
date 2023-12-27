@@ -1,10 +1,14 @@
 <!-- src/views/Partner.vue -->
 <template>
     <section class="super_title">
-        <div class="opac  container">
-            <h1 class="title text-center ">
-                I nostri partner 
-            </h1>
+      <div>
+        <div class="opac">
+             <h1 class="title text-center ">
+                 I nostri partner 
+             </h1>
+         </div>
+        <img class="hand" src="https://www.r101.it/resizer/616/348/true/importR101/contentresources_22/news/53.%24plit/C_22_news_3247_upiFotoApertura.jpg--articolostrettadimano700x394_jpg.jpg" alt="">
+
         </div>
     </section>
     <section>
@@ -403,12 +407,22 @@ methods: {
 .opac{
     background-color:#333;
     opacity: 0.8;
-    border-radius: 20px;
     margin-top: 220px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4.5rem;
+    height: 4.5rem;
     
 }
 .super_title{
     margin-top: 0px;
+}
+.hand{
+  background-image: url(https://www.r101.it/resizer/616/348/true/importR101/contentresources_22/news/53.%24plit/C_22_news_3247_upiFotoApertura.jpg--articolostrettadimano700x394_jpg.jpg);
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 </style>
   
