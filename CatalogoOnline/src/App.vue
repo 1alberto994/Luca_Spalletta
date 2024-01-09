@@ -28,8 +28,7 @@
                   </a>
                   
                   <ul class="dropdown-menu bg-dark">
-                    <li><a class="dropdown-item bg-dark" href="https://www.componentbuilding.it/pt.html">Ninz(porte tagliafuoco)</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.componentbuilding.it/pm.html">Ninz(porte multiuso)</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.ninz.it/it/home">Ninz</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://www.meverin.com/">Meverin</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://glassfire.it/">Glassfire</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://blackfireitaly.it/">Blackfire</a></li>
@@ -45,12 +44,12 @@
                   </a>
                   
                   <ul class="dropdown-menu bg-dark">
-                    <li><a class="dropdown-item bg-dark" href="https://www.ferwall.it/">Ferwall</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://www.porteimic.com/">Porte Imic</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://www.manuellodesign.it/it/">Manuello</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://www.barausse.com/it/">Barausse</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.fgporte.it/">FG Porte</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.ferwall.it/">Ferwall</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://www.chiusure-nec.it/">Nec-Chiusure</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.fgporte.it/">FGporte</a></li>
 
 
                     
@@ -86,10 +85,10 @@
                   </a>
                   
                   <ul class="dropdown-menu bg-dark">
-                    <li><a class="dropdown-item bg-dark" href="https://zanzar.it/">Zanzar System</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://zanzar.it/">Zanzar Sistem</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://croci.com/">Croci</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://suncover.com/">Suncover</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://suncover.com/frangisole-2/">Shenker Storen(frangisole)</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://suncover.com/frangisole-2/">Shenker Storen</a></li>
                     
                   </ul>
                 </li>
@@ -133,11 +132,10 @@
                   </a>
                   
                   <ul class="dropdown-menu bg-dark">
-                    <li><a class="dropdown-item bg-dark" href="https://www.componentbuilding.it/pt.html">Ninz(porte tagliafuoco)</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.componentbuilding.it/pm.html">Ninz(porte multiuso)</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.meverin.com/">Meverin</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://glassfire.it/">Glassfire</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://blackfireitaly.it/">Blackfire</a></li>
+                    <li><a class="dropdown-item router" href="https://www.ninz.it/it/home">Ninz</a></li>
+                    <li><a class="dropdown-item " href="https://www.meverin.com/">Meverin</a></li>
+                    <li><a class="dropdown-item " href="https://glassfire.it/">Glassfire</a></li>
+                    <li><a class="dropdown-item " href="https://blackfireitaly.it/">Blackfire</a></li>
                     
                   </ul>
                 </li>
@@ -276,6 +274,12 @@
             <div class="row ">
               <div class="col-sm-12 col-lg-12 col-xl-4 mt-3">
                 <div class="d-flex align-items-center justify-content-center"><img src="/rygzctcg.png" class="spalletta text-center" alt=""></div>
+                <div>
+                          <i class="fab fa-whatsapp"></i>
+                          <i class="fab fa-facebook"></i>
+                          <i class="fab fa-instagram"></i>
+                          <i class="fab fa-linkedin"></i>
+                </div>
               </div>
               <div class=" col-sm-6 col-lg-6 col-xl-4 mt-3">
                 <h4 class="">Contatti</h4>
@@ -366,11 +370,15 @@ header {
     top: 0;
     max-height: 100px;
   }
-  .font{
+  /* .font{
     font-size: 1.5rem;
-  }
+  } */
   .navbar-toggler-icon{
-    color: white;
+    color: white !important;
   }
-  
+  .dropdown-menu a.dropdown-item {
+    color: white !important;
+}
+i{color: white;}
+
 </style>
