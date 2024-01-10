@@ -6,7 +6,7 @@
         
         <div class="container-fluid d-flex ">
           
-          <div><img src="/rygzctcg.png" class="spalletta text-center mx-auto" alt=""></div>
+          <div class="d-none d-lg-block"><img src="/rygzctcg.png" class="spalletta text-center mx-auto" alt=""></div>
           
           <div class="row d-none d-lg-block d-md-none">
 
@@ -85,32 +85,34 @@
 
           </div>
         </div>
-        <div class="container-fluid d-flex align-items-center justify-content-center">
+        <div class="container-fluid d-flex">
+          <div class="d-lg-none"><img src="/rygzctcg.png" class="spalletta text-center mx-auto" alt=""></div>
+
     <div class="row">
         <!-- Pulsante di attivazione del menu per schermi piccoli -->
-        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler d-lg-none btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
+            <span class="navbar-toggler-icon text-white"></span>
         </button>
 
         <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasLabel">Menu</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Chiudi"></button>
+                <h5 class="offcanvas-title text-white" id="offcanvasLabel">Menu</h5>
+                <button type="button" class="btn-close text-reset text-white" data-bs-dismiss="offcanvas" aria-label="Chiudi"></button>
             </div>
             <div class="offcanvas-body">
-                <ul>
+                <ul class="list-unstyled">
                     
-                    <li>
+                    <li class="m-2 p-2">
                   <router-link class="router" to="/">Home</router-link>
                 </li>
   
-                <li >
+                <li class="m-2 p-2">
                   <router-link class="router" to="/about">About</router-link>
                 </li>
-                <li>
+                <li class="m-2 p-2">
                   <router-link class="router" to="/partner">Partners</router-link>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown m-2 p-2">
                   <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Chiusure Tagliafuoco
                   </a>
@@ -123,7 +125,7 @@
                     
                   </ul>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown m-2 p-2">
                   <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Porte
                   </a>
@@ -140,7 +142,7 @@
                     
                   </ul>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown m-2 p-2">
                   <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Infissi
                   </a>
@@ -151,7 +153,7 @@
                     <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/32/alwo">Alwo</a></li>
                   </ul>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown m-2 p-2">
                   <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Zanzariere/Oscuranti
                   </a>
@@ -164,8 +166,8 @@
                     
                   </ul>
                 </li>
-                <li>
-                  <a class="router" href="#footer">Contatti</a>
+                <li class="m-2 p-2">
+                  <a class="router " href="#footer">Contatti</a>
                 </li>
                     
                 </ul>
@@ -182,18 +184,18 @@
 
     <footer class="bg-dark " id="footer">
       <div class="container-fluid footcontact">
-            <div class="row ">
+            <div class="row">
               <div class="col-sm-12 col-lg-12 col-xl-4 mt-3">
-                <div class="d-flex align-items-center justify-content-center"><img src="/rygzctcg.png" class="spalletta text-center" alt=""></div>
-                <div>
-                          <i class="fab fa-whatsapp"></i>
-                          <i class="fab fa-facebook"></i>
-                          <i class="fab fa-instagram"></i>
-                          <i class="fab fa-linkedin"></i>
+                <div><img src="/rygzctcg.png"  alt=""></div>
+                <div class="mt-2" >
+                          <i class="fab fa-whatsapp p-2"></i>
+                          <i class="fab fa-facebook p-2"></i>
+                          <i class="fab fa-instagram p-2"></i>
+                          <i class="fab fa-linkedin p-2"></i>
                 </div>
               </div>
-              <div class=" col-sm-6 col-lg-6 col-xl-4 mt-3">
-                <h4 class="">Contatti</h4>
+              <div class=" col-sm-12 col-lg-12 col-xl-4 mt-3">
+                <h4>Contatti</h4>
                   <ul class=" list-unstyled" >
                     <li>Phone:<a href="tel:{{ contatti[0].fisso }}" class="router">{{ contatti[0].fisso }}</a></li>
                     <li>Mobile:<a href="tel:{{ contatti[0].mobile }}" class="router">{{ contatti[0].mobile }}</a></li>
@@ -201,11 +203,11 @@
                     <li>Address: <a href="https://www.google.com/maps/search/?api=1&query=Viale della Costituzione 19/M Catania,CT" target="_blank" class="router">{{ contatti[0].indirizzo }}</a></li>
                   </ul>
               </div>
-              <div class=" col-sm-6 col-6-12 col-xl-4 mt-3">
+              <div class=" col-sm-12 col-lg-12 col-xl-4 mt-3">
                 <h4>
                   Orari di apertura
                 </h4>
-                <ul class=" orari">
+                <ul class=" orari ">
                     <li v-for="(orario, index) in orari" :key="index">{{ orario }}</li>
                 </ul> 
               </div>
@@ -289,6 +291,8 @@ header {
     color: white !important;
 }
 i{color: white;}
-
+.navbar-toggler{
+  color: white;
+}
 
 </style>

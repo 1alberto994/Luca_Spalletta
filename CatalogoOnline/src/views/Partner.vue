@@ -28,14 +28,15 @@
         <div  class="col-lg-6 col-sm-12 text-center">
             <h1 class="size ">Chiusure tagliafuoco</h1>
         </div>
-        <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12  " data-bs-ride="carousel">
+      
+        <div id="carouselExample" class="carousel slide  col-lg-6 col-sm-12  " data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div v-for="(item, index) in carouselItems" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
-                    <div class="card">
-                      <div class="card-body">
-                        <img :src="item.image" class="d-block w-100" alt="..." style="max-width: 100%; height: auto;">
-                      </div>
-                    </div>
+                    
+                    
+                        <img :src="item.image" class="d-block w-100" alt="..." style="max-width: 100%; height: 500px;">
+                      
+                    
                 </div>
             </div>
         </div>
@@ -69,7 +70,7 @@
           <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div v-for="(item, index) in carouselItem" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
-                <img :src="item.image" class="interval   w-100" alt="...">
+                <img :src="item.image" class="interval   w-100" alt="..." style="max-width: 100%; height: 500px;">
               </div>
             </div>
           </div>
@@ -105,7 +106,7 @@
             <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div v-for="(item, index) in carouselIte" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
-                  <img :src="item.image" class=" interval d-block w-100" alt="...">
+                  <img :src="item.image" class=" interval d-block w-100" alt="..." style="max-width: 100%; height: 500px;">
                 </div>
               </div>
             </div>
@@ -154,7 +155,7 @@
           <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12 " data-bs-ride="carousel">
             <div class="carousel-inner">
               <div v-for="(item, index) in carouselIt" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
-                <img :src="item.image" class=" interval d-block w-100" alt="...">
+                <img :src="item.image" class=" interval d-block w-100" alt="..." style="max-width: 100%; height: 500px;">
               </div>
             </div>
           </div>
@@ -257,9 +258,9 @@
           link: 'https://www.ferwall.it/',
         },
         {
-          image:'https://www.chiusure-nec.it/nec/wp-content/uploads/2016/02/logo-bianco.png',
+          image:'/NEC CHIUSURE.png',
           descrizione:"NEC Chiusure srl  produce istallazioni efficienti garantendo il massimo livello di sicurezza operativa: ne sono un esempio eccellente le porte per ospedali e le porte per le scuole, pratiche veloci e certificate. ",
-          link:'CatalogoOnline/public/NEC CHIUSURE.png'
+          link:'https://www.chiusure-nec.it/'
         }
       ],
       carouselItem: [
@@ -309,7 +310,7 @@
       ],
       zanzariere:[
         {
-          image :'https://www.tecnolacchusmaniglie.com/wp-content/uploads/2022/03/zanzar-sistem.png',
+          image :'/zanzar-sistem.png',
           descrizione:"Nata con l'obiettivo di arricchire il mercato del serramento di nuove soluzioni integrate per zanzariere e di migliorare la qualità della vita nelle nostre case.  Circa 3000 clienti tra produttori, distributori e installatori sono i partner che confermano quotidianamente il risultato del nostro successo. L'azienda è supportata da una forte struttura imprenditoriale, capace di affermarsi all'interno del mercato di riferimento proseguendo costantemente l'innovazione fatta a soddisfare i propri clienti.",
           link: 'https://zanzar.it/',
         },
