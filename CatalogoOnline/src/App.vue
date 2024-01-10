@@ -3,21 +3,21 @@
   <div id="app">
     <header>
       <nav class="navbar navbar-light bg-dark ">
-  <img src="/rygzctcg.png" class="spalletta text-center mx-auto" alt="">
-     
-        <div class="container-fluid d-flex align-items-center justify-content-center">
+        
+        <div class="container-fluid d-flex ">
           
+          <div><img src="/rygzctcg.png" class="spalletta text-center mx-auto" alt=""></div>
           
-          <div class="row">
+          <div class="row d-none d-lg-block d-md-none">
 
             <div class="  align-items-center justify-content-between text-center">
-              <ul class="list-unstyled  d-flex">
+              <ul class="list-unstyled  d-flex ">
                 <li class="d-flex justify-content-between p-2 font">
                   <router-link class="router" to="/">Home</router-link>
                 </li>
   
                 <li class="d-flex justify-content-between p-2 font">
-                  <router-link class="router" to="/about">About</router-link>
+                  <router-link class="router" to="/about">Chi siamo</router-link>
                 </li>
                 <li class="d-flex justify-content-between p-2 font">
                   <router-link class="router" to="/partner">Partners</router-link>
@@ -35,9 +35,6 @@
                     
                   </ul>
                 </li>
-                <!-- <li class="d-flex justify-content-between p-2 font">
-                  <router-link class="router" to="/tagliafuoco">Chiusure Tagliafuoco</router-link>
-                </li> -->
                 <li class="dropdown d-flex justify-content-between p-2 font">
                   <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Porte
@@ -55,19 +52,6 @@
                     
                   </ul>
                 </li>
-                <!-- <li class="d-flex justify-content-between p-2 font"> 
-                  <router-link class="router" to="/porte">
-                    Porte
-                  </router-link>
-                </li> -->
-                <!-- <li class="d-flex justify-content-between p-2 font">
-                    <router-link class="router" to="/infissi" >
-                      Infissi
-                    </router-link>
-                </li>
-                <li class="d-flex justify-content-between p-2 font">
-                  <router-link class="router" to="/Zanzariere_Oscuranti">Zanzariere/Oscuranti</router-link>
-                </li> -->
                 <li class="dropdown d-flex justify-content-between p-2 font">
                   <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Infissi
@@ -115,7 +99,7 @@
             </div>
             <div class="offcanvas-body">
                 <ul>
-                    <!-- ... i tuoi elementi di menu esistenti vanno qui ... -->
+                    
                     <li>
                   <router-link class="router" to="/">Home</router-link>
                 </li>
@@ -126,7 +110,7 @@
                 <li>
                   <router-link class="router" to="/partner">Partners</router-link>
                 </li>
-                <li>
+                <li class="dropdown">
                   <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Chiusure Tagliafuoco
                   </a>
@@ -139,10 +123,7 @@
                     
                   </ul>
                 </li>
-                <!-- <li class="d-flex justify-content-between p-2 font">
-                  <router-link class="router" to="/tagliafuoco">Chiusure Tagliafuoco</router-link>
-                </li> -->
-                <li>
+                <li class="dropdown">
                   <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Porte
                   </a>
@@ -159,20 +140,7 @@
                     
                   </ul>
                 </li>
-                <!-- <li class="d-flex justify-content-between p-2 font"> 
-                  <router-link class="router" to="/porte">
-                    Porte
-                  </router-link>
-                </li> -->
-                <!-- <li class="d-flex justify-content-between p-2 font">
-                    <router-link class="router" to="/infissi" >
-                      Infissi
-                    </router-link>
-                </li>
-                <li class="d-flex justify-content-between p-2 font">
-                  <router-link class="router" to="/Zanzariere_Oscuranti">Zanzariere/Oscuranti</router-link>
-                </li> -->
-                <li>
+                <li class="dropdown">
                   <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Infissi
                   </a>
@@ -183,7 +151,7 @@
                     <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/32/alwo">Alwo</a></li>
                   </ul>
                 </li>
-                <li>
+                <li class="dropdown">
                   <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Zanzariere/Oscuranti
                   </a>
@@ -203,65 +171,8 @@
                 </ul>
             </div>
         </div>
-
-        <div class="align-items-center justify-content-between text-center">
-            <!-- Il tuo codice di menu esistente va qui -->
-        </div>
     </div>
 </div>
-
-        
-        <!-- <div>
-            
-           <div class="text-center">
-            <a class="text-center font" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
-                <span class="navbar-toggler-icon"></span> 
-            </a>
-           </div>
-
-
-<div class="offcanvas offcanvas-top bg-dark" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasTopLabel">Menu</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-  <div class="offcanvas-body">
-            <div>
-                <ul>
-                  <li>
-                    <router-link class="router" to="/">Home</router-link>
-                  </li>
-    
-                  <li>
-                    <router-link class="router" to="/about">About</router-link>
-                  </li>
-                  <li>
-                    <router-link class="router" to="/partner">Partners</router-link>
-                  </li>
-                  <li>
-                    <router-link class="router" to="/tagliafuoco">Chiusure Tagliafuoco</router-link>
-                  </li>
-                  <li> 
-                    <router-link class="router" to="/porte">
-                      Porte
-                    </router-link>
-                  </li>
-                  <li>
-                      <router-link class="router" to="/infissi" >
-                        Infissi
-                      </router-link>
-                  </li>
-                  <li>
-                    <router-link class="router" to="/Zanzariere_Oscuranti">Zanzariere/Oscuranti</router-link>
-                  </li>
-                  <li>
-                    <a class="router" href="#footer">Contatti</a>
-                  </li>
-                </ul>
-          </div>
-  </div>
-  </div> 
-        </div>-->
       </nav>
     </header>
 
@@ -346,7 +257,7 @@ export default {
 main{
   background-image: url(data:image/jpeg;base64,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);
   
-  margin-top: 220px; 
+  margin-top: 150px; 
 }
  footer{
   min-height: 100px;
@@ -373,12 +284,11 @@ header {
   /* .font{
     font-size: 1.5rem;
   } */
-  .navbar-toggler-icon{
-    color: white !important;
-  }
+
   .dropdown-menu a.dropdown-item {
     color: white !important;
 }
 i{color: white;}
+
 
 </style>

@@ -1,35 +1,47 @@
 <!-- src/views/Partner.vue -->
 <template>
-    <!-- <section class="super_title">
-      <div class="container-fluid title">
-        
-            <div class=" d-flex" >
-                  
-                  <img src="/rygzctcg.png" alt="">
-              
-                    <h1 class="size">I nostri partners</h1>
-                                  
-            </div>
+    <section class="sec_white">
+      <div class="container-fluid">
+      
+        <h1 class="size text-center partners">I nostri partners</h1>
+             <ul class="list-unstyled  d-flex align-items-center justify-content-center">
+              <li class="p-2">
+                <a class="partners" href="#tagliafuoco"> Chiusure Tagliafuoco</a>
+              </li>
+              <li class="p-2">
+                <a class="partners" href="#porte">Porte</a>
+              </li>
+              <li class="p-2">
+                <a class="partners" href="#infissi">Infissi</a>
+              </li>
+              <li class="p-2">
+                <a class="partners" href="#Oscuranti">Zanzariere e oscuranti</a>
+              </li>
+             </ul>                     
         
       </div>
-    </section> -->
+    </section>
     <section>
         
-      <div class="container-fluid">
-    <div class="  title">
-        <div class="d-flex">
-            <div><h1 class="size ">Chiusure tagliafuoco</h1></div>
-            <div id="carouselExampleFade" class="carousel slide carousel-fade " data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div v-for="(item, index) in carouselItems" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
-                        <img :src="item.image" class="interval d-block w-100" alt="...">
+      <div class="container-fluid title" id="tagliafuoco">
+    <div class="row">
+        <div  class="col-lg-6 col-sm-12 text-center">
+            <h1 class="size ">Chiusure tagliafuoco</h1>
+        </div>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12  " data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div v-for="(item, index) in carouselItems" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
+                    <div class="card">
+                      <div class="card-body">
+                        <img :src="item.image" class="d-block w-100" alt="..." style="max-width: 100%; height: auto;">
+                      </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
+
 
 
     <div class="container container-sm custom-background">
@@ -37,7 +49,7 @@
         <div v-for="(tagliafuoco, index) in tagliafuochi" :key="index" class="col-lg-6 col-sm-12">
           <div class="card custom-card">
             <a :href="tagliafuoco.link" target="_blank">
-              <img :src="tagliafuoco.image" alt="tagliafuoco" class=" mt-3 card-img-top" />
+              <img :src="tagliafuoco.image" alt="tagliafuoco" class=" mt-3 card-img-top img-fluid " />
             </a>
             <div class="card-body">
               
@@ -51,18 +63,18 @@
     </div>
     </section>
      
-    <section class="sec_white">
-      <div class="container-fluid">
-        <div class="row align-items-stretch">
-            <div class="title col-12 text-end">
-                    <h1 class="size">Porte</h1>
-            </div>
-            <div id="carouselExampleFade" class="carousel slide carousel-fade position-absolute col-6 start-0 " data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div v-for="(item, index) in carouselItem" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
-                  <img :src="item.image" class="interval   w-100" alt="...">
-                </div>
+    <section class="sec_white" id="porte">
+      <div class="container-fluid title">
+        <div class="row ">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div v-for="(item, index) in carouselItem" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
+                <img :src="item.image" class="interval   w-100" alt="...">
               </div>
+            </div>
+          </div>
+            <div  class="title col-lg-6 col-sm-12 text-center">
+                    <h1 class="size">Porte</h1>
             </div>
         </div>
   </div>
@@ -85,12 +97,12 @@
   </div>
     </section>
     <section > 
-      <div class="container-fluid">
-        <div class="row align-items-stretch">
-            <div class="title col-12">
+      <div class="container-fluid title">
+        <div class="row ">
+            <div id="infissi" class="col-lg-6 col-sm-12 text-center">
                   <h1 class="size">Infissi</h1>
             </div>
-            <div id="carouselExampleFade" class="carousel slide carousel-fade position-absolute col-6 end-0" data-bs-ride="carousel">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div v-for="(item, index) in carouselIte" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
                   <img :src="item.image" class=" interval d-block w-100" alt="...">
@@ -136,29 +148,31 @@
           </div>
           </div>
     </section>
-    <section class="sec_white">
-      <div class="container-fluid">
-        <div class="row align-items-stretch">
-            <div class="title col-12 text-end">
-                <h1 class="size">Zanzariere <br> e Oscuranti</h1>
-            </div>
-            <div id="carouselExampleFade" class="carousel slide carousel-fade position-absolute col-6 start-0 " data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div v-for="(item, index) in carouselIt" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
-                  <img :src="item.image" class=" interval d-block w-100" alt="...">
-                </div>
+    <section class="sec_white" id="Oscuranti">
+      <div class="container-fluid title">
+        <div class="row">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12 " data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div v-for="(item, index) in carouselIt" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
+                <img :src="item.image" class=" interval d-block w-100" alt="...">
               </div>
             </div>
-      </div>  
+          </div>
+          <div  class=" text-center col-lg-6 col-sm-12">
+              <h1 class="size">Zanzariere <br> e Oscuranti</h1>
+            </div>
+          </div>
+        </div>
+        
   
       
-      <div class="container cointainer-sm ">
+      <div class="container  ">
           <div class="row">
 
             <div v-for="(zanzariera, index) in zanzariere" :key="index" class="col-xl-6 col-sm-12">
               <div class="card custom-card">
                 <a :href="zanzariera.link" target="_blank">
-                  <img :src="zanzariera.image" alt="Zanzariera e Oscuranti" class="card-img-top" />
+                  <img :src="zanzariera.image" alt="Zanzariera e Oscuranti" class="card-img-top img-fluid" />
                 </a>
                 <div class="card-body">
                   <p>{{ zanzariera.descrizione }}</p>
@@ -170,7 +184,6 @@
           </div>
       </div>
   
-     </div>
     </section>
   </template>
   
@@ -427,16 +440,14 @@ methods: {
 .size{
   font-size: 4.5rem;
   color: white;
-  margin-top: 100px;
+  margin: 100pxa;
 }
-.super_title{
-    margin-top: 0px;
+.partners{
+  color: black;
 }
-.hand{
-  background-image: url(https://www.r101.it/resizer/616/348/true/importR101/contentresources_22/news/53.%24plit/C_22_news_3247_upiFotoApertura.jpg--articolostrettadimano700x394_jpg.jpg);
-  width: 100%;
-  height: 100%;
-  position: relative;
+.container{
+  max-width: 100%;
 }
+
 </style>
   
