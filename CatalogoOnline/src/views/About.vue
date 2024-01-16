@@ -1,10 +1,12 @@
 <!-- src/views/About.vue -->
 <template>
-  <div>
-    <h1>About</h1>
+  <section class="sec_white">
+    <div>
+    <h1 class="size text-center partners">Chi siamo</h1>
   
-    <!-- <router-link to="/">Go to Home</router-link> -->
+    
   </div>
+  </section>
 </template>
 
 <script>

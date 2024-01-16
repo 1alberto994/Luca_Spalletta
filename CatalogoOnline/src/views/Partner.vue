@@ -23,9 +23,9 @@
     </section>
     <section>
         
-      <div class="container-fluid title" id="tagliafuoco">
+      <div class="container-fluid " id="tagliafuoco">
     <div class="row">
-        <div  class="col-lg-6 col-sm-12 text-center">
+        <div  class=" title col-lg-6 col-sm-12 d-flex align-items-center justify-content-center  ">
             <h1 class="size ">Chiusure tagliafuoco</h1>
         </div>
       
@@ -34,7 +34,7 @@
                 <div v-for="(item, index) in carouselItems" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
                     
                     
-                        <img :src="item.image" class="d-block w-100" alt="..." style="max-width: 100%; height: 500px;">
+                        <img :src="item.image" class="d-block w-100" alt="..." style="max-width: 100%; height: 400px;">
                       
                     
                 </div>
@@ -65,7 +65,7 @@
     </section>
      
     <section class="sec_white" id="porte">
-      <div class="container-fluid title">
+      <div class="container-fluid ">
         <div class="row ">
           <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -74,8 +74,8 @@
               </div>
             </div>
           </div>
-            <div  class="title col-lg-6 col-sm-12 text-center">
-                    <h1 class="size">Porte</h1>
+            <div  class="title col-lg-6 col-sm-12 d-flex align-items-center justify-content-center">
+                    <h1 class="size ">Porte</h1>
             </div>
         </div>
   </div>
@@ -98,10 +98,10 @@
   </div>
     </section>
     <section > 
-      <div class="container-fluid title">
+      <div class="container-fluid ">
         <div class="row ">
-            <div id="infissi" class="col-lg-6 col-sm-12 text-center">
-                  <h1 class="size">Infissi</h1>
+            <div id="infissi" class=" title col-lg-6 col-sm-12 d-flex align-items-center justify-content-center">
+                  <h1 class="size ">Infissi</h1>
             </div>
             <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12" data-bs-ride="carousel">
               <div class="carousel-inner">
@@ -150,7 +150,7 @@
           </div>
     </section>
     <section class="sec_white" id="Oscuranti">
-      <div class="container-fluid title">
+      <div class="container-fluid ">
         <div class="row">
           <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12 " data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -159,8 +159,8 @@
               </div>
             </div>
           </div>
-          <div  class=" text-center col-lg-6 col-sm-12">
-              <h1 class="size">Zanzariere <br> e Oscuranti</h1>
+          <div  class=" title col-lg-6 col-sm-12 d-flex align-items-center justify-content-center">
+              <h1 class="size ">Zanzariere <br> e Oscuranti</h1>
             </div>
           </div>
         </div>
@@ -441,7 +441,7 @@ methods: {
 .size{
   font-size: 4.5rem;
   color: white;
-  margin: 100pxa;
+  
 }
 .partners{
   color: black;
@@ -449,6 +449,7 @@ methods: {
 .container{
   max-width: 100%;
 }
+
 
 </style>
   

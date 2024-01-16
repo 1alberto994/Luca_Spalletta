@@ -184,9 +184,9 @@
 
     <footer class="bg-dark " id="footer">
       <div class="container-fluid footcontact">
-            <div class="row">
+            <div class="row text-center">
               <div class="col-sm-12 col-lg-12 col-xl-4 mt-3">
-                <div><img src="/rygzctcg.png"  alt=""></div>
+                <div><img src="/rygzctcg.png"  alt="logo"></div>
                 <div class="mt-2" >
                           <i class="fab fa-whatsapp p-2"></i>
                           <i class="fab fa-facebook p-2"></i>
@@ -207,9 +207,13 @@
                 <h4>
                   Orari di apertura
                 </h4>
-                <ul class=" orari ">
+                <ul class="list-unstyled orari ">
                     <li v-for="(orario, index) in orari" :key="index">{{ orario }}</li>
                 </ul> 
+              </div>
+              <hr>
+              <div class="text-center">
+                <p>copyright Gianluca&Luca Spalletta Rappresentanze  P.IVA</p>
               </div>
 
             </div>
@@ -294,5 +298,8 @@ i{color: white;}
 .navbar-toggler{
   color: white;
 }
-
+hr{
+  border-color: white;
+  font-size: medium;
+}
 </style>
