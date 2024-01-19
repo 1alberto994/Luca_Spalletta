@@ -23,9 +23,9 @@
     </section>
     <section>
         
-      <div class="container-fluid " id="tagliafuoco">
-    <div class="row">
-        <div  class=" title col-lg-6 col-sm-12 d-flex align-items-center justify-content-center  ">
+      <div class="container-fluid title " id="tagliafuoco">
+    <div class="row ">
+        <div  class="  col-lg-6 col-sm-12 d-flex align-items-center justify-content-center  ">
             <h1 class="size ">Chiusure tagliafuoco</h1>
         </div>
       
@@ -54,7 +54,7 @@
             </a>
             <div class="card-body">
               
-              <p class="card-text">{{ tagliafuoco.descrizione }}</p>
+              <p class="card-text"><strong>{{ tagliafuoco.descrizione }}</strong></p>
               
               <a :href="tagliafuoco.link" target="_blank" class="btn btn-dark p-2">Vai al sito</a>
             </div>
@@ -65,7 +65,7 @@
     </section>
      
     <section class="sec_white" id="porte">
-      <div class="container-fluid ">
+      <div class="container-fluid title ">
         <div class="row ">
           <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -74,7 +74,7 @@
               </div>
             </div>
           </div>
-            <div  class="title col-lg-6 col-sm-12 d-flex align-items-center justify-content-center">
+            <div  class=" col-lg-6 col-sm-12 d-flex align-items-center justify-content-center">
                     <h1 class="size ">Porte</h1>
             </div>
         </div>
@@ -88,7 +88,7 @@
           </a>
           <div class="card-body">
             
-            <p class="card-text">{{ porta.descrizione }}</p>
+            <p class="card-text"><strong>{{ porta.descrizione }}</strong></p>
             
             <a :href="porta.link" target="_blank" class="btn btn-dark p-2">Vai al sito</a>
           </div>
@@ -98,9 +98,9 @@
   </div>
     </section>
     <section > 
-      <div class="container-fluid ">
+      <div class="container-fluid title">
         <div class="row ">
-            <div id="infissi" class=" title col-lg-6 col-sm-12 d-flex align-items-center justify-content-center">
+            <div id="infissi" class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center">
                   <h1 class="size ">Infissi</h1>
             </div>
             <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12" data-bs-ride="carousel">
@@ -121,7 +121,7 @@
                   <img :src="infisso.image" alt="infissi" class="card-img-top" />
                 </a>
                 <div class="card-body ">
-                  <p class="card-text ">{{ infisso.descrizione }}</p>
+                  <p class="card-text "><strong>{{ infisso.descrizione }}</strong></p>
                   <a :href="infisso.link" target="_blank" class="btn btn-dark p-2">Vai al sito</a>
 
                 </div>
@@ -139,7 +139,7 @@
                   <img :src="azienda.image" alt="infissi" class="card-img-top" />
               </a>
               <div class="card-body ">
-                  <p class="card-text ">{{ azienda.descrizione }}</p>
+                  <p class="card-text "><strong>{{ azienda.descrizione }}</strong></p>
                   <a :href="azienda.link" target="_blank" class="btn btn-dark p-2">Vai al sito</a>
 
               </div>
@@ -150,7 +150,7 @@
           </div>
     </section>
     <section class="sec_white" id="Oscuranti">
-      <div class="container-fluid ">
+      <div class="container-fluid title">
         <div class="row">
           <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12 " data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -159,7 +159,7 @@
               </div>
             </div>
           </div>
-          <div  class=" title col-lg-6 col-sm-12 d-flex align-items-center justify-content-center">
+          <div  class="  col-lg-6 col-sm-12 d-flex align-items-center justify-content-center">
               <h1 class="size ">Zanzariere <br> e Oscuranti</h1>
             </div>
           </div>
@@ -176,7 +176,7 @@
                   <img :src="zanzariera.image" alt="Zanzariera e Oscuranti" class="card-img-top img-fluid" />
                 </a>
                 <div class="card-body">
-                  <p>{{ zanzariera.descrizione }}</p>
+                  <p><strong>{{ zanzariera.descrizione }}</strong></p>
                   <a :href="zanzariera.link" target="_blank" class="btn btn-dark p-2">Vai al sito</a>
                 </div>
       
@@ -436,7 +436,7 @@ methods: {
     min-height: 400px;
     width: 300px;
     background-color: black;
-    opacity: 0.8 !important;
+    /* opacity: 0.8 !important; */
 }
 .size{
   font-size: 4.5rem;
