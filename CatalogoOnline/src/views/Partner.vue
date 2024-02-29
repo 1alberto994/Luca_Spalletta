@@ -1,21 +1,22 @@
 <!-- src/views/Partner.vue -->
 <template>
     <section class="sec_white">
-      <div class="container-fluid">
+      <div class="container-fluid ">
       
         <h1 class="size text-center partners">I nostri partners</h1>
              <ul class="list-unstyled  d-flex align-items-center justify-content-center">
               <li class="p-2">
-                <a class="partners" href="#tagliafuoco"> Chiusure Tagliafuoco</a>
+                <strong><a class="partners" href="#tagliafuoco"> Chiusure Tagliafuoco</a></strong>
+                  
               </li>
               <li class="p-2">
-                <a class="partners" href="#porte">Porte</a>
+                <strong><a class="partners" href="#porte">Porte</a></strong>
               </li>
               <li class="p-2">
-                <a class="partners" href="#infissi">Infissi</a>
+                <strong><a class="partners" href="#infissi">Infissi</a></strong>
               </li>
               <li class="p-2">
-                <a class="partners" href="#Oscuranti">Zanzariere e oscuranti</a>
+                <strong><a class="partners" href="#Oscuranti">Zanzariere e oscuranti</a></strong>
               </li>
              </ul>                     
         
@@ -246,7 +247,7 @@
         link:'https://www.barausse.com/it/'
       },
       {
-        image:'https://www.fgporte.it/images/FGPorte/loghi/logo-FG-50-orizz-400.png',
+        image:'/Logo FG 558 300.png',
         descrizione:"L'azienda FG Porte S.R.L.,viene fondata Giorgio Dino,Guerrino,Riccardo e Settimio nel 1968.Tutto ebbe inizio in una piccola falegnameria dove i fratteli Giorgi si sono via via specializzati nella produzione di infissi in legno e dedicando una particolare attenzione alla realizzazione delle porte",
         link:'https://www.fgporte.it/'
 
@@ -254,7 +255,7 @@
       },
         {
           image :'https://www.ferwall.it/images/2022/10/21/logo.png',
-          descrizione:'ciao',
+          descrizione:"L'azienda guidata da Domenico Arena nel 1995 ha voluto soddisfare  la crescente richiesta di porte blindate e serrande avvolgibili. Pur mantenendo ancora alcune delle lavorazioni a livello artigianale si è così riusciti, in questi anni, ad industrializzare e commercializzare a marchio Ferwall® un prodotto di qualità e ad entrare, a giusto titolo, tra i produttori leader in Italia nella realizzazione di porte blindate per esterno.",
           link: 'https://www.ferwall.it/',
         },
         {
@@ -436,7 +437,7 @@ methods: {
     min-height: 400px;
     width: 300px;
     background-color: black;
-    /* opacity: 0.8 !important; */
+    opacity: 0.8 !important; 
 }
 .size{
   font-size: 4.5rem;
