@@ -5,17 +5,17 @@
       
         <h1 class="size text-center partners">I nostri partners</h1>
              <ul class="list-unstyled  d-flex align-items-center justify-content-center">
-              <li class="p-2">
+              <li class="p-2 bottone">
                 <strong><a class="partners" href="#tagliafuoco"> Chiusure Tagliafuoco</a></strong>
                   
               </li>
-              <li class="p-2">
+              <li class="p-2 bottone">
                 <strong><a class="partners" href="#porte">Porte</a></strong>
               </li>
-              <li class="p-2">
+              <li class="p-2 bottone">
                 <strong><a class="partners" href="#infissi">Infissi</a></strong>
               </li>
-              <li class="p-2">
+              <li class="p-2 bottone">
                 <strong><a class="partners" href="#Oscuranti">Zanzariere e oscuranti</a></strong>
               </li>
              </ul>                     
@@ -30,7 +30,7 @@
             <h1 class="size ">Chiusure tagliafuoco</h1>
         </div>
       
-        <div id="carouselExample" class="carousel slide  col-lg-6 col-sm-12  " data-bs-ride="carousel">
+        <div id="carouselExampleFade" class="carousel slide  col-lg-6 col-sm-12  " data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div v-for="(item, index) in carouselItems" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
                     
@@ -221,13 +221,16 @@
       ],
       carouselItems: [
       {
-        image: 'https://www.proteggifire.it/files/acatalog1/category/PortaTagliafuoco_02.jpg',
+        image: 'https://www.meverin.com/wp-content/uploads/2020/07/portone-girevole-magnum-meverin-ospedale.jpg',
       },
       {
-        image: 'https://www.industrieluna.com/wp-content/uploads/2015/11/Banner_PorteTU_850x425b.jpg',
+        image: 'https://glassfire.it/wp-content/uploads/2023/04/SEDE-INPS-ROMA-LINEA-ACCIAIO.jpg',
       },
       {
-        image: 'https://i1.wp.com/www.imsasrl.it/wp-content/uploads/2020/09/1-1.png?fit=700%2C400&ssl=1',
+        image: '/BLOCKSHUTTER-EI-120-10-nera (1).jpeg',
+      },
+      {
+        image: '/meverin-porte-pedonali-resistenti-al-fuoco-ce2019-2.png',
       },
     ],
     porte:[
@@ -259,20 +262,25 @@
           link: 'https://www.ferwall.it/',
         },
         {
-          image:'/NEC CHIUSURE.png',
+          image:'/NEC CHIUSURE LOGO.pdf',
           descrizione:"NEC Chiusure srl  produce istallazioni efficienti garantendo il massimo livello di sicurezza operativa: ne sono un esempio eccellente le porte per ospedali e le porte per le scuole, pratiche veloci e certificate. ",
           link:'https://www.chiusure-nec.it/'
+        },
+        {
+          image:'/logo-arco-industrie-300x208.png',
+          descrizione:"L'azienda, nata con il nome di Porte e Portoni srl nel 2000 per produrre rampe di carico e scarico e portoni sezionali, assume la attuale denominazione dopo aver acquisito, nel 2005, il ramo di azienda di una società storica, leader nel mercato delle chiusure industriali e civili.",
+          link:'https://www.arcoindustrie.it/'
         }
       ],
       carouselItem: [
         {
-          image: 'https://www.relupisa.it/wp-content/uploads/2019/05/4.jpg',
+          image: 'https://www.porteimic.com/assets/images/basic-100-noce-dogato-2000x1720.jpg',
         },
         {
-          image: 'https://www.fracaros.it/DB_files/sottocategorie/Schermata_08-2456513_alle_10.44.26.png',
+          image: 'https://www.manuellodesign.it/images/bollini-linee-mpm/collezione-sicur.webp',
         },
         {
-          image: 'https://www.garofoli.com/wp-content/uploads/2018/02/Garofoli_No-Limits_Olmo-Grigio_filetti-forati-6-mm-e1545059658122.jpg',
+          image: 'https://www.barausse.com/app/uploads/2023/04/Barausse_boiserie_milled-801x800.jpg',
         },
       ],
       infissi:[
@@ -300,13 +308,13 @@
       ],
       carouselIte: [
         {
-          image:'https://www.ediltecnico.it/wp-content/uploads/2023/05/infissi-serramenti-finestre-definizioni-1024x683.jpg',
+          image:'https://www.cosmetgroup.it/upload/sitogalleryenergy11000x1000-465-500x500.jpg',
         },
         {
-          image: 'https://www.dauniaserramenti.it/wp-content/uploads/2021/07/daunia-serramenti-infissi-finestre-portafinestre-pvc-anteprima.jpg',
+          image: 'https://www.cosmetgroup.it/upload/naturarev-265-500x500.jpg',
         },
         {
-          image: 'https://www.infissilombardia.it/wp-content/uploads/2017/07/infissi-in-pvc-milano.jpg',
+          image: 'https://www.cosmetgroup.it/upload/sitoelencovistametalesterno460x750-650-500x500.jpg',
         },
       ],
       zanzariere:[
@@ -333,13 +341,13 @@
       ],
       carouselIt: [
         {
-          image: 'https://www.serramenti82.it/wp-content/uploads/2018/08/zanzariere_4.jpg',
+          image: '/5D4P0880.jpg',
         },
         {
-          image: 'https://www.ca-mia.it/wp-content/uploads/2020/09/sistemi-oscuranti-ca-mia-luxury-home.jpg',
+          image: 'https://croci.com/wp-content/uploads/2020/01/girasole-def-1568x1082.jpg',
         },
         {
-          image: 'https://www.oknoplast.it/blog/wp-content/uploads/2019/09/vantaggi-oscuranti-per-finestre.jpg',
+          image: 'https://suncover.com/wp-content/uploads/2022/01/home-infinity-1024x1024.jpg',
         },
       ],
     currentSlide: 0,
@@ -437,7 +445,7 @@ methods: {
     min-height: 400px;
     width: 300px;
     background-color: black;
-    opacity: 0.8 !important; 
+    
 }
 .size{
   font-size: 4.5rem;
@@ -449,6 +457,9 @@ methods: {
 }
 .container{
   max-width: 100%;
+}
+.bottone{
+  font-size: 1.5rem;
 }
 
 
