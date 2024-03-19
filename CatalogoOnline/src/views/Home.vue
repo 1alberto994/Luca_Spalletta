@@ -5,10 +5,10 @@
     <div class="carousel-inner">
       <div v-for="(item, index) in carouselItems" :key="index" :class="['carousel-item', { 'active': index === 0 }]">
         
-        <div class="carousel-overlay">
+        <div class="carousel-overlay size">
           <h3>{{ item.title }}</h3>
         </div>
-          <div class="over">
+          <div class="over ">
         <img :src="item.imageUrl" class="d-block w-100 imgHome " alt="...">
 
           </div>
@@ -27,18 +27,15 @@
     <section class="sec_white">
       <div class="container-fluid">
           <div class="row  ">
-            <div class="col-6 welcome text-dark d-flex align-items-center justify-content-center">
-              <h1>La nostra storia</h1>
+            <div class=" col-sm-12 col-lg-6 welcome text-dark d-flex align-items-center justify-content-center mt-3">
+              <h1>CHI SIAMO</h1>
             </div>
-              <div class="   col-6 mt-4 text-dark descrizione">
-               <strong> Spalletta rappresentanze offre consulenza tecnico commerciale  nel settore  chiusure tagliafuoco , infissi interni ed esterni, chiusure residenziale ed industriali dal 1999. Grazie all'esperienza acquisita ,l'agenzia è in grado di assistervi nella scelta di prodotti ideali per le vostre esigenze ,garantendo la massima qualità in ogni prodotto che offriamo.</strong> 
+              <div class=" col-sm-12  col-lg-6 mt-4 text-dark descrizione">
+               <strong> Spalletta rappresentanze offre consulenza tecnico commerciale  nel settore  chiusure tagliafuoco, infissi interni ed esterni, chiusure residenziale ed industriali dal 1999. <br> Grazie all'esperienza acquisita, l'agenzia è in grado di assistervi nella scelta di prodotti ideali per le vostre esigenze, garantendo la massima qualità in ogni prodotto che offriamo.</strong> 
 
               </div>
               <div class="text-center mt-5">
                   <ul class="list-unstyled d-flex justify-content-center">
-                    <li class=" p-2">
-                       <router-link class="btn btn-dark p-3 mb-2" to="/about">Chi siamo</router-link>
-                    </li>
                     <li class=" p-2">
                       <router-link class="btn btn-dark p-3 mb-2" to="/partner">I nostri Partners</router-link>  
                     </li>
@@ -58,10 +55,15 @@ export default {
   data() {
     return {
       carouselItems: [
-        { imageUrl: 'https://www.meverin.com/wp-content/uploads/2020/07/portone-girevole-magnum-meverin-ospedale.jpg', title: '' },
-        { imageUrl: '/portone-scorrevole-acciaio-inox-meverin-ce2019.png', title: 'Titolo 2' },
-        { imageUrl: '/speedy-4.jpg', title: 'Titolo 3' },
-        { imageUrl: '/SEDE-INPS-ROMA-LINEA-ACCIAIO.jpg', title: 'Titolo 4' }
+        // { imageUrl: 'https://www.meverin.com/wp-content/uploads/2020/07/portone-girevole-magnum-meverin-ospedale.jpg', title: 'Titolo 1' },
+        { imageUrl: '/speedy-4.jpg', title: 'Mantieni il tuo ambiente sicuro' },
+        { imageUrl: '/5D4P0880.jpg', title: 'Il meglio per il tuo ambiente domestico' },
+        { imageUrl: '/portfolio_arco_1.jpg', title: 'Selezioniamo i migliori prodotti' },
+        { imageUrl: '/Imic23-11.jpg', title: 'Arreda con stile e praticità' },
+        { imageUrl: '/portone-scorrevole-acciaio-inox-meverin-ce2019.png', title: ' A supporto della tua crescita' },
+        { imageUrl: '/portone-girevole-magnum-meverin-ospedale.png', title: "Affidabilità professionalità innovazione" },
+
+
 
       ]
     };
@@ -119,7 +121,7 @@ export default {
 .carousel-overlay {
   position: absolute;
   top: 50%;
-  left: 25%;
+  left: 15%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.5); /* Opaco */
   padding: 20px;
