@@ -1,27 +1,19 @@
 <!-- src/views/Home.vue -->
 <template>
-  <section class="sec">
+  <section class="sec  sec-margin">
     <div id="carouselExampleFade" class="carousel slide carousel-fade">
     <div class="carousel-inner">
-      <div v-for="(item, index) in carouselItems" :key="index" :class="['carousel-item', { 'active': index === 0 }]">
+      <div v-for="(item, index) in carouselItems" :key="index" :class="['carousel-item', { 'active': index === currentIndex }]">
         
-        <div class="carousel-overlay size">
+        <div class="carousel-overlay fontHome  d-flex align-items-center justify-content-center">
           <h3>{{ item.title }}</h3>
         </div>
           <div class="over ">
-        <img :src="item.imageUrl" class="d-block w-100 imgHome " alt="...">
+        <img :src="item.imageUrl" class="d-block w-100 img-fluid   " :style="{ height: item.height }" alt="..."  >
 
           </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
     </section>
     <section class="sec_white">
@@ -55,22 +47,38 @@ export default {
   data() {
     return {
       carouselItems: [
-        // { imageUrl: 'https://www.meverin.com/wp-content/uploads/2020/07/portone-girevole-magnum-meverin-ospedale.jpg', title: 'Titolo 1' },
-        { imageUrl: '/speedy-4.jpg', title: 'Mantieni il tuo ambiente sicuro' },
-        { imageUrl: '/5D4P0880.jpg', title: 'Il meglio per il tuo ambiente domestico' },
-        { imageUrl: '/portfolio_arco_1.jpg', title: 'Selezioniamo i migliori prodotti' },
-        { imageUrl: '/Imic23-11.jpg', title: 'Arreda con stile e praticità' },
-        { imageUrl: '/portone-scorrevole-acciaio-inox-meverin-ce2019.png', title: ' A supporto della tua crescita' },
-        { imageUrl: '/portone-girevole-magnum-meverin-ospedale.png', title: "Affidabilità professionalità innovazione" },
+        { imageUrl: '/speedy-4.jpg', title: 'Mantieni il tuo ambiente sicuro',height: '700px' },
+        { imageUrl: '/5D4P0880.jpg', title: 'Il meglio per il tuo ambiente domestico', height: '700px' },
+        { imageUrl: '/portfolio_arco_1.jpg', title: 'Selezioniamo i migliori prodotti',height: '700px' },
+        { imageUrl: '/Imic23-11.jpg', title: 'Arreda con stile e praticità',height: '700px' },
+        { imageUrl: '/portone-scorrevole-acciaio-inox-meverin-ce2019.png', title: ' A supporto della tua crescita',height: '700px' },
+        { imageUrl: '/portone-girevole-magnum-meverin-ospedale.png', title: "Affidabilità professionalità innovazione",height: '700px' },
 
 
 
-      ]
+      ],
+      currentIndex:0,
+      intervalId: null,
+      intervalDuration: 6000
     };
+  },
+  mounted() {
+    // Avvia l'intervallo per scorrere automaticamente il carosello
+    this.intervalId = setInterval(this.nextSlide, this.intervalDuration);
+  },
+  methods: {
+    nextSlide() {
+      // Avanza al prossimo elemento del carosello
+      this.currentIndex = (this.currentIndex + 1) % this.carouselItems.length;
+    }
+  },
+  beforeDestroy() {
+    // Assicurati di cancellare l'intervallo quando il componente viene distrutto
+    clearInterval(this.intervalId);
   }
 };
 </script>
-<style>
+<style scoped>
 .welcome{
   font-size: 2.5rem;
   color: white;
@@ -121,9 +129,9 @@ export default {
 .carousel-overlay {
   position: absolute;
   top: 50%;
-  left: 15%;
+  left: 20%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.5); /* Opaco */
+  background-color: rgba(0, 0, 0, 0.5); 
   padding: 20px;
   border-radius: 5px;
   color: white;
@@ -133,14 +141,38 @@ export default {
 .over{
   width: 100%;
   overflow: hidden;
-  /* height: 400px; */
+  
 }
 .descrizione{
   font-size:1.5rem;
 }
-.imgHome{
-  height: 100%;
-  overflow: visible;
+
+h3{
+  font-size: 3.5rem;
+}
+@media (max-width: 576px) {
+  .carousel .carousel-inner .carousel-item img {
+    height: 100% !important; /* Altezza per dispositivi mobile */
+    width: auto;
+    
+  }
+  
+  h3{
+    font-size: 1.0rem;
+  }
+  .sec-margin{
+    margin-top: 50px;
+  }
+}
+@media (min-width: 577px) and (max-width: 768px) {
+  .carousel .carousel-inner .carousel-item img {
+    height: 100% !important; /* Altezza per dispositivi tablet */
+    width: auto;
+  }
+  h3{
+    font-size: 2.0rem;
+  }
+
 }
 
 </style>

@@ -2,11 +2,11 @@
 <template>
   <div id="app">
     <header>
-      <nav class="navbar navbar-light bg-dark ">
+      <nav class="navbar navbar-light bg-dark">
         
-        <div class="container-fluid d-flex ">
+        <div class="  container-fluid d-flex ">
           
-          <div class="d-none d-lg-block"><img src="/rygzctcg.png" class="spalletta text-center mx-auto" alt=""></div>
+          <div class="d-none d-lg-block"><img src="/rygzctcg.png" class="spalletta text-center " alt=""></div>
           
           <div class="row d-none d-lg-block d-md-none">
 
@@ -89,26 +89,22 @@
     <div class="row">
         <!-- Pulsante di attivazione del menu per schermi piccoli -->
         <button class="navbar-toggler d-lg-none btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
-            <span class="navbar-toggler-icon text-light"></span>
+            <span class="navbar-toggler-icon text-light icon"></span>
         </button>
 
-        <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+        <div class="offcanvas offcanvas-start bg-dark" :class="{ 'show': isOffcanvasOpen }" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title text-white" id="offcanvasLabel">Menu</h5>
-                <button type="button" class="btn-close text-reset text-white" data-bs-dismiss="offcanvas" aria-label="Chiudi"></button>
+                <button type="button" class="btn-close text-reset text-white"  @click="toggleOffcanvas" data-bs-dismiss="offcanvas" aria-label="Chiudi"></button>
             </div>
             <div class="offcanvas-body">
                 <ul class="list-unstyled">
                     
                     <li class="m-2 p-2">
-                  <router-link class="router" to="/">Home</router-link>
-                </li>
-  
-                <li class="m-2 p-2">
-                  <router-link class="router" to="/about">About</router-link>
+                  <router-link class="router" to="/" @click.native="handleLinkClick" >Home</router-link>
                 </li>
                 <li class="m-2 p-2">
-                  <router-link class="router" to="/partner">Partners</router-link>
+                  <router-link class="router" to="/partner" @click.native="handleLinkClick" >Partners</router-link>
                 </li>
                 <li class="dropdown m-2 p-2">
                   <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -184,20 +180,12 @@
 
     <footer class="bg-dark " id="footer">
       <div class="container-fluid footcontact">
-            <div class="row text-center">
-              <div class="col-sm-12 col-lg-12 col-xl-4 mt-3">
-                <div><img src="/rygzctcg.png"  alt="logo"></div>
-                <!-- <div class="mt-2" >
-                          <i class="fab fa-whatsapp p-2"></i>
-                          <i class="fab fa-facebook p-2"></i>
-                          <i class="fab fa-instagram p-2"></i>
-                          <i class="fab fa-linkedin p-2"></i>
-                </div> -->
-              </div>
+            <div class="row text-center d-flex justify-content-around">
+             
               <div class=" col-sm-12 col-lg-12 col-xl-4 mt-3">
                 <h4>Contatti</h4>
                   <ul class=" list-unstyled" >
-                    <li>Phone:<a href="tel:{{ contatti[0].fisso }}" class="router">{{ contatti[0].fisso }}</a></li>
+                    <li>Phone:<a href="tel:3477563069" class="router">{{ contatti[0].fisso }}</a></li>
                     <li>Mobile:<a href="tel:{{ contatti[0].mobile }}" class="router">{{ contatti[0].mobile }}</a></li>
                     <li>Email:<a href="mailto:info@spallettarappresentanze.it" class="router">{{ contatti[0].email }}</a></li>
                     <li>Address: <a href="https://www.google.com/maps/search/?api=1&query=Viale della Costituzione 19/M Catania,CT" target="_blank" class="router">{{ contatti[0].indirizzo }}</a></li>
@@ -239,7 +227,8 @@ export default {
         }
       ],
       orari:['Lun. 9:00-18:00','Mar. 9:00-18:00','Mer. 9:00-18:00','Gio. 9:00-18:00','Ven. 9:00-18:00','Sab.   Chiuso','Dom.   Chiuso'],
-      isDropdownVisible: false
+      isDropdownVisible: false,
+      isOffcanvasOpen: false
       
     }
     
@@ -250,21 +239,54 @@ export default {
     },
     hideDropdown() {
       this.isDropdownVisible = false;
+    },
+    toggleOffcanvas() {
+      this.isOffcanvasOpen = !this.isOffcanvasOpen;
+    },
+    closeOffcanvas() {
+      this.isOffcanvasOpen = false;
+    },
+    handleLinkClick() {
+      // Chiudi l'offcanvas quando viene fatto clic su un link del menu
+      this.closeOffcanvas();
     }
+  
   }
 };
 </script>
 
 <style>
+/* Stile per il contenitore principale dell'applicazione */
+#app {
+  width: 100%;
+  min-height: 100vh; /* Altezza minima del 100% del viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Imposta il corpo e l'html per coprire completamente lo schermo */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Nasconde lo scorrimento orizzontale */
+}
+
 .router {
   text-decoration: none;
   color: white;
 }
+.router:hover{
+  color: white;
+  text-decoration: none;
+}
 main{
-  /* background-image: url(data:image/jpeg;base64,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); */
-  background-image: url(https://thumbs.dreamstime.com/b/sfondo-di-trama-monocromatica-grunge-astratta-foto-scorta-fotografia-stock-228171102.jpg);
   
-  margin-top: 115px; 
+  /* background-image: url(https://thumbs.dreamstime.com/b/sfondo-di-trama-monocromatica-grunge-astratta-foto-scorta-fotografia-stock-228171102.jpg); */
+  background-image: url(https://i.pinimg.com/736x/a8/4b/00/a84b00aed02b505734b4326ac9a9d465.jpg);
+  
+  margin-top: 15px; 
 }
  footer{
   min-height: 100px;
@@ -286,7 +308,7 @@ header {
     width: 100%;
     z-index: 2000;
     top: 0;
-    max-height: 100px;
+    min-height: 50px;
   }
   /* .font{
     font-size: 1.5rem;
@@ -295,7 +317,7 @@ header {
   .dropdown-menu a.dropdown-item {
     color: white !important;
 }
-i{color: white;}
+.icon{color: white;}
 .navbar-toggler{
   color: white;
 }
@@ -305,5 +327,21 @@ hr{
 }
 .spalletta{
   height: 100px;
+}
+.offcanvas {
+  visibility: hidden; /* Nasconde l'offcanvas inizialmente */
+  transition: visibility 0s, opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.offcanvas.show {
+  visibility: visible; /* Mostra l'offcanvas quando è aperto */
+  opacity: 1;
+}
+@media (max-width: 768px){
+  .spalletta{
+    height: 50px;
+  }
+  
 }
 </style>

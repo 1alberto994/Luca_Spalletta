@@ -1,7 +1,7 @@
-<!-- src/views/Partner.vue -->
+
 <template>
-    <section class="sec_white">
-      <div class="container-fluid ">
+    <section class="sec-bot ">
+      <div class="container-fluid  special_section">
       
         <h1 class="size text-center partners ">I nostri partners</h1>
              <ul class="list-unstyled  d-flex align-items-center justify-content-center">
@@ -22,23 +22,24 @@
         
       </div>
     </section>
-    <section>
+    <section class="sec-grey">
         
-      <div class="container-fluid title " id="tagliafuoco">
-    <div class="row ">
-        <div  class="  col-lg-6 col-sm-12 d-flex align-items-center justify-content-center  ">
+      <div class="container-fluid" id="tagliafuoco">
+    <div class="row prova p-2 ">
+        <div  class="  col-lg-6 d-flex align-items-center justify-content-center title  ">
             <h1 class="size ">Chiusure tagliafuoco</h1>
         </div>
       
-        <div id="carouselExampleFade" class="carousel slide  col-lg-6 col-sm-12  " data-bs-ride="carousel">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade  col-lg-6  " data-bs-ride="carousel">
             <div class="carousel-inner" >
                 <div v-for="(item, index) in carouselItems" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
                     
                     
-                        <img :src="item.image" class="d-block w-100" alt="..." style="max-width: 100%; height: 400px;object-fit: cover;">
+                        <img :src="item.image" class="d-block w-100 img-fluid  " alt="..."  >
                       
                     
                 </div>
+                
             </div>
         </div>
     </div>
@@ -66,20 +67,21 @@
     </section>
      
     <section class="sec_white" id="porte">
-      <div class="container-fluid title ">
-        <div class="row ">
-          <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div v-for="(item, index) in carouselItem" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
-                <img :src="item.image" class="interval   w-100" alt="..." style="max-width: 100%; height: 500px;">
-              </div>
-            </div>
-          </div>
-            <div  class=" col-lg-6 col-sm-12 d-flex align-items-center justify-content-center">
-                    <h1 class="size ">Porte</h1>
-            </div>
+      <div class="container-fluid">
+    <div class="row p-2">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12" data-bs-ride="carousel" >
+            
+                <div v-for="(item, index) in carouselItem" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }" >
+                    <img :src="item.image" class="d-block w-100 img-fluid " alt="..."  >
+                </div>
+            
         </div>
-  </div>
+        <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center title">
+            <h1 class="size ">Porte</h1>
+        </div>
+    </div>
+</div>
+
   <div class="container-fluid container-sm custom-background">
     <div class="row">
       <div v-for="(porta, index) in porte" :key="index" class="col-lg-6 col-sm-12">
@@ -98,23 +100,23 @@
     </div>
   </div>
     </section>
-    <section > 
-      <div class="container-fluid title">
-        <div class="row ">
-            <div id="infissi" class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center">
+    <section  class="sec-grey"> 
+      <div class="container-fluid ">
+        <div class="row p-2 ">
+            <div id="infissi" class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center title">
                   <h1 class="size ">Infissi</h1>
             </div>
             <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div v-for="(item, index) in carouselIte" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
-                  <img :src="item.image" class=" interval d-block w-100" alt="..." style="max-width: 100%; height: 500px;">
+                  <img :src="item.image" class="  d-block w-100 img-fluid " alt="..." >
                 </div>
               </div>
             </div>
         </div>
   </div>
       <div class="container-fluid container-sm ">
-          <div class="row">
+          <div class="row ">
 
             <div v-for="(infisso, index) in infissi" :key="index" class="col-12 ">
               <div class="card custom-card">
@@ -151,16 +153,16 @@
           </div>
     </section>
     <section class="sec_white" id="Oscuranti">
-      <div class="container-fluid title">
-        <div class="row">
+      <div class="container-fluid ">
+        <div class="row p-2">
           <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12 " data-bs-ride="carousel">
             <div class="carousel-inner">
               <div v-for="(item, index) in carouselIt" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
-                <img :src="item.image" class=" interval d-block w-100" alt="..." style="max-width: 100%; height: 500px;">
+                <img :src="item.image" class="  d-block w-100 img-fluid " alt="..." >
               </div>
             </div>
           </div>
-          <div  class="  col-lg-6 col-sm-12 d-flex align-items-center justify-content-center">
+          <div  class="  col-lg-6 col-sm-12 d-flex align-items-center justify-content-center title">
               <h1 class="size ">Zanzariere <br> e Oscuranti</h1>
             </div>
           </div>
@@ -274,16 +276,16 @@
       ],
       carouselItem: [
         {
-          image: 'https://www.porteimic.com/assets/images/basic-100-noce-dogato-2000x1720.jpg',
+          image: '/Porta 6_M.png',
         },
         {
-          image: 'https://www.manuellodesign.it/images/bollini-linee-mpm/collezione-sicur.webp',
+          image: '/Porta 2_M.png',
         },
         {
-          image: 'https://www.barausse.com/app/uploads/2023/04/Barausse_boiserie_milled-801x800.jpg',
+          image: '/Ambientazione 6.png',
         },
         {
-          image: '/Imic23-19.jpg',
+          image: '/AMB_16_FINALE.png',
         },
       ],
       infissi:[
@@ -338,6 +340,11 @@
           image:'https://suncover.com/wp-content/uploads/2020/05/marchio-suncover.png',
           descrizione:"Suncover da oltre 50 anni risponde atutte le esigenze di protezione solare,schermatura e diffusione luminosa,sempre al fianco di professionisti dell'arredo,del restauro e delle costruzioni.Dal 1969 Suncover produce su misura e vende, tende avvolgibili di ogni dimensione e materiale, per interno ed esterno, frangisole, tende tecniche per l'arredo per ogni ambiente domestico, professionale, teatri, musei, hotels, padiglioni espositivi, e tante altre locations.Produce e vende anche zanzariere e sistemi antinsetto, di diverse tipologie e per ogni ambiente, sia domestico che professionale.",
           link:'https://suncover.com/'
+        },
+        {
+          image:'https://www.palagina.eu/wp-content/uploads/2023/12/logo-palagina-web.png',
+          descrizione:"La nostra azienda, fondata nel 1981 grazie all'intraprendenza dei fondatori, Carlo e Marcello Francalanci, ha avuto inizio come una falegnameria a carattere strettamente famigliare a Ponte a Cappiano. Nel 1985, l'attività coinvolge l'intera famiglia, e si avvia la commercializzazione delle prime zanzariere, utilizzando prodotti in barra e semi-lavorati.Durante gli anni '90, l'azienda decide di dedicarsi definitivamente alla produzione di articoli propri. Attraverso una costante ricerca e sviluppo interna, si sono apportate migliorie significative ai prodotti, culminate nella registrazione di alcuni brevetti e sistemi PALAGINA.",
+          link:'https://www.palagina.eu'
         },
         {
           image:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Logo_Schenker_Storen.svg/1200px-Logo_Schenker_Storen.svg.png',
@@ -448,33 +455,128 @@ methods: {
 .sec_white{
     background-image: url(https://i.pinimg.com/736x/a8/4b/00/a84b00aed02b505734b4326ac9a9d465.jpg);
     width: 100%;
-    height: auto;
+    margin: 0;
     
 }
 .title{
     min-height: 400px;
-    width: 300px;
-    background-color: black;
+    width: 100%;
+    background-color:#333;
     
 }
+.list-unstyled {
+  margin: 0;
+}
 .size{
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   color: white;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
   
 }
 .partners{
   color: black;
   margin-top: 100px;
 }
+.partners:hover{
+  text-decoration: none;
+  color:#333;
+}
 .container{
   max-width: 100%;
 }
 .bottone{
   font-size: 1.5rem;
+  margin: 0;
+}
+.bottone a{
+  margin: 0;
 }
 .carousel-inner{
   overflow: hidden;
+}
+.sec-grey{
+  background-image: url(https://thumbs.dreamstime.com/b/sfondo-di-trama-monocromatica-grunge-astratta-foto-scorta-fotografia-stock-228171102.jpg);
+
+}
+.sec-bot{
+  margin-bottom: 30px;
+}
+
+@media(min-width: 769px){
+  .carousel-item img {
+    width:100%; /* Imposta la larghezza dell'immagine al 100% */
+    /* object-fit: contain; Imposta l'altezza dell'immagine al 100% dell'altezza dell'elemento padre */
+    height: 500px;
+   
+    
+  }
+}
+@media (max-width: 768px) {
+  
+
+  .size {
+    font-size: 2rem; /* Riduci la dimensione del testo del titolo su dispositivi mobili */
+    margin: 0;
+  }
+
+  .partners {
+    margin-top: 100px; 
+  }
+  .bottone{
+    font-size: 0.5rem;
+    margin: 0;
+  }
+  .sec_white {
+    margin-top: 0; /* Annulla i margini esterni della sezione */
+  }
+
+  .special_section {
+    padding: 0; /* Annulla il padding interno della sezione */
+  }
+
+  /* Aggiungi queste regole CSS per rimuovere i margini dall'elenco degli elementi */
+  .list-unstyled {
+    margin: 0;
+  }
+
+  /* Aggiungi queste regole CSS per rimuovere i margini dalle ancore all'interno dei bottoni */
+  .bottone a {
+    margin: 0;
+  }
+
+  /* Aggiungi queste regole CSS per rimuovere i margini dai titoli */
+  
+  .carousel-item {
+    width: 100%; /* Imposta la larghezza dell'elemento del carosello al 100% */
+    margin: 0; /* Rimuovi i margini */
+  }
+
+  .carousel-item img {
+    width:100%; /* Imposta la larghezza dell'immagine al 100% */
+    object-fit: contain; /* Imposta l'altezza dell'immagine al 100% dell'altezza dell'elemento padre */
+    height: 300px;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  .title {
+    text-align: center; /* Centra il testo */
+    min-height: 200px; /* Imposta un'altezza minima per il div title */
+    width: 100%; /* Imposta la larghezza al 100% */
+    background-color: #333; /* Imposta il colore di sfondo */
+    margin: 0; /* Rimuovi i margini */
+    padding: 0; /* Rimuovi il padding */
+  }
+  .prova{
+    display: flex;
+    justify-content: space-around;
+  }
+  #carouselExampleFade{
+    padding: 0;
+  }
+
 }
 
 </style>
