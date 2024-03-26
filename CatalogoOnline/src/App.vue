@@ -185,7 +185,7 @@
               <div class=" col-sm-12 col-lg-12 col-xl-4 mt-3">
                 <h4>Contatti</h4>
                   <ul class=" list-unstyled" >
-                    <li>Phone:<a href="tel:3477563069" class="router">{{ contatti[0].fisso }}</a></li>
+                    <li>Phone:<a href="tel:{{ contatti[0].fisso }}" class="router">{{ contatti[0].fisso }}</a></li>
                     <li>Mobile:<a href="tel:{{ contatti[0].mobile }}" class="router">{{ contatti[0].mobile }}</a></li>
                     <li>Email:<a href="mailto:info@spallettarappresentanze.it" class="router">{{ contatti[0].email }}</a></li>
                     <li>Address: <a href="https://www.google.com/maps/search/?api=1&query=Viale della Costituzione 19/M Catania,CT" target="_blank" class="router">{{ contatti[0].indirizzo }}</a></li>
