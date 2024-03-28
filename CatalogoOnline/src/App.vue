@@ -6,7 +6,7 @@
         
         <div class="  container-fluid d-flex ">
           
-          <div class="d-none d-lg-block"><img src="/rygzctcg.png" class="spalletta text-center " alt=""></div>
+          <div class="d-none d-lg-block"><router-link class="router" to="/"><img src="/rygzctcg.png" class="spalletta text-center " alt=""></router-link></div>
           
           <div class="row d-none d-lg-block d-md-none">
 
@@ -84,27 +84,27 @@
           </div>
         </div>
         <div class="container-fluid d-flex">
-          <div class="d-lg-none"><img src="/rygzctcg.png" class="spalletta text-center mx-auto" alt=""></div>
+          <div class="d-lg-none"><router-link class="router" to="/"><img src="/rygzctcg.png" class="spalletta text-center " alt=""></router-link></div>
 
     <div class="row">
         <!-- Pulsante di attivazione del menu per schermi piccoli -->
-        <button class="navbar-toggler d-lg-none btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
-            <span class="navbar-toggler-icon text-light icon"></span>
-        </button>
+        <button class="navbar-toggler d-lg-none btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" style="color: white;">
+    <span class="fas fa-bars text-white"></span>
+</button>
 
-        <div class="offcanvas offcanvas-start bg-dark" :class="{ 'show': isOffcanvasOpen }" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title text-white" id="offcanvasLabel">Menu</h5>
-                <button type="button" class="btn-close text-reset text-white"  @click="toggleOffcanvas" data-bs-dismiss="offcanvas" aria-label="Chiudi"></button>
-            </div>
+<div class="offcanvas offcanvas-start bg-dark" :class="{ 'show': isOffcanvasOpen }" id="offcanvas" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-white" id="offcanvasLabel">Menu</h5>
+        <button type="button" class="btn-close text-reset text-white" data-bs-dismiss="offcanvas" aria-label="Chiudi"></button>
+    </div>
             <div class="offcanvas-body">
                 <ul class="list-unstyled">
                     
                     <li class="m-2 p-2">
-                  <router-link class="router" to="/" @click.native="handleLinkClick" >Home</router-link>
+                  <router-link class="router" to="/" @click.native="closeOffcanvas" >Home</router-link>
                 </li>
                 <li class="m-2 p-2">
-                  <router-link class="router" to="/partner" @click.native="handleLinkClick" >Partners</router-link>
+                  <router-link class="router" to="/partner" @click.native="closeOffcanvas" >Partners</router-link>
                 </li>
                 <li class="dropdown m-2 p-2">
                   <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -175,7 +175,7 @@
     </header>
 
     <main>
-      <router-view></router-view>
+      <router-view ></router-view>
     </main>
 
     <footer class="bg-dark " id="footer">
@@ -185,8 +185,8 @@
               <div class=" col-sm-12 col-lg-12 col-xl-4 mt-3">
                 <h4>Contatti</h4>
                   <ul class=" list-unstyled" >
-                    <li>Phone:<a href="tel:{{ contatti[0].fisso }}" class="router">{{ contatti[0].fisso }}</a></li>
-                    <li>Mobile:<a href="tel:{{ contatti[0].mobile }}" class="router">{{ contatti[0].mobile }}</a></li>
+                    <li>Phone:<a href="tel:095335467" class="router">{{ contatti[0].fisso }}</a></li>
+                    <li>Mobile:<a href="tel: +393408714768" class="router">{{ contatti[0].mobile }}</a></li>
                     <li>Email:<a href="mailto:info@spallettarappresentanze.it" class="router">{{ contatti[0].email }}</a></li>
                     <li>Address: <a href="https://www.google.com/maps/search/?api=1&query=Viale della Costituzione 19/M Catania,CT" target="_blank" class="router">{{ contatti[0].indirizzo }}</a></li>
                   </ul>
@@ -233,6 +233,12 @@ export default {
     }
     
   },
+  watch: {
+    '$route'() {
+      // Chiudi l'offcanvas quando viene rilevato un cambio di route
+      this.closeOffcanvas();
+    }
+  },
   methods: {
     showDropdown() {
       this.isDropdownVisible = true;
@@ -243,15 +249,23 @@ export default {
     toggleOffcanvas() {
       this.isOffcanvasOpen = !this.isOffcanvasOpen;
     },
-    closeOffcanvas() {
-      this.isOffcanvasOpen = false;
-    },
     handleLinkClick() {
-      // Chiudi l'offcanvas quando viene fatto clic su un link del menu
-      this.closeOffcanvas();
-    }
-  
+    // Chiudi l'offcanvas quando viene fatto clic su un link
+    this.closeOffcanvas();
+    console.log('Router link clicked!');
+  },
+    closeOffcanvas() {
+      this.isOffcanvasOpen = false; // Chiude l'offcanvas quando viene chiamato questo metodo
+      this.emitCloseOffcanvasEvent()
+      console.log('Offcanvas closed!');
+    },
+    emitCloseOffcanvasEvent() {
+      this.$emit('close-offcanvas');
+    },
   }
+   
+  
+  
 };
 </script>
 
@@ -317,10 +331,9 @@ header {
   .dropdown-menu a.dropdown-item {
     color: white !important;
 }
-.icon{color: white;}
-.navbar-toggler{
-  color: white;
-}
+.navbar-toggler-icon {
+        color: white !important;
+    }
 hr{
   border-color: white;
   font-size: medium;
@@ -329,19 +342,34 @@ hr{
   height: 100px;
 }
 .offcanvas {
-  visibility: hidden; /* Nasconde l'offcanvas inizialmente */
-  transition: visibility 0s, opacity 0.5s ease-in-out;
+  display: none; /* Nasconde l'offcanvas inizialmente */
+  /* transition: opacity 0.5s ease-in-out; */
   opacity: 0;
 }
 
 .offcanvas.show {
-  visibility: visible; /* Mostra l'offcanvas quando è aperto */
+  display: block; /* Mostra l'offcanvas quando isOffcanvasOpen è true */
   opacity: 1;
 }
 @media (max-width: 768px){
   .spalletta{
     height: 50px;
   }
+  .offcanvas {
+  display: none; /* Nasconde l'offcanvas inizialmente */
+  /* transition: opacity 0.5s ease-in-out; */
+  opacity: 0;
+  max-width: 0;
+  transition: max-width 0.5s ease, opacity 0.5s ease;
+  overflow: hidden;
   
+}
+.offcanvas.show {
+  display: block; /* Mostra l'offcanvas quando isOffcanvasOpen è true */
+  opacity: 1;
+  max-width: 70%;
+}
+
+
 }
 </style>

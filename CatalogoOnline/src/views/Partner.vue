@@ -3,7 +3,7 @@
     <section class="sec-bot ">
       <div class="container-fluid  special_section">
       
-        <h1 class="size text-center partners ">I nostri partners</h1>
+        <h1 class=" text-center  fontTitle ">I nostri partners</h1>
              <ul class="list-unstyled  d-flex align-items-center justify-content-center">
               <li class="p-2 bottone">
                 <strong><a class="partners" href="#tagliafuoco"> Chiusure Tagliafuoco</a></strong>
@@ -56,7 +56,7 @@
             </a>
             <div class="card-body">
               
-              <p class="card-text"><strong>{{ tagliafuoco.descrizione }}</strong></p>
+              <p class="card-text text-dark"><strong>{{ tagliafuoco.descrizione }}</strong></p>
               
               <a :href="tagliafuoco.link" target="_blank" class="btn btn-dark p-2">Vai al sito</a>
             </div>
@@ -91,7 +91,7 @@
           </a>
           <div class="card-body">
             
-            <p class="card-text"><strong>{{ porta.descrizione }}</strong></p>
+            <p class="card-text text-dark"><strong>{{ porta.descrizione }}</strong></p>
             
             <a :href="porta.link" target="_blank" class="btn btn-dark p-2">Vai al sito</a>
           </div>
@@ -124,7 +124,7 @@
                   <img :src="infisso.image" alt="infissi" class="card-img-top" />
                 </a>
                 <div class="card-body ">
-                  <p class="card-text "><strong>{{ infisso.descrizione }}</strong></p>
+                  <p class="card-text text-dark"><strong>{{ infisso.descrizione }}</strong></p>
                   <a :href="infisso.link" target="_blank" class="btn btn-dark p-2">Vai al sito</a>
 
                 </div>
@@ -142,7 +142,7 @@
                   <img :src="azienda.image" alt="infissi" class="card-img-top" />
               </a>
               <div class="card-body ">
-                  <p class="card-text "><strong>{{ azienda.descrizione }}</strong></p>
+                  <p class="text-dark"><strong>{{ azienda.descrizione }}</strong></p>
                   <a :href="azienda.link" target="_blank" class="btn btn-dark p-2">Vai al sito</a>
 
               </div>
@@ -476,7 +476,15 @@ methods: {
 }
 .partners{
   color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   margin-top: 100px;
+
+}
+.fontTitle{
+  font-size: 3.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: 100px;
+
 }
 .partners:hover{
   text-decoration: none;
@@ -519,9 +527,15 @@ methods: {
     font-size: 2rem; /* Riduci la dimensione del testo del titolo su dispositivi mobili */
     margin: 0;
   }
+  .fontTitle{
+    font-size: 2rem;
+    margin-top: 50px;
+  }
 
-  .partners {
-    margin-top: 100px; 
+  .partners  {
+    margin-top: 50px; 
+    font-size: 0.6rem;
+    
   }
   .bottone{
     font-size: 0.5rem;

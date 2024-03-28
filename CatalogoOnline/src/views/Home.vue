@@ -19,10 +19,10 @@
     <section class="sec_white">
       <div class="container-fluid">
           <div class="row  ">
-            <div class=" col-sm-12 col-lg-6 welcome text-dark d-flex align-items-center justify-content-center mt-3">
+            <div class=" col-sm-12 col-lg-6 description  d-flex align-items-center justify-content-center mt-3">
               <h1>CHI SIAMO</h1>
             </div>
-              <div class=" col-sm-12  col-lg-6 mt-4 text-dark descrizione">
+              <div class=" col-sm-12  col-lg-6 mt-4  descrizione description">
                <strong> Spalletta rappresentanze offre consulenza tecnico commerciale  nel settore  chiusure tagliafuoco, infissi interni ed esterni, chiusure residenziale ed industriali dal 1999. <br> Grazie all'esperienza acquisita, l'agenzia è in grado di assistervi nella scelta di prodotti ideali per le vostre esigenze, garantendo la massima qualità in ogni prodotto che offriamo.</strong> 
 
               </div>
@@ -90,9 +90,8 @@ export default {
   font-family: 'Times New Roman', Times, serif;
 }
 .description{
-  font-size: 1.5rem;
-  color: black;
-  font-family:'Times New Roman', Times, serif
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* font-family:monospace; */
 }
 .sec{
   background-image: url(https://thumbs.dreamstime.com/b/sfondo-di-trama-monocromatica-grunge-astratta-foto-scorta-fotografia-stock-228171102.jpg);
