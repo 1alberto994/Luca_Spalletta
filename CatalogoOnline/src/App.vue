@@ -70,6 +70,7 @@
                     <li><a class="dropdown-item bg-dark" href="https://zanzar.it/">Zanzar Sistem</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://croci.com/">Croci</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://suncover.com/">Suncover</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.palagina.eu">Palagina</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://suncover.com/frangisole-2/">Shenker Storen</a></li>
                     
                   </ul>
@@ -88,14 +89,14 @@
 
     <div class="row">
         <!-- Pulsante di attivazione del menu per schermi piccoli -->
-        <button class="navbar-toggler d-lg-none btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" style="color: white;">
+        <button class="navbar-toggler d-lg-none btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"  @click="toggleOffcanvas" style="color: white;">
     <span class="fas fa-bars text-white"></span>
 </button>
 
-<div class="offcanvas offcanvas-start bg-dark" :class="{ 'show': isOffcanvasOpen }" id="offcanvas" aria-labelledby="offcanvasLabel">
+<div class="offcanvas offcanvas-start bg-dark" :class="{ 'show': isOffcanvasOpen }" id="offcanvas" aria-labelledby="offcanvasLabel" v-if="isOffcanvasOpen">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title text-white" id="offcanvasLabel">Menu</h5>
-        <button type="button" class="btn-close text-reset text-white" data-bs-dismiss="offcanvas" aria-label="Chiudi"></button>
+        
     </div>
             <div class="offcanvas-body">
                 <ul class="list-unstyled">
@@ -158,7 +159,8 @@
                     <li><a class="dropdown-item bg-dark" href="https://zanzar.it/">Zanzar System</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://croci.com/">Croci</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://suncover.com/">Suncover</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://suncover.com/frangisole-2/">Shenker Storen(frangisole)</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://www.palagina.eu">Palagina</a></li>
+                    <li><a class="dropdown-item bg-dark" href="https://suncover.com/frangisole-2/">Shenker Storen</a></li>
                     
                   </ul>
                 </li>
@@ -254,11 +256,13 @@ export default {
     this.closeOffcanvas();
     console.log('Router link clicked!');
   },
-    closeOffcanvas() {
-      this.isOffcanvasOpen = false; // Chiude l'offcanvas quando viene chiamato questo metodo
-      this.emitCloseOffcanvasEvent()
-      console.log('Offcanvas closed!');
-    },
+  closeOffcanvas() {
+  // Ritarda la chiusura dell'offcanvas per 100 millisecondi
+  setTimeout(() => {
+    this.isOffcanvasOpen = false;
+  }, 100);
+},
+
     emitCloseOffcanvasEvent() {
       this.$emit('close-offcanvas');
     },
@@ -341,34 +345,13 @@ hr{
 .spalletta{
   height: 100px;
 }
-.offcanvas {
-  display: none; /* Nasconde l'offcanvas inizialmente */
-  /* transition: opacity 0.5s ease-in-out; */
-  opacity: 0;
-}
 
-.offcanvas.show {
-  display: block; /* Mostra l'offcanvas quando isOffcanvasOpen è true */
-  opacity: 1;
-}
+
 @media (max-width: 768px){
   .spalletta{
     height: 50px;
   }
-  .offcanvas {
-  display: none; /* Nasconde l'offcanvas inizialmente */
-  /* transition: opacity 0.5s ease-in-out; */
-  opacity: 0;
-  max-width: 0;
-  transition: max-width 0.5s ease, opacity 0.5s ease;
-  overflow: hidden;
-  
-}
-.offcanvas.show {
-  display: block; /* Mostra l'offcanvas quando isOffcanvasOpen è true */
-  opacity: 1;
-  max-width: 70%;
-}
+ 
 
 
 }
