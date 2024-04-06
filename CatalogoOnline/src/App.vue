@@ -23,7 +23,7 @@
                 </li>
                 <li>
   <!-- Bottone per aprire/chiudere il dropdown -->
-  <button @click="toggleDropdown" class="apertura" >Toggle Dropdown<i class="fas fa-chevron-down arrow-icon" :class="{ 'rotate': isOpen }"></i></button>
+  <button @click="toggleDropdown" class="apertura" >Chiusure Tagliafuoco<i class="fas fa-chevron-down arrow-icon" :class="{ 'rotate': isOpen }"></i></button>
 
   <!-- Dropdown -->
   <ul v-if="isOpen" class="change" @click="selectOption">
@@ -34,51 +34,41 @@
 
   </ul>
 </li>
-                <!-- <li class="dropdown" @click="showDropdown">
-  <button class="btn navList dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Chiusure Tagliafuoco
+  
+<li>
+  <button class="apertura" @click="togglePorteDropdown">
+    Porte<i class="fas fa-chevron-down arrow-icon" :class="{ 'rotate': isPorteOpen }"></i>
   </button>
-  <ul class="dropdown-menu dropdown-menu-dark" :class="{ 'show': isDropdownVisible }">
-    <li><a class="dropdown-item active bg-dark"  href="https://www.ninz.it/it/home">Ninz</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://www.meverin.com/">Meverin</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://glassfire.it/">Glassfire</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://blackfireitaly.it/">Blackfire</a></li>
-  </ul>
-</li> -->
-<li class="dropdown" @click="togglePorteDropdown">
-  <button class="btn navList dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Porte
-  </button>
-  <ul class="dropdown-menu dropdown-menu-dark" :class="{ 'show': isPorteDropdownVisible }">
-    <li><a class="dropdown-item bg-dark" href="https://www.ferwall.it/">Ferwall</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://www.porteimic.com/">Porte Imic</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://www.manuellodesign.it/it/">Manuello</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://www.barausse.com/it/">Barausse</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://www.chiusure-nec.it/">Nec-Chiusure</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://www.fgporte.it/">FGporte</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://www.arcoindustrie.it/">Arco industrie</a></li>
+  <ul v-if="isPorteOpen" class="change" @click="selectPorteOption">
+    <li class="item"><a class="link" href="https://www.ferwall.it/">Ferwall</a></li>
+    <li class="item"><a class="link" href="https://www.porteimic.com/">Porte Imic</a></li>
+    <li class="item"><a class="link" href="https://www.manuellodesign.it/it/">Manuello</a></li>
+    <li class="item"><a class="link" href="https://www.barausse.com/it/">Barausse</a></li>
+    <li class="item"><a class="link" href="https://www.chiusure-nec.it/">Nec-Chiusure</a></li>
+    <li class="item"><a class="link" href="https://www.fgporte.it/">FGporte</a></li>
+    <li class="item"><a class="link" href="https://www.arcoindustrie.it/">Arco industrie</a></li>
   </ul>
 </li>
-<li class="dropdown" @click="toggleInfissiDropdown">
-  <button class="btn navList dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Infissi
+<li >
+  <button class="apertura" @click="toggleInfissiDropdown">
+    Infissi<i class="fas fa-chevron-down arrow-icon" :class="{ 'rotate': isInfissiOpen }"></i>
   </button>
-  <ul class="dropdown-menu bg-dark" :class="{ 'show': isInfissiDropdownVisible }">
-                    <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/30/cosmet">Cosmet</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/31/fideal">Fideal</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/32/alwo">Alwo</a></li>
+  <ul v-if="isInfissiOpen" class="change" @click="selectInfissiOption">
+                    <li class="item"><a class="link" href="https://www.cosmetgroup.it/brand/30/cosmet">Cosmet</a></li>
+                    <li class="item"><a class="link" href="https://www.cosmetgroup.it/brand/31/fideal">Fideal</a></li>
+                    <li class="item"><a class="link" href="https://www.cosmetgroup.it/brand/32/alwo">Alwo</a></li>
                   </ul>
 </li>
-<li class="dropdown" @click="toggleZanzarieraDropdown">
-  <button class="btn navList dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Zanzariere/Oscuranti
+<li >
+  <button class="apertura" @click="toggleZanzarieraDropdown">
+    Zanzariere/Oscuranti<i class="fas fa-chevron-down arrow-icon" :class="{ 'rotate': isZanzarieraOpen }"></i>
   </button>
-  <ul class="dropdown-menu bg-dark" :class="{ 'show': isZanzarieraDropdownVisible }">
-                    <li><a class="dropdown-item bg-dark" href="https://zanzar.it/">Zanzar Sistem</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://croci.com/">Croci</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://suncover.com/">Suncover</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.palagina.eu">Palagina</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://suncover.com/frangisole-2/">Shenker Storen</a></li>
+  <ul v-if="isZanzarieraOpen" class="change" @click="selectZanzarieraOption">
+                    <li class="item"><a class="link" href="https://zanzar.it/">Zanzar Sistem</a></li>
+                    <li class="item"><a class="link" href="https://croci.com/">Croci</a></li>
+                    <li class="item"><a class="link" href="https://suncover.com/">Suncover</a></li>
+                    <li class="item"><a class="link" href="https://www.palagina.eu">Palagina</a></li>
+                    <li class="item"><a class="link" href="https://suncover.com/frangisole-2/">Shenker Storen</a></li>
                     
                   </ul>
                 </li>
@@ -118,54 +108,57 @@
                 <li class="m-2 p-2">
                   <router-link class="router" to="/partner" @click.native="closeOffcanvas" >Partners</router-link>
                 </li>
-                <li class="dropdown" @click="showDropdown">
-  <button class="btn navList dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Chiusure Tagliafuoco
-  </button>
-  <ul class="dropdown-menu dropdown-menu-dark" :class="{ 'show': isDropdownVisible }">
-    <li><a class="dropdown-item active bg-dark"  href="https://www.ninz.it/it/home">Ninz</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://www.meverin.com/">Meverin</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://glassfire.it/">Glassfire</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://blackfireitaly.it/">Blackfire</a></li>
+                <li>
+  <!-- Bottone per aprire/chiudere il dropdown -->
+  <button @click="toggleDropdown" class="apertura" >Chiusure Tagliafuoco<i class="fas fa-chevron-down arrow-icon" :class="{ 'rotate': isOpen }"></i></button>
+
+  <!-- Dropdown -->
+  <ul v-if="isOpen" class="change" @click="selectOption">
+    <li class="item"><a class="link" href="https://www.ninz.it/it/home">Ninz</a></li>
+    <li class="item"><a class="link" href="https://www.meverin.com/">Meverin</a></li>
+    <li class="item"><a class="link" href="https://glassfire.it/">Glassfire</a></li>
+    <li class="item"><a class="link" href="https://blackfireitaly.it/">Blackfire</a></li>
+
   </ul>
 </li>
-<li class="dropdown" @click="togglePorteDropdown">
-  <button class="btn navList dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Porte
+<li>
+  <button class="apertura" @click="togglePorteDropdown">
+    Porte<i class="fas fa-chevron-down arrow-icon" :class="{ 'rotate': isPorteOpen }"></i>
   </button>
-  <ul class="dropdown-menu dropdown-menu-dark" :class="{ 'show': isPorteDropdownVisible }">
-    <li><a class="dropdown-item bg-dark" href="https://www.ferwall.it/">Ferwall</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://www.porteimic.com/">Porte Imic</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://www.manuellodesign.it/it/">Manuello</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://www.barausse.com/it/">Barausse</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://www.chiusure-nec.it/">Nec-Chiusure</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://www.fgporte.it/">FGporte</a></li>
-    <li><a class="dropdown-item bg-dark" href="https://www.arcoindustrie.it/">Arco industrie</a></li>
+  <ul v-if="isPorteOpen" class="change" @click="selectPorteOption">
+    <li class="item"><a class="link" href="https://www.ferwall.it/">Ferwall</a></li>
+    <li class="item"><a class="link" href="https://www.porteimic.com/">Porte Imic</a></li>
+    <li class="item"><a class="link" href="https://www.manuellodesign.it/it/">Manuello</a></li>
+    <li class="item"><a class="link" href="https://www.barausse.com/it/">Barausse</a></li>
+    <li class="item"><a class="link" href="https://www.chiusure-nec.it/">Nec-Chiusure</a></li>
+    <li class="item"><a class="link" href="https://www.fgporte.it/">FGporte</a></li>
+    <li class="item"><a class="link" href="https://www.arcoindustrie.it/">Arco industrie</a></li>
   </ul>
 </li>
-<li class="dropdown" @click="toggleInfissiDropdown">
-  <button class="btn navList dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Infissi
+<li >
+  <button class="apertura" @click="toggleInfissiDropdown">
+    Infissi<i class="fas fa-chevron-down arrow-icon" :class="{ 'rotate': isInfissiOpen }"></i>
   </button>
-  <ul class="dropdown-menu bg-dark" :class="{ 'show': isInfissiDropdownVisible }">
-                    <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/30/cosmet">Cosmet</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/31/fideal">Fideal</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/32/alwo">Alwo</a></li>
+  <ul v-if="isInfissiOpen" class="change" @click="selectInfissiOption">
+                    <li class="item"><a class="link" href="https://www.cosmetgroup.it/brand/30/cosmet">Cosmet</a></li>
+                    <li class="item"><a class="link" href="https://www.cosmetgroup.it/brand/31/fideal">Fideal</a></li>
+                    <li class="item"><a class="link" href="https://www.cosmetgroup.it/brand/32/alwo">Alwo</a></li>
                   </ul>
 </li>
-<li class="dropdown" @click="toggleZanzarieraDropdown">
-  <button class="btn navList dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Zanzariere/Oscuranti
+<li >
+  <button class="apertura" @click="toggleZanzarieraDropdown">
+    Zanzariere/Oscuranti<i class="fas fa-chevron-down arrow-icon" :class="{ 'rotate': isZanzarieraOpen }"></i>
   </button>
-  <ul class="dropdown-menu bg-dark" :class="{ 'show': isZanzarieraDropdownVisible }">
-                    <li><a class="dropdown-item bg-dark" href="https://zanzar.it/">Zanzar Sistem</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://croci.com/">Croci</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://suncover.com/">Suncover</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.palagina.eu">Palagina</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://suncover.com/frangisole-2/">Shenker Storen</a></li>
+  <ul v-if="isZanzarieraOpen" class="change" @click="selectZanzarieraOption">
+                    <li class="item"><a class="link" href="https://zanzar.it/">Zanzar Sistem</a></li>
+                    <li class="item"><a class="link" href="https://croci.com/">Croci</a></li>
+                    <li class="item"><a class="link" href="https://suncover.com/">Suncover</a></li>
+                    <li class="item"><a class="link" href="https://www.palagina.eu">Palagina</a></li>
+                    <li class="item"><a class="link" href="https://suncover.com/frangisole-2/">Shenker Storen</a></li>
                     
                   </ul>
                 </li>
+               
                 <li class="m-2 p-2">
                   <a class="router " href="#footer" @click="scrollToFooter($event)">Contatti</a>
                   
@@ -238,14 +231,13 @@ export default {
         }
       ],
       orari:['Lun. 9:00-18:00','Mar. 9:00-18:00','Mer. 9:00-18:00','Gio. 9:00-18:00','Ven. 9:00-18:00','Sab.   Chiuso','Dom.   Chiuso'],
-      isDropdownVisible: false,
-      isPorteDropdownVisible: false ,
-      isInfissiDropdownVisible: false,
-      isZanzarieraDropdownVisible: false,
       isOffcanvasOpen: false,
       loadingOffcanvas: false,
       isLoadingToFooter: false,
       isOpen: false, 
+      isPorteOpen:false,
+      isInfissiOpen:false,
+      isZanzarieraOpen:false,
       loading: false
       
     }
@@ -279,6 +271,42 @@ export default {
       console.log('Opzione selezionata:', selectedOption);
       // Chiudi il dropdown
       this.isOpen = false;
+    },
+    togglePorteDropdown() {
+      // Inverti lo stato del dropdown
+      this.isPorteOpen = !this.isPorteOpen;
+    },
+    selectPorteOption(event) {
+      // Ottieni il testo dell'opzione selezionata
+      const selectedPorteOption = event.target.innerText;
+      // Esegui le azioni necessarie in base all'opzione selezionata
+      console.log('Opzione selezionata:', selectedPorteOption);
+      // Chiudi il dropdown
+      this.isPorteOpen = false;
+    },
+    toggleInfissiDropdown() {
+      // Inverti lo stato del dropdown
+      this.isInfissiOpen = !this.isInfissiOpen;
+    },
+    selectInfissiOption(event) {
+      // Ottieni il testo dell'opzione selezionata
+      const selectedInfissiOption = event.target.innerText;
+      // Esegui le azioni necessarie in base all'opzione selezionata
+      console.log('Opzione selezionata:', selectedInfissiOption);
+      // Chiudi il dropdown
+      this.isInfissiOpen = false;
+    },
+    toggleZanzarieraDropdown() {
+      // Inverti lo stato del dropdown
+      this.isZanzarieraOpen = !this.isZanzarieraOpen;
+    },
+    selectZanzarieraOption(event) {
+      // Ottieni il testo dell'opzione selezionata
+      const selectedZanzarieraOption = event.target.innerText;
+      // Esegui le azioni necessarie in base all'opzione selezionata
+      console.log('Opzione selezionata:', selectedZanzarieraOption);
+      // Chiudi il dropdown
+      this.isZanzarieraOpen = false;
     },
    
     scrollToTop() {
@@ -317,33 +345,6 @@ scrollToFooter(event) {
     this.scrollToTop();
     next();
   },
-    showDropdown() {
-      this.isDropdownVisible = true;
-      this.loading=false;
-    },
-    hideDropdown() {
-      this.isDropdownVisible = false;
-    },
-    togglePorteDropdown() {
-      this.isPorteDropdownVisible = !this.isPorteDropdownVisible; // Metodo per invertire lo stato di visibilità del dropdown delle porte
-      
-    },
-    toggleInfissiDropdown() {
-      this.isInfissiDropdownVisible = !this.isInfissiDropdownVisible; // Metodo per invertire lo stato di visibilità del dropdown delle porte
-      
-    },
-    toggleZanzarieraDropdown() {
-      this.isZanzarieraDropdownVisible = !this.isZanzarieraDropdownVisible; // Metodo per invertire lo stato di visibilità del dropdown delle porte
-      
-    },
-    closeDropdowns(event) {
-      // Chiude tutti i dropdown aperti se il clic avviene al di fuori dei dropdown
-      if (!event.target.closest('.dropdown')) {
-        this.isDropdownVisible = false;
-        this.isPorteDropdownVisible = false;
-        this.isInfissiDropdownVisible = false;
-        this.isZanzarieraDropdownVisible = false;
-      }},
     toggleOffcanvas() {
       this.isOffcanvasOpen = !this.isOffcanvasOpen;
     },

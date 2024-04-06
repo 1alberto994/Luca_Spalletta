@@ -193,7 +193,7 @@
   
   export default {
     name: 'Partner',
-    // name: 'CarouselExample',
+    name: 'CarouselExample',
     data(){
       return{
         tagliafuochi:[
