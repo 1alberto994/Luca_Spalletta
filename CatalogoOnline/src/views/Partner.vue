@@ -1,31 +1,29 @@
 
 <template>
-    <section class="sec-bot ">
+    <section class="sec-bot " id="pippo">
       <div class="container-fluid  special_section">
       
         <h1 class=" text-center  fontTitle ">I nostri partners</h1>
-             <ul class="list-unstyled  d-flex align-items-center justify-content-center">
-              <li class="p-2 bottone">
-                <strong><a class="partners" href="#tagliafuoco"> Chiusure Tagliafuoco</a></strong>
-                  
-              </li>
-              <li class="p-2 bottone">
-                <strong><a class="partners" href="#porte">Porte</a></strong>
-              </li>
-              <li class="p-2 bottone">
-                <strong><a class="partners" href="#infissi">Infissi</a></strong>
-              </li>
-              <li class="p-2 bottone">
-                <strong><a class="partners" href="#Oscuranti">Zanzariere e oscuranti</a></strong>
-              </li>
-             </ul>                     
+      </div>
+      <div class="text-center">
         
+    <strong><button class="linked" href="#tagliafuoco" @click="scrollToChiusure"> Chiusure Tagliafuoco</button></strong>
+  
+  
+  <strong><button class="linked" href="#porte" @click="scrollToPorte">Porte</button></strong>
+
+
+  <strong><button class="linked" href="#infissi" @click="scrollToInfissi">Infissi</button></strong>
+
+
+  <strong><button class="linked" href="#Oscuranti" @click="scrollToOscuranti">Zanzariere e oscuranti</button></strong>
       </div>
     </section>
-    <section class="sec-grey">
+    
+    <section class="sec-grey" id="tagliafuoco">
         
-      <div class="container-fluid" id="tagliafuoco">
-    <div class="row prova p-2 ">
+      <div class="container-fluid">
+    <div class="row prova ">
         <div  class="  col-lg-6 d-flex align-items-center justify-content-center title  ">
             <h1 class="size ">Chiusure tagliafuoco</h1>
         </div>
@@ -68,7 +66,7 @@
      
     <section class="sec_white" id="porte">
       <div class="container-fluid">
-    <div class="row p-2">
+    <div class="row  ">
         <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12" data-bs-ride="carousel" >
             
                 <div v-for="(item, index) in carouselItem" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }" >
@@ -100,10 +98,10 @@
     </div>
   </div>
     </section>
-    <section  class="sec-grey"> 
+    <section  class="sec-grey " id="infissi"> 
       <div class="container-fluid ">
         <div class="row p-2 ">
-            <div id="infissi" class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center title">
+            <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center title">
                   <h1 class="size ">Infissi</h1>
             </div>
             <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12" data-bs-ride="carousel">
@@ -195,8 +193,7 @@
   
   export default {
     name: 'Partner',
-    name: 'CarouselExample',
-    
+    // name: 'CarouselExample',
     data(){
       return{
         tagliafuochi:[
@@ -313,16 +310,16 @@
       ],
       carouselIte: [
         {
-          image:'https://www.cosmetgroup.it/upload/sitogalleryenergy11000x1000-465-500x500.jpg',
+          image:'/sitohomelucemetalslim1000x600-318-1000x600.jpg',
         },
         {
-          image: 'https://www.cosmetgroup.it/upload/naturarev-265-500x500.jpg',
+          image: '/sitohomenatura1000x600-402-1000x600.jpg',
         },
         {
-          image: 'https://www.cosmetgroup.it/upload/sitoelencovistametalesterno460x750-650-500x500.jpg',
+          image: '/sitohomeprestigio1000x600-236-1000x600.jpg',
         },
         {
-          image: 'https://www.cosmetgroup.it/upload/sitoheaderenergy11920x1080-393-820x820.jpg',
+          image: '/sitohomevistainterno11000x600-220-1000x600.jpg',
         },
       ],
       zanzariere:[
@@ -378,6 +375,18 @@ methods: {
   nextSlide() {
     // Incrementa l'indice della slide corrente
     this.currentSlide = (this.currentSlide + 1) % this.carouselItems.length;
+  },
+  scrollToChiusure() {
+    document.getElementById('tagliafuoco').scrollIntoView({ behavior: 'smooth' });
+  },
+  scrollToPorte() {
+    document.getElementById('porte').scrollIntoView({ behavior: 'smooth' });
+  },
+  scrollToInfissi() {
+    document.getElementById('infissi').scrollIntoView({ behavior: 'smooth' });
+  },
+  scrollToOscuranti() {
+    document.getElementById('Oscuranti').scrollIntoView({ behavior: 'smooth' });
   },
 },
 };
@@ -453,13 +462,13 @@ methods: {
   height: auto;
 }
 .sec_white{
-    background-image: url(https://i.pinimg.com/736x/a8/4b/00/a84b00aed02b505734b4326ac9a9d465.jpg);
+    background-image: url(https://static.vecteezy.com/ti/vettori-gratis/p3/2056905-elegante-sfondo-bianco-concetto-vettoriale.jpg);
     width: 100%;
     margin: 0;
     
 }
 .title{
-    min-height: 400px;
+    min-height: 300px;
     width: 100%;
     background-color:#333;
     
@@ -474,10 +483,13 @@ methods: {
   margin: 0;
   
 }
-.partners{
+.linked{
   color: black;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  margin-top: 100px;
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+  font-size: 1.5rem;
 
 }
 .fontTitle{
@@ -510,7 +522,12 @@ methods: {
 .sec-bot{
   margin-bottom: 30px;
 }
-
+#tagliafuoco,
+#porte,
+#infissi,
+#Oscuranti {
+  padding-top: 75px; /* Aggiungi uno spazio superiore di 100px */
+}
 @media(min-width: 769px){
   .carousel-item img {
     width:100%; /* Imposta la larghezza dell'immagine al 100% */
@@ -521,7 +538,12 @@ methods: {
   }
 }
 @media (max-width: 768px) {
-  
+  #tagliafuoco,
+#porte,
+#infissi,
+#Oscuranti {
+  padding-top: 0px; /* Aggiungi uno spazio superiore di 100px */
+}
 
   .size {
     font-size: 2rem; /* Riduci la dimensione del testo del titolo su dispositivi mobili */
@@ -532,9 +554,11 @@ methods: {
     margin-top: 50px;
   }
 
-  .partners  {
-    margin-top: 50px; 
-    font-size: 0.6rem;
+  .linked {
+    /* margin-top: 50px;  */
+    font-size: 0.5rem;
+    border: none;
+    background-color: transparent;
     
   }
   .bottone{
@@ -592,6 +616,7 @@ methods: {
   }
 
 }
+
 
 </style>
   

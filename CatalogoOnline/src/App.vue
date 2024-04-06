@@ -1,72 +1,79 @@
 <!-- Aggiungi questo al tuo file src/App.vue -->
 <template>
   <div id="app">
-    <header>
-      <nav class="navbar navbar-light bg-dark">
+    <header id="header">
+      <nav class="navbar navbar-light ">
         
         <div class="  container-fluid d-flex ">
           
-          <div class="d-none d-lg-block"><router-link class="router" to="/"><img src="/rygzctcg.png" class="spalletta text-center " alt=""></router-link></div>
+          <div class="d-none d-lg-block"><router-link class="router" to="/"><img src="/rygzctcg.png" class="spalletta text-center " alt="" @click="scrollToTop"></router-link></div>
+          <div class="d-none d-lg-block">
+            <a href="" id="header">portami su </a>
+          </div>
           
           <div class="row d-none d-lg-block d-md-none">
 
             <div class="  align-items-center justify-content-between text-center">
               <ul class="list-unstyled  d-flex ">
                 <li class="d-flex justify-content-between p-2 font">
-                  <router-link class="router" to="/">Home</router-link>
+                  <router-link class="router" to="/" @click="scrollToTop">Home</router-link>
                 </li>
                 <li class="d-flex justify-content-between p-2 font">
-                  <router-link class="router" to="/partner">Partners</router-link>
+                  <router-link class="router" to="/partner" @click="scrollToTop">Partners</router-link>
                 </li>
-                <li class="dropdown d-flex justify-content-between p-2 font">
-                  <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Chiusure Tagliafuoco
-                  </a>
-                  
-                  <ul class="dropdown-menu bg-dark">
-                    <li><a class="dropdown-item bg-dark" href="https://www.ninz.it/it/home">Ninz</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.meverin.com/">Meverin</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://glassfire.it/">Glassfire</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://blackfireitaly.it/">Blackfire</a></li>
-                    
-                  </ul>
-                </li>
-                <li class="dropdown d-flex justify-content-between p-2 font">
-                  <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Porte
-                  </a>
-                  
-                  <ul class="dropdown-menu bg-dark">
-                    <li><a class="dropdown-item bg-dark" href="https://www.porteimic.com/">Porte Imic</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.manuellodesign.it/it/">Manuello</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.barausse.com/it/">Barausse</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.fgporte.it/">FG Porte</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.ferwall.it/">Ferwall</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.chiusure-nec.it/">Nec-Chiusure</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.arcoindustrie.it/">Arco industrie</a></li>
+                <li>
+  <!-- Bottone per aprire/chiudere il dropdown -->
+  <button @click="toggleDropdown" class="apertura" >Toggle Dropdown<i class="fas fa-chevron-down arrow-icon" :class="{ 'rotate': isOpen }"></i></button>
 
+  <!-- Dropdown -->
+  <ul v-if="isOpen" class="change" @click="selectOption">
+    <li class="item"><a class="link" href="https://www.ninz.it/it/home">Ninz</a></li>
+    <li class="item"><a class="link" href="https://www.meverin.com/">Meverin</a></li>
+    <li class="item"><a class="link" href="https://glassfire.it/">Glassfire</a></li>
+    <li class="item"><a class="link" href="https://blackfireitaly.it/">Blackfire</a></li>
 
-
-                    
-                  </ul>
-                </li>
-                <li class="dropdown d-flex justify-content-between p-2 font">
-                  <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Infissi
-                  </a>
-                  
-                  <ul class="dropdown-menu bg-dark">
+  </ul>
+</li>
+                <!-- <li class="dropdown" @click="showDropdown">
+  <button class="btn navList dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Chiusure Tagliafuoco
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark" :class="{ 'show': isDropdownVisible }">
+    <li><a class="dropdown-item active bg-dark"  href="https://www.ninz.it/it/home">Ninz</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://www.meverin.com/">Meverin</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://glassfire.it/">Glassfire</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://blackfireitaly.it/">Blackfire</a></li>
+  </ul>
+</li> -->
+<li class="dropdown" @click="togglePorteDropdown">
+  <button class="btn navList dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Porte
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark" :class="{ 'show': isPorteDropdownVisible }">
+    <li><a class="dropdown-item bg-dark" href="https://www.ferwall.it/">Ferwall</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://www.porteimic.com/">Porte Imic</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://www.manuellodesign.it/it/">Manuello</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://www.barausse.com/it/">Barausse</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://www.chiusure-nec.it/">Nec-Chiusure</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://www.fgporte.it/">FGporte</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://www.arcoindustrie.it/">Arco industrie</a></li>
+  </ul>
+</li>
+<li class="dropdown" @click="toggleInfissiDropdown">
+  <button class="btn navList dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Infissi
+  </button>
+  <ul class="dropdown-menu bg-dark" :class="{ 'show': isInfissiDropdownVisible }">
                     <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/30/cosmet">Cosmet</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/31/fideal">Fideal</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/32/alwo">Alwo</a></li>
                   </ul>
-                </li>
-                <li class="dropdown d-flex justify-content-between p-2 font">
-                  <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Zanzariere/Oscuranti
-                  </a>
-                  
-                  <ul class="dropdown-menu bg-dark">
+</li>
+<li class="dropdown" @click="toggleZanzarieraDropdown">
+  <button class="btn navList dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Zanzariere/Oscuranti
+  </button>
+  <ul class="dropdown-menu bg-dark" :class="{ 'show': isZanzarieraDropdownVisible }">
                     <li><a class="dropdown-item bg-dark" href="https://zanzar.it/">Zanzar Sistem</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://croci.com/">Croci</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://suncover.com/">Suncover</a></li>
@@ -75,8 +82,9 @@
                     
                   </ul>
                 </li>
-                <li class="d-flex justify-content-between p-2 font">
-                  <a class="router" href="#footer">Contatti</a>
+               
+                <li class="d-flex justify-content-between navList font">
+                  <button class=" btn navList" href="#" @click="scrollToFooter">Contatti</button>
                 </li>
               </ul>
             </div>
@@ -86,6 +94,9 @@
         </div>
         <div class="container-fluid d-flex">
           <div class="d-lg-none"><router-link class="router" to="/"><img src="/rygzctcg.png" class="spalletta text-center " alt=""></router-link></div>
+          <div class=" d-lg-none">
+            <a href="" id="header">portami su </a>
+          </div>
 
     <div class="row">
         <!-- Pulsante di attivazione del menu per schermi piccoli -->
@@ -93,7 +104,7 @@
     <span class="fas fa-bars text-white"></span>
 </button>
 
-<div class="offcanvas offcanvas-start bg-dark" :class="{ 'show': isOffcanvasOpen }" id="offcanvas" aria-labelledby="offcanvasLabel" v-if="isOffcanvasOpen">
+<div class="offcanvas offcanvas-start " :class="{ 'show': isOffcanvasOpen }" id="offcanvas" aria-labelledby="offcanvasLabel" v-if="isOffcanvasOpen">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title text-white" id="offcanvasLabel">Menu</h5>
         
@@ -107,56 +118,47 @@
                 <li class="m-2 p-2">
                   <router-link class="router" to="/partner" @click.native="closeOffcanvas" >Partners</router-link>
                 </li>
-                <li class="dropdown m-2 p-2">
-                  <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Chiusure Tagliafuoco
-                  </a>
-                  
-                  <ul class="dropdown-menu bg-dark">
-                    <li><a class="dropdown-item router" href="https://www.ninz.it/it/home">Ninz</a></li>
-                    <li><a class="dropdown-item " href="https://www.meverin.com/">Meverin</a></li>
-                    <li><a class="dropdown-item " href="https://glassfire.it/">Glassfire</a></li>
-                    <li><a class="dropdown-item " href="https://blackfireitaly.it/">Blackfire</a></li>
-                    
-                  </ul>
-                </li>
-                <li class="dropdown m-2 p-2">
-                  <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Porte
-                  </a>
-                  
-                  <ul class="dropdown-menu bg-dark">
-                    <li><a class="dropdown-item bg-dark" href="https://www.ferwall.it/">Ferwall</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.porteimic.com/">Porte Imic</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.manuellodesign.it/it/">Manuello</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.barausse.com/it/">Barausse</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.chiusure-nec.it/">Nec-Chiusure</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.fgporte.it/">FGporte</a></li>
-                    <li><a class="dropdown-item bg-dark" href="https://www.arcoindustrie.it/">Arco industrie</a></li>
-
-
-
-                    
-                  </ul>
-                </li>
-                <li class="dropdown m-2 p-2">
-                  <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Infissi
-                  </a>
-                  
-                  <ul class="dropdown-menu bg-dark">
+                <li class="dropdown" @click="showDropdown">
+  <button class="btn navList dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Chiusure Tagliafuoco
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark" :class="{ 'show': isDropdownVisible }">
+    <li><a class="dropdown-item active bg-dark"  href="https://www.ninz.it/it/home">Ninz</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://www.meverin.com/">Meverin</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://glassfire.it/">Glassfire</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://blackfireitaly.it/">Blackfire</a></li>
+  </ul>
+</li>
+<li class="dropdown" @click="togglePorteDropdown">
+  <button class="btn navList dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Porte
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark" :class="{ 'show': isPorteDropdownVisible }">
+    <li><a class="dropdown-item bg-dark" href="https://www.ferwall.it/">Ferwall</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://www.porteimic.com/">Porte Imic</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://www.manuellodesign.it/it/">Manuello</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://www.barausse.com/it/">Barausse</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://www.chiusure-nec.it/">Nec-Chiusure</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://www.fgporte.it/">FGporte</a></li>
+    <li><a class="dropdown-item bg-dark" href="https://www.arcoindustrie.it/">Arco industrie</a></li>
+  </ul>
+</li>
+<li class="dropdown" @click="toggleInfissiDropdown">
+  <button class="btn navList dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Infissi
+  </button>
+  <ul class="dropdown-menu bg-dark" :class="{ 'show': isInfissiDropdownVisible }">
                     <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/30/cosmet">Cosmet</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/31/fideal">Fideal</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://www.cosmetgroup.it/brand/32/alwo">Alwo</a></li>
                   </ul>
-                </li>
-                <li class="dropdown m-2 p-2">
-                  <a class="router dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Zanzariere/Oscuranti
-                  </a>
-                  
-                  <ul class="dropdown-menu bg-dark">
-                    <li><a class="dropdown-item bg-dark" href="https://zanzar.it/">Zanzar System</a></li>
+</li>
+<li class="dropdown" @click="toggleZanzarieraDropdown">
+  <button class="btn navList dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Zanzariere/Oscuranti
+  </button>
+  <ul class="dropdown-menu bg-dark" :class="{ 'show': isZanzarieraDropdownVisible }">
+                    <li><a class="dropdown-item bg-dark" href="https://zanzar.it/">Zanzar Sistem</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://croci.com/">Croci</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://suncover.com/">Suncover</a></li>
                     <li><a class="dropdown-item bg-dark" href="https://www.palagina.eu">Palagina</a></li>
@@ -165,22 +167,29 @@
                   </ul>
                 </li>
                 <li class="m-2 p-2">
-                  <a class="router " href="#footer">Contatti</a>
+                  <a class="router " href="#footer" @click="scrollToFooter($event)">Contatti</a>
+                  
                 </li>
                     
                 </ul>
             </div>
+            <div v-if="loadingOffcanvas" class="caricamento">
+      <img src="/rygzctcg.png" alt="">
+      <div class="spinning"></div>
+    </div>
         </div>
     </div>
 </div>
       </nav>
     </header>
 
-    <main>
-      <router-view ></router-view>
+    <main  >
+      <div v-if="loading" class="caricamento"><img src="/rygzctcg.png" alt=""><br><div class="spinning"></div></div>
+      <router-view v-else ></router-view>
+      
     </main>
 
-    <footer class="bg-dark " id="footer">
+    <footer  id="footer"  >
       <div class="container-fluid footcontact">
             <div class="row text-center d-flex justify-content-around">
              
@@ -201,7 +210,7 @@
                     <li v-for="(orario, index) in orari" :key="index">{{ orario }}</li>
                 </ul> 
               </div>
-              <hr>
+              
               <div class="text-center">
                 <p><i class="fa-regular fa-copyright"></i> Copyright Gianluca&Luca Spalletta Rappresentanze  P.IVA-04533750875</p>
               </div>
@@ -230,10 +239,27 @@ export default {
       ],
       orari:['Lun. 9:00-18:00','Mar. 9:00-18:00','Mer. 9:00-18:00','Gio. 9:00-18:00','Ven. 9:00-18:00','Sab.   Chiuso','Dom.   Chiuso'],
       isDropdownVisible: false,
-      isOffcanvasOpen: false
+      isPorteDropdownVisible: false ,
+      isInfissiDropdownVisible: false,
+      isZanzarieraDropdownVisible: false,
+      isOffcanvasOpen: false,
+      loadingOffcanvas: false,
+      isLoadingToFooter: false,
+      isOpen: false, 
+      loading: false
       
     }
     
+  },
+  created() {
+    // Esegui il caricamento prima di ogni navigazione
+    this.$router.beforeEach((to, from, next) => {
+      this.startLoading(); // Inizia il caricamento
+      setTimeout(() => {
+        next(); // Continua la navigazione dopo un breve ritardo
+        this.finishLoading(); // Completa il caricamento dopo aver navigato alla nuova pagina
+      }, 500);
+    });
   },
   watch: {
     '$route'() {
@@ -242,12 +268,82 @@ export default {
     }
   },
   methods: {
+    toggleDropdown() {
+      // Inverti lo stato del dropdown
+      this.isOpen = !this.isOpen;
+    },
+    selectOption(event) {
+      // Ottieni il testo dell'opzione selezionata
+      const selectedOption = event.target.innerText;
+      // Esegui le azioni necessarie in base all'opzione selezionata
+      console.log('Opzione selezionata:', selectedOption);
+      // Chiudi il dropdown
+      this.isOpen = false;
+    },
+   
+    scrollToTop() {
+    window.scrollTo(0, 0); // Scorri la finestra del browser fino all'inizio della pagina
+    console.log("funziona")
+  },
+  startLoading() {
+  this.loading = true;
+  this.loadingOffcanvas = true; // Aggiungi questa linea per avviare il caricamento nell'offcanvas
+},
+finishLoading() {
+  this.loading = false;
+  this.loadingOffcanvas = false; // Aggiungi questa linea per completare il caricamento nell'offcanvas
+},
+scrollToFooter(event) {
+  event.preventDefault();
+  this.isLoadingToFooter = true; // Avvia l'animazione di caricamento
+        
+        // Ritarda lo scorrimento al footer dopo un breve ritardo per simulare il caricamento
+        setTimeout(() => {
+            const footer = document.getElementById('footer');
+            footer.scrollIntoView({ behavior: 'smooth' });
+            this.closeOffcanvas(); // Chiudi l'offcanvas dopo lo scorrimento al footer
+            this.isLoadingToFooter = false; // Ferma l'animazione di caricamento
+        }, 500);
+},
+
+  delayedNavigation(to) {
+    // Ritarda la navigazione alla nuova pagina di 1 secondo
+    setTimeout(() => {
+      this.$router.push(to); // Naviga alla nuova pagina
+    }, 1000);
+  },
+  beforeRouteUpdate() {
+    // Chiamiamo la funzione scrollToTop prima di passare alla nuova route
+    this.scrollToTop();
+    next();
+  },
     showDropdown() {
       this.isDropdownVisible = true;
+      this.loading=false;
     },
     hideDropdown() {
       this.isDropdownVisible = false;
     },
+    togglePorteDropdown() {
+      this.isPorteDropdownVisible = !this.isPorteDropdownVisible; // Metodo per invertire lo stato di visibilità del dropdown delle porte
+      
+    },
+    toggleInfissiDropdown() {
+      this.isInfissiDropdownVisible = !this.isInfissiDropdownVisible; // Metodo per invertire lo stato di visibilità del dropdown delle porte
+      
+    },
+    toggleZanzarieraDropdown() {
+      this.isZanzarieraDropdownVisible = !this.isZanzarieraDropdownVisible; // Metodo per invertire lo stato di visibilità del dropdown delle porte
+      
+    },
+    closeDropdowns(event) {
+      // Chiude tutti i dropdown aperti se il clic avviene al di fuori dei dropdown
+      if (!event.target.closest('.dropdown')) {
+        this.isDropdownVisible = false;
+        this.isPorteDropdownVisible = false;
+        this.isInfissiDropdownVisible = false;
+        this.isZanzarieraDropdownVisible = false;
+      }},
     toggleOffcanvas() {
       this.isOffcanvasOpen = !this.isOffcanvasOpen;
     },
@@ -260,20 +356,97 @@ export default {
   // Ritarda la chiusura dell'offcanvas per 100 millisecondi
   setTimeout(() => {
     this.isOffcanvasOpen = false;
-  }, 100);
+  }, 500);
 },
 
     emitCloseOffcanvasEvent() {
       this.$emit('close-offcanvas');
     },
+  },
+  
+  mounted() {
+    const header = document.getElementById('header');
+  if (header) {
+    header.addEventListener('click', () => {
+      // Effettua lo scroll verso l'alto della pagina
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
   }
-   
+  },
+  beforeDestroy() {
+    document.removeEventListener('click', this.closeDropdowns); // Rimuove l'event listener quando il componente viene distrutto
+  
+  }
   
   
 };
 </script>
 
 <style>
+.change {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border:none;
+  background-color:rgba(52,58,64,255);
+  position: absolute;
+  color: white;
+}
+
+.item {
+  padding: 10px;
+  cursor: pointer;
+}
+.item:hover{
+  background-color: black;
+}
+.link{
+  text-decoration: none;
+  color: white;
+}
+
+.apertura {
+  padding: 8px 18px;
+  cursor: pointer;
+  background-color: rgba(52,58,64,255);
+  color: white;
+  border: none;
+}
+.arrow-icon {
+  margin-left: 2px;
+}
+
+.rotate {
+  transform: translateY(-50%) rotate(180deg); /* Ruota l'icona quando il dropdown è aperto */
+}
+.spinning {
+  border: 4px solid #f3f3f3; /* Colore del bordo */
+  border-top: 4px solid #3498db; /* Colore del bordo superiore */
+  border-radius: 50%; /* Rende il bordo circolare */
+  width: 40px; /* Larghezza dello spinner */
+  height: 40px; /* Altezza dello spinner */
+  animation: spin 1s linear infinite; /* Animazione di rotazione */
+}
+
+/* Animazione di rotazione dello spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.caricamento {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(52,58,64,255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Stile per il contenitore principale dell'applicazione */
 #app {
   width: 100%;
@@ -299,17 +472,26 @@ html, body {
   color: white;
   text-decoration: none;
 }
+.btn.navList.dropdown-toggle {
+    color: white; /* Imposta il colore del testo su bianco */
+    /* Aggiungi altri stili CSS desiderati per il pulsante qui */
+  }
+  .btn.navList{
+    color: white;
+  }
 main{
   
   /* background-image: url(https://thumbs.dreamstime.com/b/sfondo-di-trama-monocromatica-grunge-astratta-foto-scorta-fotografia-stock-228171102.jpg); */
-  background-image: url(https://i.pinimg.com/736x/a8/4b/00/a84b00aed02b505734b4326ac9a9d465.jpg);
+  background-image: url(https://static.vecteezy.com/ti/vettori-gratis/p3/2056905-elegante-sfondo-bianco-concetto-vettoriale.jpg);
   
   margin-top: 15px; 
 }
  footer{
   min-height: 100px;
+  background-color:rgba(52,58,64,255);
   
 }
+
 
 /* .orari{
   list-style-position: inherit;
@@ -327,6 +509,7 @@ header {
     z-index: 2000;
     top: 0;
     min-height: 50px;
+    background-color: rgba(52,58,64,255);
   }
   /* .font{
     font-size: 1.5rem;
@@ -344,6 +527,13 @@ hr{
 }
 .spalletta{
   height: 100px;
+}
+#header{
+  text-decoration: none;
+  color: rgba(52,58,64,255);
+}
+.offcanvas.offcanvas-start{
+  background-color: rgba(52,58,64,255);
 }
 
 

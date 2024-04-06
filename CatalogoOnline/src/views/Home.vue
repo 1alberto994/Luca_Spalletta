@@ -23,7 +23,7 @@
               <h1>CHI SIAMO</h1>
             </div>
               <div class=" col-sm-12  col-lg-6 mt-4  descrizione description">
-               <strong> Spalletta rappresentanze offre consulenza tecnico commerciale  nel settore  chiusure tagliafuoco, infissi interni ed esterni, chiusure residenziale ed industriali dal 1999. <br> Grazie all'esperienza acquisita, l'agenzia è in grado di assistervi nella scelta di prodotti ideali per le vostre esigenze, garantendo la massima qualità in ogni prodotto che offriamo.</strong> 
+                Spalletta rappresentanze offre consulenza tecnico commerciale  nel settore  chiusure tagliafuoco, infissi interni ed esterni, chiusure residenziale ed industriali dal 1999. <br> Grazie all'esperienza acquisita, l'agenzia è in grado di assistervi nella scelta di prodotti ideali per le vostre esigenze, garantendo la massima qualità in ogni prodotto che offriamo.
 
               </div>
               <div class="text-center mt-5">
