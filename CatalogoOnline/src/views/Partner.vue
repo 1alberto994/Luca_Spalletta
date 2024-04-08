@@ -7,39 +7,32 @@
       </div>
       <div class="text-center">
         
-    <strong><button class="linked" href="#tagliafuoco" @click="scrollToChiusure"> Chiusure Tagliafuoco</button></strong>
+    <strong><a class="linked" href="#tagliafuoco" @click="scrollToChiusure"> Chiusure Tagliafuoco</a></strong>
   
   
-  <strong><button class="linked" href="#porte" @click="scrollToPorte">Porte</button></strong>
+  <strong><a class="linked" href="#porte" @click="scrollToPorte">Porte</a></strong>
 
 
-  <strong><button class="linked" href="#infissi" @click="scrollToInfissi">Infissi</button></strong>
+  <strong><a class="linked" href="#infissi" @click="scrollToInfissi">Infissi</a></strong>
 
 
-  <strong><button class="linked" href="#Oscuranti" @click="scrollToOscuranti">Zanzariere e oscuranti</button></strong>
+  <strong><a class="linked" href="#Oscuranti" @click="scrollToOscuranti">Zanzariere e oscuranti</a></strong>
       </div>
     </section>
     
     <section class="sec-grey" id="tagliafuoco">
         
-      <div class="container-fluid">
-    <div class="row prova ">
+      <div class="">
+    <div class="row  ">
         <div  class="  col-lg-6 d-flex align-items-center justify-content-center title  ">
             <h1 class="size ">Chiusure tagliafuoco</h1>
         </div>
+        
       
-        <div id="carouselExampleFade" class="carousel slide carousel-fade  col-lg-6  " data-bs-ride="carousel">
-            <div class="carousel-inner" >
-                <div v-for="(item, index) in carouselItems" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
-                    
-                    
-                        <img :src="item.image" class="d-block w-100 img-fluid  " alt="..."  >
-                      
-                    
-                </div>
-                
-            </div>
-        </div>
+        
+        <div class="carousel prodotti col-lg-6">
+    <img :src="currentSlide" class="imagine" alt="Slide">
+  </div>
     </div>
 </div>
 
@@ -65,15 +58,12 @@
     </section>
      
     <section class="sec_white" id="porte">
-      <div class="container-fluid">
+      <div class="">
     <div class="row  ">
-        <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12" data-bs-ride="carousel" >
-            
-                <div v-for="(item, index) in carouselItem" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }" >
-                    <img :src="item.image" class="d-block w-100 img-fluid " alt="..."  >
-                </div>
-            
-        </div>
+      <div class="carousel prodotti col-lg-6">
+    <img :src="currentSlide1" class="imagine" alt="Slide">
+  </div>
+    
         <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center title">
             <h1 class="size ">Porte</h1>
         </div>
@@ -99,18 +89,14 @@
   </div>
     </section>
     <section  class="sec-grey " id="infissi"> 
-      <div class="container-fluid ">
-        <div class="row p-2 ">
+      <div class=" ">
+        <div class="row  ">
             <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center title">
                   <h1 class="size ">Infissi</h1>
             </div>
-            <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div v-for="(item, index) in carouselIte" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
-                  <img :src="item.image" class="  d-block w-100 img-fluid " alt="..." >
-                </div>
-              </div>
-            </div>
+            <div class="carousel prodotti col-lg-6">
+    <img :src="currentSlide2" class="imagine" alt="Slide">
+  </div>
         </div>
   </div>
       <div class="container-fluid container-sm ">
@@ -151,15 +137,11 @@
           </div>
     </section>
     <section class="sec_white" id="Oscuranti">
-      <div class="container-fluid ">
-        <div class="row p-2">
-          <div id="carouselExampleFade" class="carousel slide carousel-fade col-lg-6 col-sm-12 " data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div v-for="(item, index) in carouselIt" :key="index" :class="{ 'carousel-item': true, 'active': index === currentSlide }">
-                <img :src="item.image" class="  d-block w-100 img-fluid " alt="..." >
-              </div>
-            </div>
-          </div>
+      <div class=" ">
+        <div class="row ">
+          <div class="carousel prodotti col-lg-6">
+    <img :src="currentSlide3" class="imagine" alt="Slide">
+  </div>
           <div  class="  col-lg-6 col-sm-12 d-flex align-items-center justify-content-center title">
               <h1 class="size ">Zanzariere <br> e Oscuranti</h1>
             </div>
@@ -187,13 +169,14 @@
       </div>
   
     </section>
+    
   </template>
   
   <script>
   
   export default {
     name: 'Partner',
-    name: 'CarouselExample',
+    
     data(){
       return{
         tagliafuochi:[
@@ -218,19 +201,19 @@
           link:'https://blackfireitaly.it/'
         }
       ],
-      carouselItems: [
-      {
-        image: 'https://www.meverin.com/wp-content/uploads/2020/07/portone-girevole-magnum-meverin-ospedale.jpg',
-      },
-      {
-        image: 'https://glassfire.it/wp-content/uploads/2023/04/SEDE-INPS-ROMA-LINEA-ACCIAIO.jpg',
-      },
-      {
-        image: '/BLOCKSHUTTER-EI-120-10-nera (1).jpeg',
-      },
-      {
-        image: '/meverin-porte-pedonali-resistenti-al-fuoco-ce2019-2.png',
-      },
+      slides: [
+      
+         'https://www.meverin.com/wp-content/uploads/2020/07/portone-girevole-magnum-meverin-ospedale.jpg',
+      
+      
+         'https://glassfire.it/wp-content/uploads/2023/04/SEDE-INPS-ROMA-LINEA-ACCIAIO.jpg',
+      
+      
+         '/BLOCKSHUTTER-EI-120-10-nera (1).jpeg',
+      
+      
+         '/meverin-porte-pedonali-resistenti-al-fuoco-ce2019-2.png',
+      
     ],
     porte:[
       {
@@ -271,19 +254,19 @@
           link:'https://www.chiusure-nec.it/'
         }
       ],
-      carouselItem: [
-        {
-          image: '/Porta 6_M.png',
-        },
-        {
-          image: '/Porta 2_M.png',
-        },
-        {
-          image: '/Ambientazione 6.png',
-        },
-        {
-          image: '/AMB_16_FINALE.png',
-        },
+      slides1: [
+        
+           '/Porta 6_M.png',
+        
+        
+           '/Porta 2_M.png',
+        
+        
+           '/Ambientazione 6.png',
+        
+        
+           '/AMB_16_FINALE.png',
+        
       ],
       infissi:[
         {
@@ -308,19 +291,19 @@
           link:'https://www.cosmetgroup.it/brand/32/alwo'
         }
       ],
-      carouselIte: [
-        {
-          image:'/sitohomelucemetalslim1000x600-318-1000x600.jpg',
-        },
-        {
-          image: '/sitohomenatura1000x600-402-1000x600.jpg',
-        },
-        {
-          image: '/sitohomeprestigio1000x600-236-1000x600.jpg',
-        },
-        {
-          image: '/sitohomevistainterno11000x600-220-1000x600.jpg',
-        },
+      slides2: [
+        
+          '/sitohomelucemetalslim1000x600-318-1000x600.jpg',
+        
+        
+           '/sitohomenatura1000x600-402-1000x600.jpg',
+        
+        
+           '/sitohomeprestigio1000x600-236-1000x600.jpg',
+        
+        
+           '/sitohomevistainterno11000x600-220-1000x600.jpg',
+        
       ],
       zanzariere:[
         {
@@ -350,31 +333,85 @@
         }
       ],
       carouselIt: [
-        {
-          image: '/IMG_2715-2-min.jpg',
-        },
-        {
-          image: '/axiolux.jpg',
-        },
-        {
-          image: 'https://croci.com/wp-content/uploads/2020/01/girasole-def-1568x1082.jpg',
-        },
-        {
-          image: 'https://suncover.com/wp-content/uploads/2022/01/home-infinity-1024x1024.jpg',
-        },
+        
+        '/MOTORIZADA-Oasis_2900_Retractable_Insect_Screen_Shade_41.jpg',
+           '/IMG_2715-2-min.jpg',
+         '/axiolux.jpg',
+         'https://croci.com/wp-content/uploads/2020/01/girasole-def-1568x1082.jpg',
+        
       ],
-    currentSlide: 0,
+    currentIndex: 0,
+    currentIndex1:0,
+    currentIndex2:0,
+    currentIndex3:0,
+    intervalId: null,
+    intervalId1: null,
+    intervalId2:null,
+    intervalId3:null,
+
+
       
       }
     },
-    mounted() {
-  // Imposta l'intervallo per cambiare la slide ogni 3 secondi
-  setInterval(this.nextSlide, 3000);
-},
+    
+    computed: {
+    currentSlide() {
+      return this.slides[this.currentIndex];
+    },
+    currentSlide1() {
+      return this.slides1[this.currentIndex1];
+    },
+    currentSlide2() {
+      return this.slides2[this.currentIndex2];
+    },
+    currentSlide3() {
+      return this.carouselIt[this.currentIndex3];
+    },
+  },
+  created() {
+    this.startCarousel();
+    this.startCarousel1();
+    this.startCarousel2();
+    this.startCarousel3();
+
+  },
+  destroyed() {
+    clearInterval(this.intervalId);
+    clearInterval(this.intervalId1);
+    clearInterval(this.intervalId2);
+    clearInterval(this.intervalId3);
+
+
+
+  },
 methods: {
+  startCarousel() {
+      this.intervalId = setInterval(this.nextSlide, 3000);
+    },
+    startCarousel1() {
+      this.intervalId1 = setInterval(this.nextSlide1, 3000);
+    },
+    startCarousel2() {
+      this.intervalId2 = setInterval(this.nextSlide2, 3000);
+    },
+    startCarousel3() {
+      this.intervalId3 = setInterval(this.nextSlide3, 3000);
+    },
   nextSlide() {
     // Incrementa l'indice della slide corrente
-    this.currentSlide = (this.currentSlide + 1) % this.carouselItems.length;
+    this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+  },
+  nextSlide1() {
+    // Incrementa l'indice della slide corrente
+    this.currentIndex1 = (this.currentIndex1 + 1) % this.slides1.length;
+  },
+  nextSlide2() {
+    // Incrementa l'indice della slide corrente
+    this.currentIndex2 = (this.currentIndex2 + 1) % this.slides2.length;
+  },
+  nextSlide3() {
+    // Incrementa l'indice della slide corrente
+    this.currentIndex3 = (this.currentIndex3 + 1) % this.carouselIt.length;
   },
   scrollToChiusure() {
     document.getElementById('tagliafuoco').scrollIntoView({ behavior: 'smooth' });
@@ -422,7 +459,7 @@ methods: {
 }
 
 .card-img-top {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   border-bottom: 1px solid #e0e0e0;
   max-height: 200px;
@@ -430,6 +467,7 @@ methods: {
  /* opacity: 0.8 !important; */
   padding: 5px;
   border:none !important;
+  object-fit: contain;
   /* color: #333; */
 }
 
@@ -457,10 +495,7 @@ methods: {
   height: 250px;
   width: 100%;
 } */
-.carousel{
-  width: 100%;
-  height: auto;
-}
+
 .sec_white{
     background-image: url(https://static.vecteezy.com/ti/vettori-gratis/p3/2056905-elegante-sfondo-bianco-concetto-vettoriale.jpg);
     width: 100%;
@@ -487,10 +522,13 @@ methods: {
   color: black;
   font-family: Georgia, 'Times New Roman', Times, serif;
   border: none;
-  background-color: transparent;
+  text-decoration: none;
   padding: 10px;
   font-size: 1.5rem;
 
+}
+.linked:hover{
+  color: rgba(52,58,64,255);
 }
 .fontTitle{
   font-size: 3.5rem;
@@ -522,14 +560,18 @@ methods: {
 .sec-bot{
   margin-bottom: 30px;
 }
-#tagliafuoco,
-#porte,
-#infissi,
-#Oscuranti {
-  padding-top: 75px; /* Aggiungi uno spazio superiore di 100px */
+
+.carousel {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.imagine {
+  width: 100%;
+  height: 500px;
 }
 @media(min-width: 769px){
-  .carousel-item img {
+  .imagine {
     width:100%; /* Imposta la larghezza dell'immagine al 100% */
     /* object-fit: contain; Imposta l'altezza dell'immagine al 100% dell'altezza dell'elemento padre */
     height: 500px;
@@ -538,13 +580,7 @@ methods: {
   }
 }
 @media (max-width: 768px) {
-  #tagliafuoco,
-#porte,
-#infissi,
-#Oscuranti {
-  padding-top: 0px; /* Aggiungi uno spazio superiore di 100px */
-}
-
+ 
   .size {
     font-size: 2rem; /* Riduci la dimensione del testo del titolo su dispositivi mobili */
     margin: 0;
@@ -557,8 +593,7 @@ methods: {
   .linked {
     /* margin-top: 50px;  */
     font-size: 0.5rem;
-    border: none;
-    background-color: transparent;
+    text-decoration: none;
     
   }
   .bottone{
@@ -585,17 +620,18 @@ methods: {
 
   /* Aggiungi queste regole CSS per rimuovere i margini dai titoli */
   
-  .carousel-item {
+  .prodotti {
     width: 100%; /* Imposta la larghezza dell'elemento del carosello al 100% */
-    margin: 0; /* Rimuovi i margini */
+    display: flex;
+    align-items: center;
+    height: 300px;
   }
 
-  .carousel-item img {
+  .imagine {
     width:100%; /* Imposta la larghezza dell'immagine al 100% */
-    object-fit: contain; /* Imposta l'altezza dell'immagine al 100% dell'altezza dell'elemento padre */
-    height: 300px;
-    margin: 0;
-    padding: 0;
+  
+    height: 200px;
+    
     
   }
 
@@ -611,9 +647,7 @@ methods: {
     display: flex;
     justify-content: space-around;
   }
-  #carouselExampleFade{
-    padding: 0;
-  }
+ 
 
 }
 
