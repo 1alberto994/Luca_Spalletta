@@ -7,16 +7,16 @@
       </div>
       <div class="text-center">
         
-    <strong><a class="linked" href="#tagliafuoco" @click="scrollToChiusure"> Chiusure Tagliafuoco</a></strong>
+    <strong><button class="linked" href="" @click="scrollToChiusure"> Chiusure Tagliafuoco</button></strong>
   
   
-  <strong><a class="linked" href="#porte" @click="scrollToPorte">Porte</a></strong>
+  <strong><button class="linked" href="" @click="scrollToPorte">Porte</button></strong>
 
 
-  <strong><a class="linked" href="#infissi" @click="scrollToInfissi">Infissi</a></strong>
+  <strong><button class="linked" href="" @click="scrollToInfissi">Infissi</button></strong>
 
 
-  <strong><a class="linked" href="#Oscuranti" @click="scrollToOscuranti">Zanzariere e oscuranti</a></strong>
+  <strong><button class="linked" href="" @click="scrollToOscuranti">Zanzariere e oscuranti</button></strong>
       </div>
     </section>
     
@@ -522,9 +522,10 @@ methods: {
   color: black;
   font-family: Georgia, 'Times New Roman', Times, serif;
   border: none;
-  text-decoration: none;
+  /* text-decoration: none; */
   padding: 10px;
   font-size: 1.5rem;
+  background-color: transparent;
 
 }
 .linked:hover{

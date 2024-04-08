@@ -91,7 +91,7 @@
     <div class="row">
         <!-- Pulsante di attivazione del menu per schermi piccoli -->
         <button class="navbar-toggler d-lg-none btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"  @click="toggleOffcanvas" style="color: white;">
-    <span class="fas fa-bars text-white"></span>
+    <!-- <span class="fas fa-bars text-white"></span> --> <i class="fa-solid fa-bars"></i>
 </button>
 
 <div class="offcanvas offcanvas-start " :class="{ 'show': isOffcanvasOpen }" id="offcanvas" aria-labelledby="offcanvasLabel" v-if="isOffcanvasOpen">
@@ -113,7 +113,7 @@
   <button @click="toggleDropdown" class="apertura" >Chiusure Tagliafuoco<i class="fas fa-chevron-down arrow-icon" :class="{ 'rotate': isOpen }"></i></button>
 
   <!-- Dropdown -->
-  <ul v-if="isOpen" class="change" @click="selectOption">
+  <ul v-if="isOpen" class="offcanvasChange " @click="selectOption">
     <li class="item"><a class="link" href="https://www.ninz.it/it/home">Ninz</a></li>
     <li class="item"><a class="link" href="https://www.meverin.com/">Meverin</a></li>
     <li class="item"><a class="link" href="https://glassfire.it/">Glassfire</a></li>
@@ -125,7 +125,7 @@
   <button class="apertura" @click="togglePorteDropdown">
     Porte<i class="fas fa-chevron-down arrow-icon" :class="{ 'rotate': isPorteOpen }"></i>
   </button>
-  <ul v-if="isPorteOpen" class="change" @click="selectPorteOption">
+  <ul v-if="isPorteOpen" class="offcanvasChange" @click="selectPorteOption">
     <li class="item"><a class="link" href="https://www.ferwall.it/">Ferwall</a></li>
     <li class="item"><a class="link" href="https://www.porteimic.com/">Porte Imic</a></li>
     <li class="item"><a class="link" href="https://www.manuellodesign.it/it/">Manuello</a></li>
@@ -139,7 +139,7 @@
   <button class="apertura" @click="toggleInfissiDropdown">
     Infissi<i class="fas fa-chevron-down arrow-icon" :class="{ 'rotate': isInfissiOpen }"></i>
   </button>
-  <ul v-if="isInfissiOpen" class="change" @click="selectInfissiOption">
+  <ul v-if="isInfissiOpen" class="offcanvasChange" @click="selectInfissiOption">
                     <li class="item"><a class="link" href="https://www.cosmetgroup.it/brand/30/cosmet">Cosmet</a></li>
                     <li class="item"><a class="link" href="https://www.cosmetgroup.it/brand/31/fideal">Fideal</a></li>
                     <li class="item"><a class="link" href="https://www.cosmetgroup.it/brand/32/alwo">Alwo</a></li>
@@ -149,7 +149,7 @@
   <button class="apertura" @click="toggleZanzarieraDropdown">
     Zanzariere/Oscuranti<i class="fas fa-chevron-down arrow-icon" :class="{ 'rotate': isZanzarieraOpen }"></i>
   </button>
-  <ul v-if="isZanzarieraOpen" class="change" @click="selectZanzarieraOption">
+  <ul v-if="isZanzarieraOpen" class="offcanvasChange" @click="selectZanzarieraOption">
                     <li class="item"><a class="link" href="https://zanzar.it/">Zanzar Sistem</a></li>
                     <li class="item"><a class="link" href="https://croci.com/">Croci</a></li>
                     <li class="item"><a class="link" href="https://suncover.com/">Suncover</a></li>
@@ -205,7 +205,7 @@
               </div>
               
               <div class="text-center">
-                <p><i class="fa-regular fa-copyright"></i> Copyright Gianluca&Luca Spalletta Rappresentanze  P.IVA-04533750875</p>
+                <p><i class="fa-regular fa-copyright"></i> Copyright Gianluca & Luca Spalletta Rappresentanze  P.IVA-04533750875</p>
               </div>
 
             </div>
@@ -391,15 +391,27 @@ scrollToFooter(event) {
   list-style: none;
   padding: 0;
   margin: 0;
-  border:none;
-  background-color:rgba(52,58,64,255);
+  border-color: white;
+  background-color:black;
   position: absolute;
   color: white;
+}
+.offcanvasChange{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* background-color: rgba(11, 0, 0, 0.299); */
+  background-color: black;
+  color: white;
+  border: none;
+  
 }
 
 .item {
   padding: 10px;
+  text-align: center;
   cursor: pointer;
+  
 }
 .item:hover{
   background-color: black;
