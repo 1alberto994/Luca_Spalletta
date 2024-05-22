@@ -15,6 +15,14 @@
       </div>
     </div>
   </div>
+  <a class="carousel-control-prev" role="button" @click="prevSlide">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" role="button" @click="nextSlide">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </section>
     <section class="sec_white">
       <div class="container-fluid">
@@ -29,7 +37,7 @@
               <div class="text-center mt-5">
                   <ul class="list-unstyled d-flex justify-content-center">
                     <li class=" p-2">
-                      <router-link class="btn btn-dark p-3 mb-2" to="/partner">I nostri Partners</router-link>  
+                      <router-link class="btn btn-dark p-3 mb-2" to="/spalletta_partner">I nostri Partners</router-link>  
                     </li>
                   </ul>
 
@@ -70,7 +78,15 @@ export default {
     nextSlide() {
       // Avanza al prossimo elemento del carosello
       this.currentIndex = (this.currentIndex + 1) % this.carouselItems.length;
-    }
+    },
+    prevSlide() {
+        // Vai all'elemento precedente del carosello
+        if (this.currentIndex === 0) {
+          this.currentIndex = this.carouselItems.length - 1;
+        } else {
+          this.currentIndex -= 1;
+        }
+      },
   },
   beforeDestroy() {
     // Assicurati di cancellare l'intervallo quando il componente viene distrutto
@@ -149,6 +165,30 @@ export default {
 h3{
   font-size: 3.5rem;
 }
+/* Stile per le frecce */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 4%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-control-prev-icon:before,
+.carousel-control-next-icon:before {
+  /* content: ''; */
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  /* transform: translate(-50%, -50%); */
+}
+
+/* .carousel-control-prev-icon {
+  font-size: 3rem;
+} */
+
 @media (max-width: 576px) {
   .carousel .carousel-inner .carousel-item img {
     height: 100% !important; /* Altezza per dispositivi mobile */

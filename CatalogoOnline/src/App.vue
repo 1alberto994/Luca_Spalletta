@@ -19,7 +19,7 @@
                   <router-link class="router" to="/" @click="scrollToTop">Home</router-link>
                 </li>
                 <li class="d-flex justify-content-between p-2 font">
-                  <router-link class="router" to="/partner" @click="scrollToTop">Partners</router-link>
+                  <router-link class="router" to="/spalletta_partner" @click="scrollToTop">Partners</router-link>
                 </li>
                 <li>
   <!-- Bottone per aprire/chiudere il dropdown -->
@@ -106,7 +106,7 @@
                   <router-link class="router" to="/" @click.native="closeOffcanvas" >Home</router-link>
                 </li>
                 <li class="m-2 p-2">
-                  <router-link class="router" to="/partner" @click.native="closeOffcanvas" >Partners</router-link>
+                  <router-link class="router" to="/spalletta_partner" @click.native="closeOffcanvas" >Partners</router-link>
                 </li>
                 <li>
   <!-- Bottone per aprire/chiudere il dropdown -->
@@ -260,7 +260,54 @@ export default {
     }
   },
   methods: {
+    closeDropdowns(event) {
+  const dropdowns = document.querySelectorAll('.change'); // Selettore dei dropdown
+  const trigger = document.querySelectorAll('.apertura'); // Selettore dei trigger dei dropdown
+
+  // Verifica se il clic è avvenuto al di fuori di tutti i dropdown e dei loro trigger
+  if (!this.isInsideElement(event.target, dropdowns) && !this.isInsideElement(event.target, trigger)) {
+    // Chiudi i dropdown che sono aperti
+    if (this.isOpen) {
+      this.isOpen = false;
+    }
+    if (this.isPorteOpen) {
+      this.isPorteOpen = false;
+    }
+    if (this.isInfissiOpen) {
+      this.isInfissiOpen = false;
+    }
+    if (this.isZanzarieraOpen) {
+      this.isZanzarieraOpen = false;
+    }
+  }
+},
+
+// Metodo per verificare se l'elemento target è contenuto in un array di elementi
+isInsideElement(target, elements) {
+  for (let i = 0; i < elements.length; i++) {
+    if (elements[i].contains(target)) {
+      return true;
+    }
+  }
+  return false;
+},
+closeOtherDropdowns(currentDropdown) {
+      // Chiudi tutti i dropdown tranne quello corrente
+      if (currentDropdown !== 'isOpen') {
+        this.isOpen = false;
+      }
+      if (currentDropdown !== 'isPorteOpen') {
+        this.isPorteOpen = false;
+      }
+      if (currentDropdown !== 'isInfissiOpen') {
+        this.isInfissiOpen = false;
+      }
+      if (currentDropdown !== 'isZanzarieraOpen') {
+        this.isZanzarieraOpen = false;
+      }
+    },
     toggleDropdown() {
+      this.closeOtherDropdowns('isOpen');
       // Inverti lo stato del dropdown
       this.isOpen = !this.isOpen;
     },
@@ -273,6 +320,7 @@ export default {
       this.isOpen = false;
     },
     togglePorteDropdown() {
+      this.closeOtherDropdowns('isPorteOpen');
       // Inverti lo stato del dropdown
       this.isPorteOpen = !this.isPorteOpen;
     },
@@ -285,6 +333,7 @@ export default {
       this.isPorteOpen = false;
     },
     toggleInfissiDropdown() {
+      this.closeOtherDropdowns('isInfissiOpen');
       // Inverti lo stato del dropdown
       this.isInfissiOpen = !this.isInfissiOpen;
     },
@@ -297,6 +346,7 @@ export default {
       this.isInfissiOpen = false;
     },
     toggleZanzarieraDropdown() {
+      this.closeOtherDropdowns('isZanzarieraOpen');
       // Inverti lo stato del dropdown
       this.isZanzarieraOpen = !this.isZanzarieraOpen;
     },
@@ -365,23 +415,31 @@ scrollToFooter(event) {
     },
   },
   
+  // mounted() {
+  //   const header = document.getElementById('header');
+  // if (header) {
+  //   header.addEventListener('click', () => {
+  //     // Effettua lo scroll verso l'alto della pagina
+  //     window.scrollTo({
+  //       top: 0,
+  //       behavior: 'smooth'
+  //     });
+  //   });
+  // }
+  // },
+  // beforeDestroy() {
+  //   document.removeEventListener('click', this.closeDropdowns); // Rimuove l'event listener quando il componente viene distrutto
+  
+  // }
   mounted() {
-    const header = document.getElementById('header');
-  if (header) {
-    header.addEventListener('click', () => {
-      // Effettua lo scroll verso l'alto della pagina
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  }
+    // Aggiungi un event listener al documento per rilevare i clic al di fuori del dropdown
+    document.addEventListener('click', this.closeDropdowns);
   },
+
   beforeDestroy() {
-    document.removeEventListener('click', this.closeDropdowns); // Rimuove l'event listener quando il componente viene distrutto
-  
-  }
-  
+    // Rimuovi l'event listener quando il componente viene distrutto per evitare memory leak
+    document.removeEventListener('click', this.closeDropdowns);
+  },
   
 };
 </script>
